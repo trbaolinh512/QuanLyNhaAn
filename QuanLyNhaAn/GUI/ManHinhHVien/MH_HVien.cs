@@ -1,4 +1,5 @@
-﻿using PhanMemBaoCom.DTO;
+﻿using PhanMemBaoCom.BLL;
+using PhanMemBaoCom.DTO;
 using PhanMemBaoCom.GUI.ManHinhChung;
 using QuanLyNhaAn.GUI.ManHinhCBGV;
 using System;
@@ -22,7 +23,7 @@ namespace QuanLyNhaAn.GUI.ManHinhHVien
             UC_ThongTinSuatAn uC_YKienDongGop = new UC_ThongTinSuatAn(thongTinNguoiDungDto);
             pnlHienThi.Controls.Add(uC_YKienDongGop);
             thongtin = thongTinNguoiDungDto;
-            lbUser.Text = thongTinNguoiDungDto.HoTen;
+            lbUser.Text = thongtin.HoTen;
         }
 
         private void btnTTSA_Click(object sender, EventArgs e)
@@ -50,5 +51,14 @@ namespace QuanLyNhaAn.GUI.ManHinhHVien
             this.Close();
         }
 
+        private void pnlUser_Click(object sender, EventArgs e)
+        {
+            ThongTinNguoiDungBll thongTinNguoiDungBll = new ThongTinNguoiDungBll();
+            thongtin = thongTinNguoiDungBll.lay_chi_tiet_theo_mngdung(thongtin.MaNguoiDung);
+            lbUser.DataBindings.Clear();
+            lbUser.DataBindings.Add("Text", thongtin, "HoTen");
+            ThongTinCaNhan thongTinCaNhan = new ThongTinCaNhan(thongtin);
+            thongTinCaNhan.Show();
+        }
     }
 }

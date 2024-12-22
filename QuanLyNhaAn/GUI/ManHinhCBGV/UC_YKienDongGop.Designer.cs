@@ -58,7 +58,7 @@
             dgvYeuCau.Name = "dgvYeuCau";
             dgvYeuCau.RowHeadersWidth = 51;
             dgvYeuCau.RowTemplate.Height = 29;
-            dgvYeuCau.Size = new Size(1018, 955);
+            dgvYeuCau.Size = new Size(1018, 878);
             dgvYeuCau.TabIndex = 0;
             dgvYeuCau.CellClick += dgvYeuCau_CellClick;
             // 

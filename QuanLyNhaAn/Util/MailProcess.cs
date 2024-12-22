@@ -29,7 +29,7 @@ namespace QuanLyNhaAn.Util
                     smtp.Port = 587;
                     smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                     smtp.Credentials = new NetworkCredential(FROM, PASS);
-                    await smtp.SendMailAsync(mail);
+                   await smtp.SendMailAsync(mail);
                 }
 
                 return true;

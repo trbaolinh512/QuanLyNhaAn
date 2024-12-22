@@ -1,6 +1,6 @@
 ﻿namespace QuanLyNhaAn.GUI.ManHinhQLHThong
 {
-    partial class QuanLyChucVu
+    partial class QuanLyHeThong
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLyChucVu));
-            dgvChucVu = new DataGridView();
-            Id = new DataGridViewTextBoxColumn();
-            STT = new DataGridViewTextBoxColumn();
-            ChucVu = new DataGridViewTextBoxColumn();
-            LaHocVien = new DataGridViewCheckBoxColumn();
-            CoQuyenBaoCom = new DataGridViewCheckBoxColumn();
-            label4 = new Label();
-            txbChucVu = new TextBox();
-            label2 = new Label();
-            btnChinhSua = new Button();
-            ckbLaHocVien = new CheckBox();
-            ckbBaoCom = new CheckBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLyHeThong));
             panel10 = new Panel();
             pnlUser = new Panel();
             pictureBox1 = new PictureBox();
@@ -52,139 +40,23 @@
             button1 = new Button();
             btnQLYeuCau = new Button();
             btnCaiDat = new Button();
-            btnThem = new Button();
-            btnXoa = new Button();
-            ((System.ComponentModel.ISupportInitialize)dgvChucVu).BeginInit();
+            txbTitle = new Label();
+            pnlHienThi = new Panel();
             panel10.SuspendLayout();
             pnlUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // dgvChucVu
-            // 
-            dgvChucVu.AllowUserToAddRows = false;
-            dgvChucVu.AllowUserToDeleteRows = false;
-            dgvChucVu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvChucVu.Columns.AddRange(new DataGridViewColumn[] { Id, STT, ChucVu, LaHocVien, CoQuyenBaoCom });
-            dgvChucVu.Location = new Point(274, 98);
-            dgvChucVu.Name = "dgvChucVu";
-            dgvChucVu.ReadOnly = true;
-            dgvChucVu.RowHeadersWidth = 51;
-            dgvChucVu.RowTemplate.Height = 29;
-            dgvChucVu.Size = new Size(605, 899);
-            dgvChucVu.TabIndex = 2;
-            dgvChucVu.CellClick += dgvChucVu_CellClick;
-            // 
-            // Id
-            // 
-            Id.HeaderText = "Id";
-            Id.MinimumWidth = 6;
-            Id.Name = "Id";
-            Id.ReadOnly = true;
-            Id.Visible = false;
-            Id.Width = 125;
-            // 
-            // STT
-            // 
-            STT.HeaderText = "STT";
-            STT.MinimumWidth = 6;
-            STT.Name = "STT";
-            STT.ReadOnly = true;
-            STT.Width = 125;
-            // 
-            // ChucVu
-            // 
-            ChucVu.HeaderText = "Chức vụ";
-            ChucVu.MinimumWidth = 6;
-            ChucVu.Name = "ChucVu";
-            ChucVu.ReadOnly = true;
-            ChucVu.Width = 150;
-            // 
-            // LaHocVien
-            // 
-            LaHocVien.HeaderText = "Là học viên";
-            LaHocVien.MinimumWidth = 6;
-            LaHocVien.Name = "LaHocVien";
-            LaHocVien.ReadOnly = true;
-            LaHocVien.Width = 125;
-            // 
-            // CoQuyenBaoCom
-            // 
-            CoQuyenBaoCom.HeaderText = "Có quyền báo cơm";
-            CoQuyenBaoCom.MinimumWidth = 6;
-            CoQuyenBaoCom.Name = "CoQuyenBaoCom";
-            CoQuyenBaoCom.ReadOnly = true;
-            CoQuyenBaoCom.Width = 150;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(272, 9);
-            label4.Name = "label4";
-            label4.Size = new Size(324, 54);
-            label4.TabIndex = 7;
-            label4.Text = "Quản lý chức vụ";
-            // 
-            // txbChucVu
-            // 
-            txbChucVu.Location = new Point(924, 140);
-            txbChucVu.Name = "txbChucVu";
-            txbChucVu.Size = new Size(167, 27);
-            txbChucVu.TabIndex = 8;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(924, 112);
-            label2.Name = "label2";
-            label2.Size = new Size(61, 20);
-            label2.TabIndex = 9;
-            label2.Text = "Chức vụ";
-            // 
-            // btnChinhSua
-            // 
-            btnChinhSua.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnChinhSua.Location = new Point(1104, 173);
-            btnChinhSua.Name = "btnChinhSua";
-            btnChinhSua.Size = new Size(101, 29);
-            btnChinhSua.TabIndex = 10;
-            btnChinhSua.Text = "Chỉnh sửa";
-            btnChinhSua.UseVisualStyleBackColor = true;
-            btnChinhSua.Click += btnChinhSua_Click;
-            // 
-            // ckbLaHocVien
-            // 
-            ckbLaHocVien.AutoSize = true;
-            ckbLaHocVien.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            ckbLaHocVien.Location = new Point(924, 173);
-            ckbLaHocVien.Name = "ckbLaHocVien";
-            ckbLaHocVien.Size = new Size(116, 24);
-            ckbLaHocVien.TabIndex = 11;
-            ckbLaHocVien.Text = "Là học viên ?";
-            ckbLaHocVien.UseVisualStyleBackColor = true;
-            // 
-            // ckbBaoCom
-            // 
-            ckbBaoCom.AutoSize = true;
-            ckbBaoCom.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            ckbBaoCom.Location = new Point(924, 212);
-            ckbBaoCom.Name = "ckbBaoCom";
-            ckbBaoCom.Size = new Size(167, 24);
-            ckbBaoCom.TabIndex = 12;
-            ckbBaoCom.Text = "Có quyền báo cơm ?";
-            ckbBaoCom.UseVisualStyleBackColor = true;
-            // 
             // panel10
             // 
             panel10.BackColor = Color.FromArgb(0, 127, 184);
             panel10.Controls.Add(pnlUser);
-            panel10.Location = new Point(-1, -2);
+            panel10.Location = new Point(0, 0);
             panel10.Name = "panel10";
             panel10.Size = new Size(258, 123);
-            panel10.TabIndex = 31;
+            panel10.TabIndex = 33;
+            panel10.Click += pnlUser_Click;
             // 
             // pnlUser
             // 
@@ -195,6 +67,7 @@
             pnlUser.Name = "pnlUser";
             pnlUser.Size = new Size(238, 85);
             pnlUser.TabIndex = 0;
+            pnlUser.Click += pnlUser_Click;
             // 
             // pictureBox1
             // 
@@ -206,6 +79,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pnlUser_Click;
             // 
             // label1
             // 
@@ -217,6 +91,7 @@
             label1.Size = new Size(99, 28);
             label1.TabIndex = 5;
             label1.Text = "Xin chào,";
+            label1.Click += pnlUser_Click;
             // 
             // lbUser
             // 
@@ -228,6 +103,7 @@
             lbUser.Size = new Size(70, 28);
             lbUser.TabIndex = 4;
             lbUser.Text = "label1";
+            lbUser.Click += pnlUser_Click;
             // 
             // panel1
             // 
@@ -237,10 +113,10 @@
             panel1.Controls.Add(button1);
             panel1.Controls.Add(btnQLYeuCau);
             panel1.Controls.Add(btnCaiDat);
-            panel1.Location = new Point(0, 117);
+            panel1.Location = new Point(0, 119);
             panel1.Name = "panel1";
-            panel1.Size = new Size(257, 918);
-            panel1.TabIndex = 30;
+            panel1.Size = new Size(257, 915);
+            panel1.TabIndex = 32;
             // 
             // btnQLChucVu
             // 
@@ -259,6 +135,7 @@
             btnQLChucVu.Text = "          Quản lý chức vụ";
             btnQLChucVu.TextAlign = ContentAlignment.MiddleLeft;
             btnQLChucVu.UseVisualStyleBackColor = false;
+            btnQLChucVu.Click += btnQLChucVu_Click;
             // 
             // btnQLNguoiDung
             // 
@@ -336,49 +213,35 @@
             btnCaiDat.UseVisualStyleBackColor = false;
             btnCaiDat.Click += btnCaiDat_Click;
             // 
-            // btnThem
+            // txbTitle
             // 
-            btnThem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnThem.Location = new Point(1104, 131);
-            btnThem.Name = "btnThem";
-            btnThem.Size = new Size(101, 29);
-            btnThem.TabIndex = 32;
-            btnThem.Text = "Thêm";
-            btnThem.UseVisualStyleBackColor = true;
-            btnThem.Click += btnThem_Click;
+            txbTitle.AutoSize = true;
+            txbTitle.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            txbTitle.Location = new Point(264, 0);
+            txbTitle.Name = "txbTitle";
+            txbTitle.Size = new Size(399, 54);
+            txbTitle.TabIndex = 34;
+            txbTitle.Text = "Quản lý người dùng";
             // 
-            // btnXoa
+            // pnlHienThi
             // 
-            btnXoa.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnXoa.Location = new Point(1104, 212);
-            btnXoa.Name = "btnXoa";
-            btnXoa.Size = new Size(101, 29);
-            btnXoa.TabIndex = 33;
-            btnXoa.Text = "Xóa";
-            btnXoa.UseVisualStyleBackColor = true;
-            btnXoa.Click += btnXoa_Click;
+            pnlHienThi.Location = new Point(265, 57);
+            pnlHienThi.Name = "pnlHienThi";
+            pnlHienThi.Size = new Size(1615, 958);
+            pnlHienThi.TabIndex = 35;
             // 
-            // QuanLyChucVu
+            // QuanLyHeThong
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1902, 1033);
-            Controls.Add(btnXoa);
-            Controls.Add(btnThem);
+            Controls.Add(pnlHienThi);
+            Controls.Add(txbTitle);
             Controls.Add(panel10);
             Controls.Add(panel1);
-            Controls.Add(ckbBaoCom);
-            Controls.Add(ckbLaHocVien);
-            Controls.Add(btnChinhSua);
-            Controls.Add(label2);
-            Controls.Add(txbChucVu);
-            Controls.Add(label4);
-            Controls.Add(dgvChucVu);
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "QuanLyChucVu";
-            Text = "Quản lý hệ thống";
-            ((System.ComponentModel.ISupportInitialize)dgvChucVu).EndInit();
+            Name = "QuanLyHeThong";
+            Text = "QuanLyHeThong";
             panel10.ResumeLayout(false);
             pnlUser.ResumeLayout(false);
             pnlUser.PerformLayout();
@@ -389,13 +252,7 @@
         }
 
         #endregion
-        private DataGridView dgvChucVu;
-        private Label label4;
-        private TextBox txbChucVu;
-        private Label label2;
-        private Button btnChinhSua;
-        private CheckBox ckbLaHocVien;
-        private CheckBox ckbBaoCom;
+
         private Panel panel10;
         private Panel pnlUser;
         private PictureBox pictureBox1;
@@ -407,12 +264,7 @@
         private Button button1;
         private Button btnQLYeuCau;
         private Button btnCaiDat;
-        private Button btnThem;
-        private Button btnXoa;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn STT;
-        private DataGridViewTextBoxColumn ChucVu;
-        private DataGridViewCheckBoxColumn LaHocVien;
-        private DataGridViewCheckBoxColumn CoQuyenBaoCom;
+        private Label txbTitle;
+        private Panel pnlHienThi;
     }
 }

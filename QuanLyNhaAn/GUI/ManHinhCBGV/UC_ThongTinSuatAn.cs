@@ -39,6 +39,13 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
         public DateTime thoigianHienTai { get; set; }
         public int soSuatAn { get; set; }
         public decimal soTien { get; set; }
+        public int soSuatAnSang { get; set; }
+        public decimal soTienSang { get; set; }
+        public int soSuatAnTrua { get; set; }
+        public decimal soTienTrua { get; set; }
+        public int soSuatAnToi { get; set; }
+        public decimal soTienToi { get; set; }
+
         private List<List<Panel>> MaTranLich;
         public ThongTinNguoiDungDto thongTinNguoiDungDto { get; set; }
         public bool LaHocVien { get; set; }
@@ -58,6 +65,14 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             soSuatAn = 0;
             soTien = 0;
 
+            soSuatAnSang = 0;
+            soSuatAnTrua = 0;
+            soSuatAnToi = 0;
+
+            soTienSang = 0;
+            soTienTrua = 0;
+            soTienToi = 0;
+
             InitializeComponent();
             LoadLich();
             ThemSoNgayVaoLich(dtpChonThang.Value);
@@ -70,23 +85,40 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
 
             // Định dạng số tiền
             string formattedMoney = soTien.ToString("C", customFormat).Trim(); // Trim để loại bỏ khoảng trắng dư thừa
+            string formattedMoney1 = soTienSang.ToString("C", customFormat).Trim(); // Trim để loại bỏ khoảng trắng dư thừa
+            string formattedMoney2 = soTienTrua.ToString("C", customFormat).Trim(); // Trim để loại bỏ khoảng trắng dư thừa
+            string formattedMoney3 = soTienToi.ToString("C", customFormat).Trim(); // Trim để loại bỏ khoảng trắng dư thừa
 
             if (LaHocVien)
             {
                 pnlAn.BackColor = Color.Red;
                 lblAn.Text = ": Nghỉ ăn cả ngày";
-                txtTongSuatAn.Text = "Tông buổi nghỉ: " + soSuatAn;
-                txtTongTien.Text = "Tông tiền hoàn: " + formattedMoney;
+                txtTongSuatAn.Text = "Tổng buổi nghỉ: " + soSuatAn;
+                txtTongTien.Text = "Tổng tiền hoàn: " + formattedMoney;
+
+                lbSuatSang.Text = "Số buổi nghỉ: " + soSuatAnSang;
+                lbTienSang.Text = "Số tiền hoàn: " + formattedMoney1;
+                lbSuatTrua.Text = "Số buổi nghỉ: " + soSuatAnTrua;
+                lbTienTrua.Text = "Số tiền hoàn: " + formattedMoney2;
+                lblSuatToi.Text = "Số buổi nghỉ: " + soSuatAnToi;
+                lbTienToi.Text = "Số tiền hoàn: " + formattedMoney3;
 
                 lblLuuY.Visible = false;
                 btnLuuLich.Visible = false;
             }
             else
             {
-                pnlAn.BackColor = Color.Green;
+                pnlAn.BackColor = Color.LightSkyBlue;
                 lblAn.Text = ": Ăn cả ngày";
-                txtTongSuatAn.Text = "Tông buổi đăng ký ăn: " + soSuatAn + " buổi";
-                txtTongTien.Text = "Tông tiền phải đóng: " + formattedMoney;
+                txtTongSuatAn.Text = "Tổng buổi đăng ký ăn: " + soSuatAn + " buổi";
+                txtTongTien.Text = "Tổng tiền phải đóng: " + formattedMoney;
+
+                lbSuatSang.Text = "Số buổi đăng ký ăn: " + soSuatAnSang;
+                lbTienSang.Text = "Tông tiền phải đóng: " + formattedMoney1;
+                lbSuatTrua.Text = "Tông buổi đăng ký ăn: " + soSuatAnTrua;
+                lbTienTrua.Text = "Tông tiền phải đóng: " + formattedMoney2;
+                lblSuatToi.Text = "Tông buổi đăng ký ăn: " + soSuatAnToi;
+                lbTienToi.Text = "Tông tiền phải đóng: " + formattedMoney3;
             }
         }
 
@@ -155,6 +187,21 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                         foreach (LichSuLuuTruDto item in lsSuatAn)
                         {
                             soTien += item.SoTienTuongUng;
+                            if (item.ThoiDiem == 1)
+                            {
+                                soTienSang += item.SoTienTuongUng;
+                                soSuatAnSang += 1;
+                            }
+                            if (item.ThoiDiem == 2)
+                            {
+                                soTienTrua += item.SoTienTuongUng;
+                                soSuatAnTrua += 1;
+                            }
+                            if (item.ThoiDiem == 3) 
+                            { 
+                                soTienToi += item.SoTienTuongUng;
+                                soSuatAnToi += 1; 
+                            }
                         }
                         if (lsSuatAn.Count() == 3)
                         {
@@ -164,7 +211,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                             }
                             else
                             {
-                                pnl.BackColor = Color.Green;
+                                pnl.BackColor = Color.LightSkyBlue;
                             }
                             soSuatAn += 3;
                         }
@@ -211,9 +258,9 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                     }
                     else //Chọn theo phương thức theo từng buổi
                     {
-                        AddLichSuTextBox(pnl, lsSuatAn, 1, "Sáng", new Point(5, 30));
-                        AddLichSuTextBox(pnl, lsSuatAn, 2, "Trưa", new Point(5, 55));
-                        AddLichSuTextBox(pnl, lsSuatAn, 3, "Tối", new Point(5, 80));
+                        AddLichSuLabel(pnl, lsSuatAn, 1, "Sáng", new Point(5, 30));
+                        AddLichSuLabel(pnl, lsSuatAn, 2, "Trưa", new Point(5, 55));
+                        AddLichSuLabel(pnl, lsSuatAn, 3, "Tối", new Point(5, 80));
                     }
                 }
                 else if (ngayTrongVLap > thoigianHienTai.Date) // yêu cầu đăng ký
@@ -242,9 +289,9 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                         }
                         else //Chọn theo phương thức theo từng buổi
                         {
-                            AddYeuCauTextBox(pnl, lsSuatAn, 1, "Sáng", new Point(5, 30), new Point(65, 30));
-                            AddYeuCauTextBox(pnl, lsSuatAn, 2, "Trưa", new Point(5, 55), new Point(65, 55));
-                            AddYeuCauTextBox(pnl, lsSuatAn, 3, "Tối", new Point(5, 80), new Point(65, 80));
+                            AddYeuCauLabel(pnl, lsSuatAn, 1, "Sáng", new Point(5, 30), new Point(65, 30));
+                            AddYeuCauLabel(pnl, lsSuatAn, 2, "Trưa", new Point(5, 55), new Point(65, 55));
+                            AddYeuCauLabel(pnl, lsSuatAn, 3, "Tối", new Point(5, 80), new Point(65, 80));
                         }
                     }
                 }
@@ -271,6 +318,21 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                         foreach (LichSuLuuTruDto item in lsSuatAn)
                         {
                             soTien += item.SoTienTuongUng;
+                            if (item.ThoiDiem == 1)
+                            {
+                                soTienSang += item.SoTienTuongUng;
+                                soSuatAnSang += 1;
+                            }
+                            if (item.ThoiDiem == 2)
+                            {
+                                soTienTrua += item.SoTienTuongUng;
+                                soSuatAnTrua += 1;
+                            }
+                            if (item.ThoiDiem == 3)
+                            {
+                                soTienToi += item.SoTienTuongUng;
+                                soSuatAnToi += 1;
+                            }
                         }
                         if (lsSuatAn.Count() == 3)
                         {
@@ -280,7 +342,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                             }
                             else
                             {
-                                pnl.BackColor = Color.Green;
+                                pnl.BackColor = Color.LightSkyBlue;
                             }
                             soSuatAn += 3;
                         }
@@ -347,28 +409,28 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                         // Xử lý cho buổi sáng
                         if (quaHanSang)
                         {
-                            AddLichSuTextBox(pnl, lsSuatAn, 1, "Sáng", new Point(5, 30));
+                            AddLichSuLabel(pnl, lsSuatAn, 1, "Sáng", new Point(5, 30));
                         }
                         else
                         {
                             if (!LaHocVien)
                             {
-                                AddYeuCauTextBox(pnl, lsSuatAn1, 1, "Sáng", new Point(5, 30), new Point(65, 30));
+                                AddYeuCauLabel(pnl, lsSuatAn1, 1, "Sáng", new Point(5, 30), new Point(65, 30));
                             }
                         }
 
                         // Xử lý cho buổi trưa
                         if (quaHanTrua)
                         {
-                            AddLichSuTextBox(pnl, lsSuatAn, 2, "Trưa", new Point(5, 55));
-                            AddLichSuTextBox(pnl, lsSuatAn, 3, "Tối", new Point(5, 80));
+                            AddLichSuLabel(pnl, lsSuatAn, 2, "Trưa", new Point(5, 55));
+                            AddLichSuLabel(pnl, lsSuatAn, 3, "Tối", new Point(5, 80));
                         }
                         else
                         {
                             if (!LaHocVien)
                             {
-                                AddYeuCauTextBox(pnl, lsSuatAn1, 2, "Trưa", new Point(5, 55), new Point(65, 55));
-                                AddYeuCauTextBox(pnl, lsSuatAn1, 3, "Tối", new Point(5, 80), new Point(65, 80));
+                                AddYeuCauLabel(pnl, lsSuatAn1, 2, "Trưa", new Point(5, 55), new Point(65, 55));
+                                AddYeuCauLabel(pnl, lsSuatAn1, 3, "Tối", new Point(5, 80), new Point(65, 80));
                             }
                         }
 
@@ -384,15 +446,15 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             }
         }
 
-        private void AddYeuCauTextBox(Panel pnl, List<YeuCauDangKyDto> lsSuatAn, int thoiDiem, string labelText, Point location, Point cbx)
+        private void AddYeuCauLabel(Panel pnl, List<YeuCauDangKyDto> lsSuatAn, int thoiDiem, string labelText, Point location, Point cbx)
         {
-            TextBox textBox = new TextBox
+            Label label = new Label
             {
                 BorderStyle = BorderStyle.None,
                 Size = new Size(60, 20),
                 Location = location
             };
-            textBox.Text = $"{labelText}:";
+            label.Text = $"{labelText}:";
             CheckBox checkBox = new CheckBox
             {
                 Location = cbx
@@ -422,45 +484,45 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                 }
             }
 
-            pnl.Controls.Add(textBox);
+            pnl.Controls.Add(label);
             pnl.Controls.Add(checkBox);
-            textBox.BackColor=pnl.BackColor;
+            label.BackColor=pnl.BackColor;
         }
 
-        private void AddLichSuTextBox(Panel pnl, List<LichSuLuuTruDto> lsSuatAn, int thoiDiem, string labelText, Point location)
+        private void AddLichSuLabel(Panel pnl, List<LichSuLuuTruDto> lsSuatAn, int thoiDiem, string labelText, Point location)
         {
-            TextBox textBox = new TextBox
+            Label label = new Label
             {
                 BorderStyle = BorderStyle.None,
                 Size = new Size(65, 20),
                 Location = location
             };
-            textBox.BackColor = pnl.BackColor;
+            label.BackColor = pnl.BackColor;
             // Kiểm tra ThoiDiem
             if (lsSuatAn.Any(x => x.ThoiDiem == thoiDiem))
             {
                 if (LaHocVien)
                 {
-                    textBox.Text = $"{labelText}:";
+                    label.Text = $"{labelText}:";
                 }
                 else
                 {
-                    textBox.Text = $"{labelText}: X";
+                    label.Text = $"{labelText}: X";
                 }
             }
             else
             {
                 if (LaHocVien)
                 {
-                    textBox.Text = $"{labelText}: X";
+                    label.Text = $"{labelText}: X";
                 }
                 else
                 {
-                    textBox.Text = $"{labelText}: ";
+                    label.Text = $"{labelText}: ";
                 }
             }
 
-            pnl.Controls.Add(textBox);
+            pnl.Controls.Add(label);
         }
         private async Task LamMoiLich()
         {
@@ -508,10 +570,8 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                     {
                         if (panel.Controls[k] is CheckBox checkBox)
                         {
-                            
                             // Xác định thứ tự của CheckBox trong Panel
                             int index = k;
-
                             // Kiểm tra nếu CheckBox được chọn
                             
                                 DateTime dt = dtpChonThang.Value;
@@ -528,12 +588,10 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                                 bool quaHanSang = thoigianHienTai >= hanGioMoSang;
                                 bool quaHanTrua = thoigianHienTai >= hanGioMoTruaToi;
 
-
                             if (phuongthuc == 0) // Cả ngày
                             {
                                 if (!quaHanSang && !quaHanTrua)
                                 {
-
                                     DateTime buoisang = new DateTime(ngayDuocTich.Year, ngayDuocTich.Month, ngayDuocTich.Day);
                                     DateTime buoitrua = buoisang.Add(thongTinHeThongDto.HanBaoTruaToi);
                                     DateTime buoitoi = buoisang.Add(thongTinHeThongDto.HanBaoTruaToi);

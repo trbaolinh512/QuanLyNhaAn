@@ -44,16 +44,20 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             dgvSuatAn.Columns.Clear();
 
             dgvSuatAn.Columns.Add("STT", "STT");
+            dgvSuatAn.Columns[0].Width = 50;
             dgvSuatAn.Columns.Add("HoTen", "Họ Tên");
+            dgvSuatAn.Columns[1].Width = 150;
             dgvSuatAn.Columns.Add("MaHocVien", "Mã học viên");
             dgvSuatAn.Columns.Add("PhuongThuc", "Phương thức");
             dgvSuatAn.Columns["PhuongThuc"].Frozen = true;
+            dgvSuatAn.Columns[3].Width = 130;
             for (int i = 1; i <= ngayKetThuc.Day; i++)
             {
                 dgvSuatAn.Columns.Add(i.ToString(), i.ToString());
+                dgvSuatAn.Columns[3 + i].Width = 30;
             }
+            dgvSuatAn.ColumnHeadersDefaultCellStyle.Font = new Font(dgvSuatAn.Font, FontStyle.Bold);
 
-            
             int stt = 0;
             int index = 0;
             foreach (ThongTinNguoiDungDto item in listNguoiDung)
@@ -84,6 +88,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                     dgvSuatAn.Rows.Add(sang);
                     dgvSuatAn.Rows.Add(trua);
                     dgvSuatAn.Rows.Add(toi);
+                    dgvSuatAn.Rows[index].DefaultCellStyle.BackColor = SystemColors.Control;
                     index += 3;
                 }
             }
@@ -501,7 +506,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                 Cursor = Cursors.Default;
             }
             MessageBox.Show(
-                            "Đã lưu lịch thành công!\nLưu ý: \n   Những buổi quá hạn thì sẽ không được lưu vào trong hệ thống",
+                            "Đã lưu thông tin thành công!",
                             "Thông báo", // Tiêu đề của thông báo
                             MessageBoxButtons.OK, // Các nút hiển thị trong thông báo
                             MessageBoxIcon.Information // Biểu tượng hiển thị (Warning, Error, Information, etc.)

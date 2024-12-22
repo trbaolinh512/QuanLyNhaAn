@@ -1,4 +1,5 @@
-﻿using PhanMemBaoCom.BLL;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using PhanMemBaoCom.BLL;
 using PhanMemBaoCom.DTO;
 using PhanMemBaoCom.GUI.ManHinhChung;
 using QuanLyNhaAn.Util;
@@ -11,67 +12,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace QuanLyNhaAn.GUI.ManHinhQLHThong
 {
-    public partial class YKienDongGop : Form
+    public partial class UC_YKienDongGop : UserControl
     {
         public byte[] imageData { get; set; }
         ThongTinNguoiDungDto nguoiDungDto { get; set; }
-        public YKienDongGop(ThongTinNguoiDungDto nguoidungdto)
+        public UC_YKienDongGop(ThongTinNguoiDungDto nguoidungdto)
         {
-            if (nguoidungdto == null)
-            {
-                this.Close();
-                return;
-            }
             nguoiDungDto = nguoidungdto;
             InitializeComponent();
-            lbUser.Text = nguoidungdto.HoTen;
             LoadYKien();
         }
-
-        private void btnQLNguoiDung_Click(object sender, EventArgs e)
-        {
-            QuanLyNguoiDung manhinh = new QuanLyNguoiDung(nguoiDungDto);
-            Point location = this.Location;
-
-            manhinh.StartPosition = FormStartPosition.Manual;
-            manhinh.Location = location;
-            manhinh.Show();
-            this.Close();
-        }
-
-        private void btnQLChucVu_Click(object sender, EventArgs e)
-        {
-            QuanLyChucVu manhinh = new QuanLyChucVu(nguoiDungDto);
-            Point location = this.Location;
-            manhinh.StartPosition = FormStartPosition.Manual;
-            manhinh.Location = location;
-            manhinh.Show();
-            this.Close();
-        }
-
-        private void btnCaiDat_Click(object sender, EventArgs e)
-        {
-            CaiDatHeThong manhinh = new CaiDatHeThong(nguoiDungDto);
-            Point location = this.Location;
-            manhinh.StartPosition = FormStartPosition.Manual;
-            manhinh.Location = location;
-            manhinh.Show();
-            this.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            DangNhap manhinh = new DangNhap();
-            Point location = this.Location;
-            manhinh.Location = location;
-            manhinh.Show();
-            this.Close();
-        }
-
         public void LoadYKien()
         {
             dgvYKien.Rows.Clear();
@@ -112,7 +65,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
                 YKienDongGopBll yKienDongGopBll = new YKienDongGopBll();
                 YKienDongGopDto yKienDongGopDto = yKienDongGopBll.lay_theo_id(int.Parse(id));
                 string noiDung = dgvYKien.Rows[e.RowIndex].Cells["NoiDung"].Value.ToString();
-                string phanhoi = dgvYKien.Rows[e.RowIndex].Cells["NoiDungPhanHoi"].Value != null? dgvYKien.Rows[e.RowIndex].Cells["NoiDungPhanHoi"].Value.ToString():null ;
+                string phanhoi = dgvYKien.Rows[e.RowIndex].Cells["NoiDungPhanHoi"].Value != null ? dgvYKien.Rows[e.RowIndex].Cells["NoiDungPhanHoi"].Value.ToString() : null;
                 txbYeuCau.Text = noiDung;
                 txbPhanHoi.Text = phanhoi;
 
@@ -135,7 +88,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             }
         }
 
-        private async void btnLuu_Click(object sender, EventArgs e)
+        private void btnLuu_Click(object sender, EventArgs e)
         {
             // Kiểm tra xem người dùng đã chọn một dòng trong DataGridView chưa
             if (dgvYKien.SelectedRows.Count == 0 && dgvYKien.SelectedCells.Count == 0)
@@ -183,8 +136,8 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             ThongTinNguoiDungBll thongTinNguoiDungBll = new ThongTinNguoiDungBll();
             ThongTinNguoiDungDto nguoiGui = thongTinNguoiDungBll.lay_chi_tiet_theo_iddung(yKienDongGopDto.NguoiGui);
             MessageBox.Show("Thông tin đã được lưu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            await mailProcess.sendMail(nguoiGui.Email, title, content);
-            
+            mailProcess.sendMail(nguoiGui.Email, title, content);
+
         }
     }
 }

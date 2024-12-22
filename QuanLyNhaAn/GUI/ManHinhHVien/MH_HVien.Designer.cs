@@ -139,6 +139,7 @@
             panel10.Name = "panel10";
             panel10.Size = new Size(258, 123);
             panel10.TabIndex = 9;
+            panel10.Click += pnlUser_Click;
             // 
             // pnlUser
             // 
@@ -149,6 +150,7 @@
             pnlUser.Name = "pnlUser";
             pnlUser.Size = new Size(238, 85);
             pnlUser.TabIndex = 0;
+            pnlUser.Click += pnlUser_Click;
             // 
             // pictureBox1
             // 
@@ -160,6 +162,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pnlUser_Click;
             // 
             // label1
             // 
@@ -171,6 +174,7 @@
             label1.Size = new Size(99, 28);
             label1.TabIndex = 5;
             label1.Text = "Xin chào,";
+            label1.Click += pnlUser_Click;
             // 
             // lbUser
             // 
@@ -182,6 +186,7 @@
             lbUser.Size = new Size(70, 28);
             lbUser.TabIndex = 4;
             lbUser.Text = "label1";
+            lbUser.Click += pnlUser_Click;
             // 
             // MH_HVien
             // 

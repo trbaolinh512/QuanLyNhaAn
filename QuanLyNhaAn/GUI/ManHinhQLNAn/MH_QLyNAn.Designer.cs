@@ -63,6 +63,7 @@
             panel10.Name = "panel10";
             panel10.Size = new Size(258, 123);
             panel10.TabIndex = 31;
+            panel10.Click += pnlUser_Click;
             // 
             // pnlUser
             // 
@@ -73,6 +74,7 @@
             pnlUser.Name = "pnlUser";
             pnlUser.Size = new Size(238, 85);
             pnlUser.TabIndex = 0;
+            pnlUser.Click += pnlUser_Click;
             // 
             // pictureBox1
             // 
@@ -84,6 +86,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pnlUser_Click;
             // 
             // label1
             // 
@@ -95,6 +98,7 @@
             label1.Size = new Size(99, 28);
             label1.TabIndex = 5;
             label1.Text = "Xin chào,";
+            label1.Click += pnlUser_Click;
             // 
             // lbUser
             // 
@@ -106,6 +110,7 @@
             lbUser.Size = new Size(70, 28);
             lbUser.TabIndex = 4;
             lbUser.Text = "label1";
+            lbUser.Click += pnlUser_Click;
             // 
             // panel1
             // 
@@ -191,9 +196,10 @@
             btnTKCBGV.Name = "btnTKCBGV";
             btnTKCBGV.Size = new Size(258, 47);
             btnTKCBGV.TabIndex = 4;
-            btnTKCBGV.Text = "          Thống kê CBGV";
+            btnTKCBGV.Text = "          Thống kê CB-GV";
             btnTKCBGV.TextAlign = ContentAlignment.MiddleLeft;
             btnTKCBGV.UseVisualStyleBackColor = false;
+            btnTKCBGV.Click += btnTKCBGV_Click;
             // 
             // btnYKDG
             // 
@@ -212,12 +218,13 @@
             btnYKDG.Text = "          Ý kiến đóng góp";
             btnYKDG.TextAlign = ContentAlignment.MiddleLeft;
             btnYKDG.UseVisualStyleBackColor = false;
+            btnYKDG.Click += btnYKDG_Click;
             // 
             // lblTieuDe
             // 
             lblTieuDe.AutoSize = true;
             lblTieuDe.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTieuDe.Location = new Point(284, 8);
+            lblTieuDe.Location = new Point(265, 0);
             lblTieuDe.Name = "lblTieuDe";
             lblTieuDe.Size = new Size(208, 54);
             lblTieuDe.TabIndex = 32;
@@ -236,6 +243,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MH_QLyNAn";
             Text = "Quản lý nhà ăn";
+            Click += pnlUser_Click;
             panel10.ResumeLayout(false);
             pnlUser.ResumeLayout(false);
             pnlUser.PerformLayout();

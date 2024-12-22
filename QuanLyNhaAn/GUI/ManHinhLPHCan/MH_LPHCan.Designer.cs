@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MH_LPHCan));
             flowLayoutPanel1 = new FlowLayoutPanel();
-            btnXemSuatAn = new Button();
             btnTTSA = new Button();
+            btnXemSuatAn = new Button();
             btnYKDG = new Button();
             button1 = new Button();
             pnlHienThi = new Panel();
@@ -59,25 +59,6 @@
             flowLayoutPanel1.Size = new Size(258, 913);
             flowLayoutPanel1.TabIndex = 12;
             // 
-            // btnXemSuatAn
-            // 
-            btnXemSuatAn.BackColor = Color.FromArgb(0, 127, 184);
-            btnXemSuatAn.FlatAppearance.BorderSize = 0;
-            btnXemSuatAn.FlatStyle = FlatStyle.Flat;
-            btnXemSuatAn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnXemSuatAn.ForeColor = Color.White;
-            btnXemSuatAn.Image = (Image)resources.GetObject("btnXemSuatAn.Image");
-            btnXemSuatAn.ImageAlign = ContentAlignment.MiddleLeft;
-            btnXemSuatAn.Location = new Point(3, 103);
-            btnXemSuatAn.Margin = new Padding(3, 20, 3, 11);
-            btnXemSuatAn.Name = "btnXemSuatAn";
-            btnXemSuatAn.Size = new Size(255, 52);
-            btnXemSuatAn.TabIndex = 3;
-            btnXemSuatAn.Text = "            Thông tin suất ăn";
-            btnXemSuatAn.TextAlign = ContentAlignment.MiddleLeft;
-            btnXemSuatAn.UseVisualStyleBackColor = false;
-            btnXemSuatAn.Click += btnXemSuatAn_Click;
-            // 
             // btnTTSA
             // 
             btnTTSA.BackColor = Color.FromArgb(0, 127, 184);
@@ -96,6 +77,25 @@
             btnTTSA.TextAlign = ContentAlignment.MiddleLeft;
             btnTTSA.UseVisualStyleBackColor = false;
             btnTTSA.Click += btnTTSA_Click;
+            // 
+            // btnXemSuatAn
+            // 
+            btnXemSuatAn.BackColor = Color.FromArgb(0, 127, 184);
+            btnXemSuatAn.FlatAppearance.BorderSize = 0;
+            btnXemSuatAn.FlatStyle = FlatStyle.Flat;
+            btnXemSuatAn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnXemSuatAn.ForeColor = Color.White;
+            btnXemSuatAn.Image = (Image)resources.GetObject("btnXemSuatAn.Image");
+            btnXemSuatAn.ImageAlign = ContentAlignment.MiddleLeft;
+            btnXemSuatAn.Location = new Point(3, 103);
+            btnXemSuatAn.Margin = new Padding(3, 20, 3, 11);
+            btnXemSuatAn.Name = "btnXemSuatAn";
+            btnXemSuatAn.Size = new Size(255, 52);
+            btnXemSuatAn.TabIndex = 3;
+            btnXemSuatAn.Text = "            Thông tin suất ăn";
+            btnXemSuatAn.TextAlign = ContentAlignment.MiddleLeft;
+            btnXemSuatAn.UseVisualStyleBackColor = false;
+            btnXemSuatAn.Click += btnXemSuatAn_Click;
             // 
             // btnYKDG
             // 
@@ -161,6 +161,7 @@
             panel10.Name = "panel10";
             panel10.Size = new Size(258, 123);
             panel10.TabIndex = 13;
+            panel10.Click += pnlUser_Click;
             // 
             // pnlUser
             // 
@@ -171,6 +172,7 @@
             pnlUser.Name = "pnlUser";
             pnlUser.Size = new Size(238, 85);
             pnlUser.TabIndex = 0;
+            pnlUser.Click += pnlUser_Click;
             // 
             // pictureBox1
             // 
@@ -182,6 +184,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pnlUser_Click;
             // 
             // label1
             // 
@@ -193,6 +196,7 @@
             label1.Size = new Size(99, 28);
             label1.TabIndex = 5;
             label1.Text = "Xin chào,";
+            label1.Click += pnlUser_Click;
             // 
             // lbUser
             // 
@@ -204,6 +208,7 @@
             lbUser.Size = new Size(70, 28);
             lbUser.TabIndex = 4;
             lbUser.Text = "label1";
+            lbUser.Click += pnlUser_Click;
             // 
             // MH_LPHCan
             // 

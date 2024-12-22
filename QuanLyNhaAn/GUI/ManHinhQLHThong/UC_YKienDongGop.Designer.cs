@@ -1,6 +1,6 @@
-﻿namespace QuanLyNhaAn.GUI.ManHinhQLNAn
+﻿namespace QuanLyNhaAn.GUI.ManHinhQLHThong
 {
-    partial class UC_YKDG
+    partial class UC_YKienDongGop
     {
         /// <summary> 
         /// Required designer variable.
@@ -34,7 +34,6 @@
             label3 = new Label();
             txbYeuCau = new TextBox();
             btnLuu = new Button();
-            label2 = new Label();
             dgvYKien = new DataGridView();
             Id = new DataGridViewTextBoxColumn();
             STT = new DataGridViewTextBoxColumn();
@@ -52,67 +51,58 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(1280, 199);
+            label5.Location = new Point(1206, 260);
             label5.Name = "label5";
             label5.Size = new Size(35, 20);
-            label5.TabIndex = 43;
+            label5.TabIndex = 42;
             label5.Text = "Ảnh";
             // 
             // ptbAnh
             // 
             ptbAnh.BorderStyle = BorderStyle.FixedSingle;
-            ptbAnh.Location = new Point(1282, 226);
+            ptbAnh.Location = new Point(1208, 287);
             ptbAnh.Name = "ptbAnh";
-            ptbAnh.Size = new Size(305, 213);
-            ptbAnh.TabIndex = 42;
+            ptbAnh.Size = new Size(305, 276);
+            ptbAnh.TabIndex = 41;
             ptbAnh.TabStop = false;
             // 
             // txbPhanHoi
             // 
-            txbPhanHoi.Location = new Point(1282, 482);
+            txbPhanHoi.Location = new Point(1208, 605);
             txbPhanHoi.Multiline = true;
             txbPhanHoi.Name = "txbPhanHoi";
-            txbPhanHoi.Size = new Size(305, 157);
-            txbPhanHoi.TabIndex = 41;
+            txbPhanHoi.Size = new Size(305, 173);
+            txbPhanHoi.TabIndex = 40;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(1280, 454);
+            label3.Location = new Point(1206, 582);
             label3.Name = "label3";
             label3.Size = new Size(133, 20);
-            label3.TabIndex = 40;
+            label3.TabIndex = 39;
             label3.Text = "Nội dung phản hồi";
             // 
             // txbYeuCau
             // 
-            txbYeuCau.Location = new Point(1282, 40);
+            txbYeuCau.Location = new Point(1208, 32);
             txbYeuCau.Multiline = true;
             txbYeuCau.Name = "txbYeuCau";
             txbYeuCau.ReadOnly = true;
-            txbYeuCau.Size = new Size(305, 142);
-            txbYeuCau.TabIndex = 39;
+            txbYeuCau.Size = new Size(305, 187);
+            txbYeuCau.TabIndex = 38;
             // 
             // btnLuu
             // 
             btnLuu.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLuu.Location = new Point(1384, 650);
+            btnLuu.Location = new Point(1313, 792);
             btnLuu.Name = "btnLuu";
             btnLuu.Size = new Size(94, 29);
-            btnLuu.TabIndex = 38;
+            btnLuu.TabIndex = 37;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(1280, 17);
-            label2.Name = "label2";
-            label2.Size = new Size(113, 20);
-            label2.TabIndex = 37;
-            label2.Text = "Nội dung ý kiến";
+            btnLuu.Click += btnLuu_Click;
             // 
             // dgvYKien
             // 
@@ -120,13 +110,14 @@
             dgvYKien.AllowUserToDeleteRows = false;
             dgvYKien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvYKien.Columns.AddRange(new DataGridViewColumn[] { Id, STT, NoiDung, NoiDungPhanHoi, NguoiGui, NguoiPhanHoi, NgayYeuCau, NgayPhanHoi });
-            dgvYKien.Location = new Point(6, 17);
+            dgvYKien.Location = new Point(3, 26);
             dgvYKien.Name = "dgvYKien";
             dgvYKien.ReadOnly = true;
             dgvYKien.RowHeadersWidth = 51;
             dgvYKien.RowTemplate.Height = 29;
-            dgvYKien.Size = new Size(1196, 914);
+            dgvYKien.Size = new Size(1167, 795);
             dgvYKien.TabIndex = 36;
+            dgvYKien.CellClick += dgvYKien_CellClick;
             // 
             // Id
             // 
@@ -197,19 +188,19 @@
             NgayPhanHoi.ReadOnly = true;
             NgayPhanHoi.Width = 170;
             // 
-            // UC_YKDG
+            // UC_YKienDongGop
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             Controls.Add(label5);
             Controls.Add(ptbAnh);
             Controls.Add(txbPhanHoi);
             Controls.Add(label3);
             Controls.Add(txbYeuCau);
             Controls.Add(btnLuu);
-            Controls.Add(label2);
             Controls.Add(dgvYKien);
-            Name = "UC_YKDG";
+            Name = "UC_YKienDongGop";
             Size = new Size(1615, 958);
             ((System.ComponentModel.ISupportInitialize)ptbAnh).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvYKien).EndInit();
@@ -225,7 +216,6 @@
         private Label label3;
         private TextBox txbYeuCau;
         private Button btnLuu;
-        private Label label2;
         private DataGridView dgvYKien;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn STT;

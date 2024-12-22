@@ -31,7 +31,7 @@ namespace PhanMemBaoCom.BLL
                     CoQuyenBaoCom = result.GetBoolean(3)
                 });
             }
-            access.close();
+            cn.Close();
             return list;
         }
 
@@ -71,7 +71,7 @@ namespace PhanMemBaoCom.BLL
             command.Parameters.AddWithValue("@CoQuyenBaoCom", dto.CoQuyenBaoCom);
 
             int result = access.ExecuteCommandText(command);
-            access.close();
+            cn.Close();
             return result > 0;
         }
 

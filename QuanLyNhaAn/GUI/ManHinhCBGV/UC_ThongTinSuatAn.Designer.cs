@@ -55,15 +55,27 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             btnLuuLich = new Button();
             btnLamMoi = new Button();
             lblLuuY = new Label();
+            groupBox3 = new GroupBox();
+            lblSuatToi = new Label();
+            lbTienToi = new Label();
+            groupBox2 = new GroupBox();
+            lbSuatTrua = new Label();
+            lbTienTrua = new Label();
+            groupBox4 = new GroupBox();
+            lbSuatSang = new Label();
+            lbTienSang = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             groupBox1.SuspendLayout();
+            groupBox3.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox4.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(56, 26);
+            label1.Location = new Point(25, 25);
             label1.Name = "label1";
             label1.Size = new Size(50, 20);
             label1.TabIndex = 0;
@@ -73,7 +85,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // 
             dtpChonThang.CustomFormat = "MM/yyyy";
             dtpChonThang.Format = DateTimePickerFormat.Custom;
-            dtpChonThang.Location = new Point(112, 21);
+            dtpChonThang.Location = new Point(81, 20);
             dtpChonThang.Name = "dtpChonThang";
             dtpChonThang.Size = new Size(99, 27);
             dtpChonThang.TabIndex = 1;
@@ -82,7 +94,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // txtTongSuatAn
             // 
             txtTongSuatAn.AutoSize = true;
-            txtTongSuatAn.Location = new Point(56, 62);
+            txtTongSuatAn.Location = new Point(25, 61);
             txtTongSuatAn.Name = "txtTongSuatAn";
             txtTongSuatAn.Size = new Size(94, 20);
             txtTongSuatAn.TabIndex = 2;
@@ -91,7 +103,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // txtTongTien
             // 
             txtTongTien.AutoSize = true;
-            txtTongTien.Location = new Point(56, 97);
+            txtTongTien.Location = new Point(25, 96);
             txtTongTien.Name = "txtTongTien";
             txtTongTien.Size = new Size(72, 20);
             txtTongTien.TabIndex = 3;
@@ -195,7 +207,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // 
             cbxPhuongThuc.FormattingEnabled = true;
             cbxPhuongThuc.Items.AddRange(new object[] { "Theo ngày", "Theo từng buổi" });
-            cbxPhuongThuc.Location = new Point(434, 20);
+            cbxPhuongThuc.Location = new Point(399, 20);
             cbxPhuongThuc.Name = "cbxPhuongThuc";
             cbxPhuongThuc.Size = new Size(134, 28);
             cbxPhuongThuc.TabIndex = 5;
@@ -205,7 +217,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(335, 26);
+            label2.Location = new Point(300, 26);
             label2.Name = "label2";
             label2.Size = new Size(93, 20);
             label2.TabIndex = 6;
@@ -253,7 +265,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // 
             // pnlAn
             // 
-            pnlAn.BackColor = Color.Green;
+            pnlAn.BackColor = Color.LightSkyBlue;
             pnlAn.Location = new Point(12, 32);
             pnlAn.Name = "pnlAn";
             pnlAn.Size = new Size(20, 20);
@@ -270,7 +282,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // 
             // btnLuuLich
             // 
-            btnLuuLich.Location = new Point(434, 62);
+            btnLuuLich.Location = new Point(399, 62);
             btnLuuLich.Name = "btnLuuLich";
             btnLuuLich.Size = new Size(94, 29);
             btnLuuLich.TabIndex = 8;
@@ -280,7 +292,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // 
             // btnLamMoi
             // 
-            btnLamMoi.Location = new Point(334, 62);
+            btnLamMoi.Location = new Point(299, 62);
             btnLamMoi.Name = "btnLamMoi";
             btnLamMoi.Size = new Size(94, 29);
             btnLamMoi.TabIndex = 9;
@@ -298,10 +310,100 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             lblLuuY.TabIndex = 4;
             lblLuuY.Text = "*Trước khi đổi sang tháng khác, bạn hãy lưu lịch trong tháng mà bạn đã chỉnh";
             // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(lblSuatToi);
+            groupBox3.Controls.Add(lbTienToi);
+            groupBox3.Location = new Point(21, 393);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(250, 93);
+            groupBox3.TabIndex = 17;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Buổi tối";
+            // 
+            // lblSuatToi
+            // 
+            lblSuatToi.AutoSize = true;
+            lblSuatToi.Location = new Point(28, 23);
+            lblSuatToi.Name = "lblSuatToi";
+            lblSuatToi.Size = new Size(50, 20);
+            lblSuatToi.TabIndex = 9;
+            lblSuatToi.Text = "label2";
+            // 
+            // lbTienToi
+            // 
+            lbTienToi.AutoSize = true;
+            lbTienToi.Location = new Point(27, 54);
+            lbTienToi.Name = "lbTienToi";
+            lbTienToi.Size = new Size(50, 20);
+            lbTienToi.TabIndex = 10;
+            lbTienToi.Text = "label3";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(lbSuatTrua);
+            groupBox2.Controls.Add(lbTienTrua);
+            groupBox2.Location = new Point(21, 276);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(250, 87);
+            groupBox2.TabIndex = 16;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Buổi trưa";
+            // 
+            // lbSuatTrua
+            // 
+            lbSuatTrua.AutoSize = true;
+            lbSuatTrua.Location = new Point(34, 23);
+            lbSuatTrua.Name = "lbSuatTrua";
+            lbSuatTrua.Size = new Size(50, 20);
+            lbSuatTrua.TabIndex = 6;
+            lbSuatTrua.Text = "label2";
+            // 
+            // lbTienTrua
+            // 
+            lbTienTrua.AutoSize = true;
+            lbTienTrua.Location = new Point(33, 54);
+            lbTienTrua.Name = "lbTienTrua";
+            lbTienTrua.Size = new Size(50, 20);
+            lbTienTrua.TabIndex = 7;
+            lbTienTrua.Text = "label3";
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(lbSuatSang);
+            groupBox4.Controls.Add(lbTienSang);
+            groupBox4.Location = new Point(21, 151);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(250, 91);
+            groupBox4.TabIndex = 15;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Buổi sáng";
+            // 
+            // lbSuatSang
+            // 
+            lbSuatSang.AutoSize = true;
+            lbSuatSang.Location = new Point(29, 23);
+            lbSuatSang.Name = "lbSuatSang";
+            lbSuatSang.Size = new Size(50, 20);
+            lbSuatSang.TabIndex = 1;
+            lbSuatSang.Text = "label2";
+            // 
+            // lbTienSang
+            // 
+            lbTienSang.AutoSize = true;
+            lbTienSang.Location = new Point(28, 54);
+            lbTienSang.Name = "lbTienSang";
+            lbTienSang.Size = new Size(50, 20);
+            lbTienSang.TabIndex = 2;
+            lbTienSang.Text = "label3";
+            // 
             // UC_ThongTinSuatAn
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(groupBox3);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox4);
             Controls.Add(lblLuuY);
             Controls.Add(btnLamMoi);
             Controls.Add(btnLuuLich);
@@ -319,6 +421,12 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             panel2.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -350,5 +458,14 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
         private Panel panel4;
         private Label label4;
         private Label lblLuuY;
+        private GroupBox groupBox3;
+        private Label lblSuatToi;
+        private Label lbTienToi;
+        private GroupBox groupBox2;
+        private Label lbSuatTrua;
+        private Label lbTienTrua;
+        private GroupBox groupBox4;
+        private Label lbSuatSang;
+        private Label lbTienSang;
     }
 }

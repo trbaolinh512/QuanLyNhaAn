@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.Office.Interop.Excel;
 using Microsoft.VisualBasic.Logging;
 using PhanMemBaoCom.DAL;
 using PhanMemBaoCom.DTO;
@@ -315,16 +316,51 @@ namespace PhanMemBaoCom.BLL
             return list;
         }
 
-        public List<ThongTinNguoiDungDto> lay_danh_sach_hoc_vien_cung_phong_khoa(Tuple<string, string> item)
+        public List<ThongTinNguoiDungDto> lay_danh_sach_CB_GV_cung_phong_khoa(string? phong,string? khoa,string? input)
         {
+            ChucVuBll chucVuBll = new ChucVuBll();
+            List<ChucVuDto> chucVuDtos = chucVuBll.lay_tat_ca();
+            List<int> listChucVuCBGV = chucVuDtos.Where(x=>!x.LaHocVien && x.CoQuyenBaoCom).Select(x=>x.Id).ToList();
             List<ThongTinNguoiDungDto> list = new List<ThongTinNguoiDungDto>();
-            string commandString = "SELECT * FROM ThongTinNguoiDung WHERE Phong = @Phong AND Khoa = @Khoa";
+            string commandString = "SELECT * FROM ThongTinNguoiDung WHERE ChucVuId in (@ChucVuId) ";
             SqlConnection cn = access.open();
 
+            if(!string.IsNullOrEmpty(phong) && !string.IsNullOrEmpty(khoa))
+            {
+                commandString += "AND Phong = @Phong AND Khoa = @Khoa";
+            }else if (!string.IsNullOrEmpty(phong))
+            {
+                commandString += "AND Phong = @Phong";
+            }
+            else if (!string.IsNullOrEmpty(khoa))
+            {
+                commandString += "AND Khoa = @Khoa";
+            }
+            if (input != null)
+            {
+                commandString += " AND (MaNguoiDung Like @input OR HoTen LIKE @input)";
+            }
             using (SqlCommand cmd = new SqlCommand(commandString, cn))
             {
-                cmd.Parameters.AddWithValue("@Phong", item.Item1);
-                cmd.Parameters.AddWithValue("@Khoa", item.Item2);
+                if (input != null)
+                {
+                    cmd.Parameters.AddWithValue("@input", $"%{input}%");
+                }
+                if (!string.IsNullOrEmpty(phong) && !string.IsNullOrEmpty(khoa))
+                {
+                    cmd.Parameters.AddWithValue("@Phong", phong);
+                    cmd.Parameters.AddWithValue("@Khoa", khoa);
+                }
+                else if (!string.IsNullOrEmpty(phong))
+                {
+                    cmd.Parameters.AddWithValue("@Phong", phong);
+                }
+                else if (!string.IsNullOrEmpty(khoa))
+                {
+                    cmd.Parameters.AddWithValue("@Khoa", khoa);
+                }
+                
+                cmd.Parameters.AddWithValue("@ChucVuId", string.Join(",", listChucVuCBGV));
                 SqlDataReader result = cmd.ExecuteReader();
                 while (result.Read())
                 {
@@ -372,7 +408,7 @@ namespace PhanMemBaoCom.BLL
             command.Parameters.AddWithValue("@TrangThai",1 );
 
             int result = access.ExecuteCommandText(command);
-            access.close();
+            cn.Close();
             return result > 0;
         }
 
@@ -392,7 +428,9 @@ namespace PhanMemBaoCom.BLL
                         {
                             maxId = reader.GetInt32(0);
                         }
-                        catch (Exception ex) { }
+                        catch (Exception ex) {
+                            cn.Close();
+                        }
                     }
                 }
             }
@@ -437,43 +475,104 @@ namespace PhanMemBaoCom.BLL
             command.Parameters.AddWithValue("@TrangThai", nguoiDungSua.TrangThai);
             command.Parameters.AddWithValue("@MaNguoiDung", nguoiDungSua.MaNguoiDung);
 
-            int result = access.ExecuteCommandText(command);
-            access.close();
-            return result > 0;
+            int rowsAffected = command.ExecuteNonQuery();
+            cn.Close();
+            // Kiểm tra số dòng bị ảnh hưởng
+            return rowsAffected > 0;
         }
 
         public bool xoa_nguoi_dung(string maNguoiDung)
         {
             string commandString = @"
-                                    DELETE FROM ThongTinNguoiDung 
-                                    WHERE 
-                                        MaNguoiDung = @MaNguoiDung";
+                            DELETE FROM ThongTinNguoiDung 
+                            WHERE 
+                                MaNguoiDung = @MaNguoiDung";
 
             SqlConnection cn = access.open();
             SqlCommand command = new SqlCommand(commandString, cn);
 
             command.Parameters.AddWithValue("@MaNguoiDung", maNguoiDung);
 
-            int result = access.ExecuteCommandText(command);
-            access.close();
-            return result > 0;
+            try
+            {
+                // Sử dụng ExecuteNonQuery để thực thi lệnh DELETE
+                int rowsAffected = command.ExecuteNonQuery();
+
+                // Nếu số hàng bị ảnh hưởng > 0 thì xóa thành công
+                cn.Close();
+                return rowsAffected > 0;
+            }
+            catch (Exception ex)
+            {
+                // Log hoặc xử lý lỗi tại đây nếu cần
+                Console.WriteLine(ex.Message);
+                cn.Close();
+                return false;
+            }
         }
+
 
         public bool check_ton_tai_manguoidung(string maNguoiDung)
         {
-            string commandString = @"
+           
+                string commandString = @"
                                     SELECT * FROM ThongTinNguoiDung 
                                     WHERE 
                                         MaNguoiDung = @MaNguoiDung";
 
+                SqlConnection cn = access.open();
+                SqlCommand command = new SqlCommand(commandString, cn);
+
+                command.Parameters.AddWithValue("@MaNguoiDung", maNguoiDung);
+            try
+            {
+                // Thực thi lệnh SQL
+                object result = command.ExecuteScalar();
+                cn.Close();
+                // Kiểm tra kết quả
+                return result != null;
+            }catch (Exception ex)
+            {
+                cn.Close();
+                return false;
+            }
+            
+        }
+
+        internal List<string> lay_thong_tin_phong()
+        {
+            List<string> list = new List<string>();
+            string commandString = "SELECT DISTINCT Phong FROM ThongTinNguoiDung WHERE Phong IS NOT NULL AND Phong <> '';";
             SqlConnection cn = access.open();
-            SqlCommand command = new SqlCommand(commandString, cn);
 
-            command.Parameters.AddWithValue("@MaNguoiDung", maNguoiDung);
+            using (SqlCommand cmd = new SqlCommand(commandString, cn))
+            {
+                SqlDataReader result = cmd.ExecuteReader();
+                while (result.Read())
+                {
+                    list.Add(result.GetString(0));
+                }
+            }
+            cn.Close();
+            return list;
+        }
 
-            int result = access.ExecuteCommandText(command);
-            access.close();
-            return result > 0;
+        internal List<string> lay_thong_tin_khoa()
+        {
+            List<string> list = new List<string>();
+            string commandString = "SELECT DISTINCT Khoa FROM ThongTinNguoiDung WHERE Khoa IS NOT NULL AND Khoa <> '';";
+            SqlConnection cn = access.open();
+
+            using (SqlCommand cmd = new SqlCommand(commandString, cn))
+            {
+                SqlDataReader result = cmd.ExecuteReader();
+                while (result.Read())
+                {
+                    list.Add(result.GetString(0));
+                }
+            }
+            cn.Close();
+            return list;
         }
     }
 }

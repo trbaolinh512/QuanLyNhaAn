@@ -53,12 +53,13 @@
             // dgvHocVien
             // 
             dgvHocVien.AllowUserToAddRows = false;
+            dgvHocVien.AllowUserToDeleteRows = false;
             dgvHocVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvHocVien.Location = new Point(3, 166);
             dgvHocVien.Name = "dgvHocVien";
             dgvHocVien.RowHeadersWidth = 51;
             dgvHocVien.RowTemplate.Height = 29;
-            dgvHocVien.Size = new Size(1609, 760);
+            dgvHocVien.Size = new Size(1609, 700);
             dgvHocVien.TabIndex = 0;
             // 
             // btnTimKiem

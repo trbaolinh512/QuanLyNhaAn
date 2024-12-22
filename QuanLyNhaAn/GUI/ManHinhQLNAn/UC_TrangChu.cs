@@ -41,12 +41,12 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             int[] soSuatTongLop = new int[3] { 0, 0, 0 };//Phục vị hiển thị trên label
 
             int stt = 0;
-            foreach(string item in listLop)
+            foreach (string item in listLop)
             {
                 stt++;
                 int[] soSuatTongTungLop = new int[3] { 0, 0, 0 };//Phục vụ hiển thị data grid view
 
-                List<ThongTinNguoiDungDto> listNguoiDungCungLop = thongTinNguoiDungBll.lay_danh_sach_hoc_vien_cung_lop(item,null);
+                List<ThongTinNguoiDungDto> listNguoiDungCungLop = thongTinNguoiDungBll.lay_danh_sach_hoc_vien_cung_lop(item, null);
                 int count = listNguoiDungCungLop.Count();
                 foreach (ThongTinNguoiDungDto l in listNguoiDungCungLop)//Vòng lặp tính từng người ăn bao nhiêu suất trong từng thời điểm
                 {
@@ -60,7 +60,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                     soSuatTongTungLop[2] += soSuatAnToiTungLop;//--
                 }
                 int tongTungLop = soSuatTongTungLop[0] + soSuatTongTungLop[1] + soSuatTongTungLop[2];
-                dgvHocVien.Rows.Add(stt,item, count*3 - tongTungLop);
+                dgvHocVien.Rows.Add(stt, item, count * 3 - tongTungLop);
                 soSuatTongLop[0] += count - soSuatTongTungLop[0];
                 soSuatTongLop[1] += count - soSuatTongTungLop[1];
                 soSuatTongLop[2] += count - soSuatTongTungLop[2];
@@ -73,7 +73,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                 stt++;
                 int[] soSuatTongTungPhongKhoa = new int[3] { 0, 0, 0 };//Phục vụ hiển thị data grid view
 
-                List<ThongTinNguoiDungDto> listNguoiDungCungPhongKhoa = thongTinNguoiDungBll.lay_danh_sach_hoc_vien_cung_phong_khoa(item);
+                List<ThongTinNguoiDungDto> listNguoiDungCungPhongKhoa = thongTinNguoiDungBll.lay_danh_sach_CB_GV_cung_phong_khoa(item.Item1,item.Item2,null);
                 int count = listNguoiDungCungPhongKhoa.Count();
                 foreach (ThongTinNguoiDungDto l in listNguoiDungCungPhongKhoa)//Vòng lặp tính từng người ăn bao nhiêu suất trong từng thời điểm
                 {
@@ -87,13 +87,13 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                     soSuatTongTungPhongKhoa[2] += soSuatAnToiTungPhongKhoa;//--
                 }
                 int tongTungPhongKhoa = soSuatTongTungPhongKhoa[0] + soSuatTongTungPhongKhoa[1] + soSuatTongTungPhongKhoa[2];
-                dgvCBGV.Rows.Add(stt,item.Item1,item.Item2, tongTungPhongKhoa);
+                dgvCBGV.Rows.Add(stt, item.Item1, item.Item2, tongTungPhongKhoa);
                 soSuatTongPhongKhoa[0] += soSuatTongTungPhongKhoa[0];
                 soSuatTongPhongKhoa[1] += soSuatTongTungPhongKhoa[1];
                 soSuatTongPhongKhoa[2] += soSuatTongTungPhongKhoa[2];
             }
 
-            lblNgayHomNay.Text = "Hiện tại là: "+thoidiemhientai.ToString();
+            lblNgayHomNay.Text = "Hiện tại là: " + thoidiemhientai.ToString("HH:mm dd/MM/yyyy");
             lblSuatHocVienSang.Text = "Suất học viên: " + soSuatTongLop[0].ToString();
             lblSuatHocVienTrua.Text = "Suất học viên: " + soSuatTongLop[1].ToString();
             lblSuatHocVienToi.Text = "Suất học viên: " + soSuatTongLop[2].ToString();

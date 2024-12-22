@@ -1,6 +1,6 @@
 ﻿namespace QuanLyNhaAn.GUI.ManHinhQLNAn
 {
-    partial class UC_TKCBGV
+    partial class UC_ThongKeCBGV
     {
         /// <summary> 
         /// Required designer variable.
@@ -39,10 +39,17 @@
             txbTimKiem = new TextBox();
             label1 = new Label();
             btnLamMoi = new Button();
-            dgvHocVien = new DataGridView();
+            dgvCBGV = new DataGridView();
             cbxKhoa = new ComboBox();
             label4 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvHocVien).BeginInit();
+            groupBox1 = new GroupBox();
+            label5 = new Label();
+            panel4 = new Panel();
+            label6 = new Label();
+            pnlAn = new Panel();
+            lblAn = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvCBGV).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // btnExcel
@@ -53,6 +60,7 @@
             btnExcel.TabIndex = 35;
             btnExcel.Text = "Xuất file Excel";
             btnExcel.UseVisualStyleBackColor = true;
+            btnExcel.Click += btnExcel_Click;
             // 
             // cbxPhong
             // 
@@ -62,6 +70,7 @@
             cbxPhong.Name = "cbxPhong";
             cbxPhong.Size = new Size(120, 28);
             cbxPhong.TabIndex = 34;
+            cbxPhong.SelectedIndexChanged += cbxPhong_SelectedIndexChanged;
             // 
             // label34
             // 
@@ -80,6 +89,7 @@
             btnTimKiem.TabIndex = 32;
             btnTimKiem.Text = "Tìm kiếm";
             btnTimKiem.UseVisualStyleBackColor = true;
+            btnTimKiem.Click += btnTimKiem_Click;
             // 
             // cbxPhuongThuc
             // 
@@ -90,6 +100,7 @@
             cbxPhuongThuc.Size = new Size(120, 28);
             cbxPhuongThuc.TabIndex = 31;
             cbxPhuongThuc.Text = "Theo ngày";
+            cbxPhuongThuc.SelectedIndexChanged += cbxPhuongThuc_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -108,6 +119,7 @@
             dtpThang.Name = "dtpThang";
             dtpThang.Size = new Size(101, 27);
             dtpThang.TabIndex = 29;
+            dtpThang.ValueChanged += dtpThang_ValueChanged;
             // 
             // label2
             // 
@@ -142,16 +154,19 @@
             btnLamMoi.TabIndex = 25;
             btnLamMoi.Text = "Làm mới";
             btnLamMoi.UseVisualStyleBackColor = true;
+            btnLamMoi.Click += btnLamMoi_Click;
             // 
-            // dgvHocVien
+            // dgvCBGV
             // 
-            dgvHocVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvHocVien.Location = new Point(3, 160);
-            dgvHocVien.Name = "dgvHocVien";
-            dgvHocVien.RowHeadersWidth = 51;
-            dgvHocVien.RowTemplate.Height = 29;
-            dgvHocVien.Size = new Size(1609, 765);
-            dgvHocVien.TabIndex = 24;
+            dgvCBGV.AllowUserToAddRows = false;
+            dgvCBGV.AllowUserToDeleteRows = false;
+            dgvCBGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCBGV.Location = new Point(3, 160);
+            dgvCBGV.Name = "dgvCBGV";
+            dgvCBGV.RowHeadersWidth = 51;
+            dgvCBGV.RowTemplate.Height = 29;
+            dgvCBGV.Size = new Size(1609, 700);
+            dgvCBGV.TabIndex = 24;
             // 
             // cbxKhoa
             // 
@@ -161,6 +176,7 @@
             cbxKhoa.Name = "cbxKhoa";
             cbxKhoa.Size = new Size(120, 28);
             cbxKhoa.TabIndex = 37;
+            cbxKhoa.SelectedIndexChanged += cbxKhoa_SelectedIndexChanged;
             // 
             // label4
             // 
@@ -171,10 +187,68 @@
             label4.TabIndex = 36;
             label4.Text = "Khoa";
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(panel4);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(pnlAn);
+            groupBox1.Controls.Add(lblAn);
+            groupBox1.Location = new Point(1253, 47);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(341, 84);
+            groupBox1.TabIndex = 38;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Lưu ý";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(38, 58);
+            label5.Name = "label5";
+            label5.Size = new Size(170, 20);
+            label5.TabIndex = 3;
+            label5.Text = ": Ăn 1-2 buổi trong ngày";
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.Yellow;
+            panel4.Location = new Point(12, 58);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(20, 20);
+            panel4.TabIndex = 2;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(207, 32);
+            label6.Name = "label6";
+            label6.Size = new Size(98, 20);
+            label6.TabIndex = 2;
+            label6.Text = "X : Có suất ăn";
+            // 
+            // pnlAn
+            // 
+            pnlAn.BackColor = Color.LightSkyBlue;
+            pnlAn.Location = new Point(12, 32);
+            pnlAn.Name = "pnlAn";
+            pnlAn.Size = new Size(20, 20);
+            pnlAn.TabIndex = 1;
+            // 
+            // lblAn
+            // 
+            lblAn.AutoSize = true;
+            lblAn.Location = new Point(38, 32);
+            lblAn.Name = "lblAn";
+            lblAn.Size = new Size(89, 20);
+            lblAn.TabIndex = 0;
+            lblAn.Text = ": Ăn cả ngày";
+            // 
             // UC_TKCBGV
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(groupBox1);
             Controls.Add(cbxKhoa);
             Controls.Add(label4);
             Controls.Add(btnExcel);
@@ -188,10 +262,12 @@
             Controls.Add(txbTimKiem);
             Controls.Add(label1);
             Controls.Add(btnLamMoi);
-            Controls.Add(dgvHocVien);
+            Controls.Add(dgvCBGV);
             Name = "UC_TKCBGV";
             Size = new Size(1615, 958);
-            ((System.ComponentModel.ISupportInitialize)dgvHocVien).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCBGV).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -209,8 +285,14 @@
         private TextBox txbTimKiem;
         private Label label1;
         private Button btnLamMoi;
-        private DataGridView dgvHocVien;
+        private DataGridView dgvCBGV;
         private ComboBox cbxKhoa;
         private Label label4;
+        private GroupBox groupBox1;
+        private Label label5;
+        private Panel panel4;
+        private Label label6;
+        private Panel pnlAn;
+        private Label lblAn;
     }
 }

@@ -78,10 +78,10 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                 }
                 else
                 {
-                    if (chucVuDtos[nguoiDungDto.ChucVuId - 1].ChucVu.Equals("QuanTriHeThong"))
+                    if (chucVuDtos[nguoiDungDto.ChucVuId - 1].Id == 1)//Quản lý hệ thống
                     {
                         //Man hinh quan tri he thong
-                        QuanLyNguoiDung qly = new QuanLyNguoiDung(nguoiDungDto);
+                        QuanLyHeThong qly = new QuanLyHeThong(nguoiDungDto);
                         Point location = this.Location;
                         qly.StartPosition = FormStartPosition.Manual;
                         qly.Location = location;
@@ -92,7 +92,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                     }
                     else
                     {
-                        if (chucVuDtos[nguoiDungDto.ChucVuId - 1].ChucVu.Equals("CanBoNhaAn"))
+                        if (chucVuDtos[nguoiDungDto.ChucVuId - 1].Id == 2)//Quản lý nhà ăn
                         {
                             //Man hinh quan tri nha an
                             MH_QLyNAn manhinh = new MH_QLyNAn(nguoiDungDto);

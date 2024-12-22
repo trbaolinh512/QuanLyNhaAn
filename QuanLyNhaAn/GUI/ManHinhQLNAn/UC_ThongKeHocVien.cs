@@ -40,17 +40,22 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             dgvHocVien.Columns.Clear();
 
             dgvHocVien.Columns.Add("STT", "STT");
+            dgvHocVien.Columns[0].Width = 50;
             dgvHocVien.Columns.Add("HoTen", "Họ Tên");
+            dgvHocVien.Columns[1].Width = 150;
             dgvHocVien.Columns.Add("MaHocVien", "Mã học viên");
             dgvHocVien.Columns.Add("PhuongThuc", "Phương thức");
             dgvHocVien.Columns["PhuongThuc"].Frozen = true;
+            dgvHocVien.Columns[3].Width = 130;
             for (int i = 1; i <= ngayKetThuc.Day; i++)
             {
                 dgvHocVien.Columns.Add(i.ToString(), i.ToString());
+                dgvHocVien.Columns[3 + i].Width = 30;
             }
             dgvHocVien.Columns.Add("TongBuoiNghi", "Tổng buổi nghỉ");
             dgvHocVien.Columns.Add("TongTienHoan", "Tổng tiền hoàn lại");
 
+            dgvHocVien.ColumnHeadersDefaultCellStyle.Font = new Font(dgvHocVien.Font, FontStyle.Bold);
             int stt = 0;
             int index = 0;
             foreach (ThongTinNguoiDungDto item in listNguoiDung)
@@ -66,6 +71,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                     row[2] = item.MaNguoiDung;
                     row[3] = "Ngày";
                     dgvHocVien.Rows.Add(row);
+                    index++;
                 }
                 else
                 {
@@ -81,6 +87,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                     dgvHocVien.Rows.Add(sang);
                     dgvHocVien.Rows.Add(trua);
                     dgvHocVien.Rows.Add(toi);
+                    dgvHocVien.Rows[index].DefaultCellStyle.BackColor = SystemColors.Control;
                     index += 3;
                 }
             }

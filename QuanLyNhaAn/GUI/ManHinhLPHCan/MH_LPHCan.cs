@@ -1,4 +1,5 @@
-﻿using PhanMemBaoCom.DTO;
+﻿using PhanMemBaoCom.BLL;
+using PhanMemBaoCom.DTO;
 using PhanMemBaoCom.GUI.ManHinhChung;
 using QuanLyNhaAn.GUI.ManHinhCBGV;
 using QuanLyNhaAn.GUI.ManHinhQLNAn;
@@ -17,13 +18,13 @@ namespace QuanLyNhaAn.GUI.ManHinhLPHCan
     public partial class MH_LPHCan : Form
     {
         public ThongTinNguoiDungDto thongTinNguoiDungDto { get; set; }
-        public MH_LPHCan(ThongTinNguoiDungDto thongTinNguoiDungDto)
+        public MH_LPHCan(ThongTinNguoiDungDto thongtin)
         {
+            thongTinNguoiDungDto = thongtin;
             InitializeComponent();
             UC_ThongTinSuatAnLPHCan uC = new UC_ThongTinSuatAnLPHCan(thongTinNguoiDungDto);
             pnlHienThi.Controls.Add(uC);
             lbUser.Text = thongTinNguoiDungDto.HoTen;
-            this.thongTinNguoiDungDto = thongTinNguoiDungDto;
         }
 
         private void btnTTSA_Click(object sender, EventArgs e)
@@ -57,6 +58,16 @@ namespace QuanLyNhaAn.GUI.ManHinhLPHCan
             pnlHienThi.Controls.Clear();
             UC_ThongTinSuatAn uC_YKienDongGop = new UC_ThongTinSuatAn(thongTinNguoiDungDto);
             pnlHienThi.Controls.Add(uC_YKienDongGop);
+        }
+
+        private void pnlUser_Click(object sender, EventArgs e)
+        {
+            ThongTinNguoiDungBll thongTinNguoiDungBll = new ThongTinNguoiDungBll();
+            thongTinNguoiDungDto = thongTinNguoiDungBll.lay_chi_tiet_theo_mngdung(thongTinNguoiDungDto.MaNguoiDung);
+            lbUser.DataBindings.Clear();
+            lbUser.DataBindings.Add("Text", thongTinNguoiDungDto, "HoTen");
+            ThongTinCaNhan thongTinCaNhan = new ThongTinCaNhan(thongTinNguoiDungDto);
+            thongTinCaNhan.Show();
         }
     }
 }

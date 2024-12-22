@@ -31,7 +31,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             this.Hide();
         }
 
-        private async void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             if (Cursor.Current != Cursors.WaitCursor)
             {
@@ -53,15 +53,14 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                     
                     MailProcess mailProcess = new MailProcess();
                     Security security = new Security();
-
                     string matkhaumoi = security.GenerateRandomString();
                     string title = "Thông báo về mật khẩu mới";
                     string content = "Mật khẩu mới của bạn:" + matkhaumoi;
                     
-                    var status = await mailProcess.sendMail(email, title, content);
+                    mailProcess.sendMail(email, title, content);
                     int check = thongTinNguoiDungBll.doi_mat_khau(tk, email, security.MD5Hash(matkhaumoi));
                     Cursor = Cursors.Default;
-                    if (status && check>0)
+                    if (check>0)
                     {
                         
                         MessageBox.Show("Đã gửi mật khẩu mới cho bạn thông qua email: " + email + ".",

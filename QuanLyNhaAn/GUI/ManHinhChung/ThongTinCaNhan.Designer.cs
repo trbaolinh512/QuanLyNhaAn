@@ -52,11 +52,11 @@
             label3 = new Label();
             label1 = new Label();
             groupBox1 = new GroupBox();
-            textBox1 = new TextBox();
-            label4 = new Label();
-            textBox2 = new TextBox();
-            label5 = new Label();
             btnDoiMatKhau = new Button();
+            txbMKMoi = new TextBox();
+            label5 = new Label();
+            txbMKCu = new TextBox();
+            label4 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -76,6 +76,7 @@
             btnLuu.TabIndex = 43;
             btnLuu.Text = "Lưu thông tin";
             btnLuu.UseVisualStyleBackColor = true;
+            btnLuu.Click += btnLuu_Click;
             // 
             // txbMaND
             // 
@@ -247,9 +248,9 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(btnDoiMatKhau);
-            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(txbMKMoi);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(txbMKCu);
             groupBox1.Controls.Add(label4);
             groupBox1.Location = new Point(46, 358);
             groupBox1.Name = "groupBox1";
@@ -258,30 +259,23 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Đổi mật khẩu";
             // 
-            // textBox1
+            // btnDoiMatKhau
             // 
-            textBox1.Location = new Point(233, 43);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(171, 27);
-            textBox1.TabIndex = 36;
-            textBox1.UseSystemPasswordChar = true;
+            btnDoiMatKhau.Location = new Point(205, 142);
+            btnDoiMatKhau.Name = "btnDoiMatKhau";
+            btnDoiMatKhau.Size = new Size(133, 29);
+            btnDoiMatKhau.TabIndex = 47;
+            btnDoiMatKhau.Text = "Đổi mật khẩu";
+            btnDoiMatKhau.UseVisualStyleBackColor = true;
+            btnDoiMatKhau.Click += btnDoiMatKhau_Click;
             // 
-            // label4
+            // txbMKMoi
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(127, 46);
-            label4.Name = "label4";
-            label4.Size = new Size(89, 20);
-            label4.TabIndex = 35;
-            label4.Text = "Mật khẩu cũ";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(233, 90);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(171, 27);
-            textBox2.TabIndex = 38;
-            textBox2.UseSystemPasswordChar = true;
+            txbMKMoi.Location = new Point(233, 90);
+            txbMKMoi.Name = "txbMKMoi";
+            txbMKMoi.Size = new Size(171, 27);
+            txbMKMoi.TabIndex = 38;
+            txbMKMoi.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -292,19 +286,28 @@
             label5.TabIndex = 37;
             label5.Text = "Mật khẩu mới";
             // 
-            // btnDoiMatKhau
+            // txbMKCu
             // 
-            btnDoiMatKhau.Location = new Point(205, 142);
-            btnDoiMatKhau.Name = "btnDoiMatKhau";
-            btnDoiMatKhau.Size = new Size(133, 29);
-            btnDoiMatKhau.TabIndex = 47;
-            btnDoiMatKhau.Text = "Đổi mật khẩu";
-            btnDoiMatKhau.UseVisualStyleBackColor = true;
+            txbMKCu.Location = new Point(233, 43);
+            txbMKCu.Name = "txbMKCu";
+            txbMKCu.Size = new Size(171, 27);
+            txbMKCu.TabIndex = 36;
+            txbMKCu.UseSystemPasswordChar = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(127, 46);
+            label4.Name = "label4";
+            label4.Size = new Size(89, 20);
+            label4.TabIndex = 35;
+            label4.Text = "Mật khẩu cũ";
             // 
             // ThongTinCaNhan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(674, 548);
             Controls.Add(groupBox1);
             Controls.Add(label1);
@@ -364,9 +367,9 @@
         private Label label1;
         private GroupBox groupBox1;
         private Button btnDoiMatKhau;
-        private TextBox textBox2;
+        private TextBox txbMKMoi;
         private Label label5;
-        private TextBox textBox1;
+        private TextBox txbMKCu;
         private Label label4;
     }
 }

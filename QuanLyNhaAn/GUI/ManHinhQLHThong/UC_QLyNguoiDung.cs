@@ -1,4 +1,5 @@
-﻿using PhanMemBaoCom.BLL;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using PhanMemBaoCom.BLL;
 using PhanMemBaoCom.DTO;
 using PhanMemBaoCom.GUI.ManHinhChung;
 using PhanMemBaoCom.Helper;
@@ -12,26 +13,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace QuanLyNhaAn.GUI.ManHinhQLHThong
 {
-    public partial class QuanLyNguoiDung : Form
+    public partial class UC_QLyNguoiDung : UserControl
     {
         bool sliderbarExpand;
         List<ChucVuDto> lch { get; set; }
         ThongTinNguoiDungDto nguoiDungDto { get; set; }
         List<ThongTinNguoiDungDto> list { get; set; }
-        public QuanLyNguoiDung(ThongTinNguoiDungDto nguoidungdto)
+        public UC_QLyNguoiDung(ThongTinNguoiDungDto tnguoidungdto)
         {
             InitializeComponent();
-            if (nguoidungdto == null)
-            {
-                this.Close();
-                return;
-            }
-            nguoiDungDto = nguoidungdto;
-            lbUser.Text = nguoidungdto.HoTen;
+            nguoiDungDto = tnguoidungdto;
 
             txbLopHoc.Text = string.Empty; lbLop.Text = "Lớp";
             txbKhoaHoc.Text = string.Empty; lbKhoaHoc.Text = "Khoa"; lbKhoaHoc.Visible = false; txbKhoaHoc.Visible = false;
@@ -82,10 +76,12 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             dgvNguoiDung.Rows.Clear();
             ChucVuBll ch = new ChucVuBll();
             lch = ch.lay_tat_ca();
-
+            int stt = 0;
             foreach (ThongTinNguoiDungDto item in list)
             {
+                stt++;
                 dgvNguoiDung.Rows.Add(item.Id,
+                                        stt,
                                         item.HoTen,
                                         item.MaNguoiDung,
                                         item.Lop,
@@ -146,114 +142,82 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
 
             }
         }
-
-        private void btnQLChucVu_Click(object sender, EventArgs e)
-        {
-            QuanLyChucVu manhinh = new QuanLyChucVu(nguoiDungDto);
-            Point location = this.Location;
-            manhinh.StartPosition = FormStartPosition.Manual;
-            manhinh.Location = location;
-            manhinh.Show();
-            this.Close();
-        }
-
-        private void btnQLYeuCau_Click(object sender, EventArgs e)
-        {
-            YKienDongGop manhinh = new YKienDongGop(nguoiDungDto);
-            Point location = this.Location;
-            manhinh.StartPosition = FormStartPosition.Manual;
-            manhinh.Location = location;
-            manhinh.Show();
-            this.Close();
-
-        }
-
-        private void btnCaiDat_Click(object sender, EventArgs e)
-        {
-            CaiDatHeThong manhinh = new CaiDatHeThong(nguoiDungDto);
-            Point location = this.Location;
-            manhinh.StartPosition = FormStartPosition.Manual;
-            manhinh.Location = location;
-            manhinh.Show();
-            this.Close();
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            DangNhap manhinh = new DangNhap();
-            Point location = this.Location;
-            manhinh.Location = location;
-            manhinh.Show();
-            this.Close();
-        }
-
         private async void btnThem_Click(object sender, EventArgs e)
         {
-            try
+            if (Cursor.Current != Cursors.WaitCursor)
             {
-                if (string.IsNullOrEmpty(txbHoTen.Text))
+                try
                 {
-                    MessageBox.Show("Bạn chưa điền tên người dùng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (string.IsNullOrEmpty(txbHoTen.Text))
+                    {
+                        MessageBox.Show("Bạn chưa điền tên người dùng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (string.IsNullOrEmpty(txbMaND.Text))
+                    {
+                        MessageBox.Show("Bạn chưa điền mã người dùng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    Cursor.Current = Cursors.WaitCursor;
+                    Application.DoEvents();
+                    ThongTinNguoiDungDto nguoiDungMoi = new ThongTinNguoiDungDto
+                    {
+                        HoTen = txbHoTen.Text,
+                        MaNguoiDung = txbMaND.Text,
+                        Lop = lbLop.Text == "Lớp" ? txbLopHoc.Text : null,
+                        Khoa = lbLop.Text == "Phòng" ? txbLopHoc.Text : null,
+                        Phong = lbKhoaHoc.Visible ? txbKhoaHoc.Text : null,
+                        DonVi = txbDonVi.Text,
+                        ChucVuId = cbxVaiTro.SelectedIndex + 1,
+                        TrangThai = true,
+                        SDT = txbSDT.Text,
+                        SoTaiKhoan = txbSTK.Text,
+                        NganHang = txbTenNH.Text,
+                        Email = txbEmail.Text
+                    };
+                    MailProcess mailProcess = new MailProcess();
+                    Security security = new Security();
+
+                    string matkhaumoi = security.GenerateRandomString();
+
+                    nguoiDungMoi.MatKhau = security.MD5Hash(matkhaumoi);
+
+                    ThongTinNguoiDungBll bll = new ThongTinNguoiDungBll();
+                    bool check = bll.check_ton_tai_manguoidung(nguoiDungMoi.MaNguoiDung);
+                    if (check)
+                    {
+                        Cursor.Current = Cursors.Default;
+                        MessageBox.Show("Mã người dùng đã tồn tại! Không thể thêm người dùng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        bool result = bll.them_nguoi_dung(nguoiDungMoi);
+                        if (result)
+                        {
+
+                            string title = "Thông báo về tài khoản mới";
+                            string content = @"<p>Tài khoản của bạn đã được tạo trong hệ thống đăng ký suất ăn.</p><br><p>Mật khẩu của bạn:" + matkhaumoi + "<p>";
+                            var status = mailProcess.sendMail(nguoiDungMoi.Email, title, content);
+                            Cursor.Current = Cursors.Default;
+                            MessageBox.Show("Thêm mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            list = bll.lay_tat_ca(txbTimKiem.Text);
+                            DanhSachNguoiDung();
+                        }
+                        else
+                        {
+                            Cursor.Current = Cursors.Default;
+                            MessageBox.Show("Thêm mới thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+
                 }
-
-                if (string.IsNullOrEmpty(txbMaND.Text))
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Bạn chưa điền mã người dùng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                ThongTinNguoiDungDto nguoiDungMoi = new ThongTinNguoiDungDto
-                {
-                    HoTen = txbHoTen.Text,
-                    MaNguoiDung = txbMaND.Text,
-                    Lop = lbLop.Text == "Lớp" ? txbLopHoc.Text : null,
-                    Khoa = lbLop.Text == "Phòng" ? txbLopHoc.Text : null,
-                    Phong = lbKhoaHoc.Visible ? txbKhoaHoc.Text : null,
-                    DonVi = txbDonVi.Text,
-                    ChucVuId = cbxVaiTro.SelectedIndex+1,
-                    TrangThai = true,
-                    SDT = txbSDT.Text,
-                    SoTaiKhoan = txbSTK.Text,
-                    NganHang = txbTenNH.Text,
-                    Email = txbEmail.Text
-                };
-                MailProcess mailProcess = new MailProcess();
-                Security security = new Security();
-
-                string matkhaumoi = security.GenerateRandomString();
-                
-                nguoiDungMoi.MatKhau=security.MD5Hash(matkhaumoi);
-
-                ThongTinNguoiDungBll bll = new ThongTinNguoiDungBll();
-                bool check = bll.check_ton_tai_manguoidung(nguoiDungMoi.MaNguoiDung);
-                if (check)
-                {
-                    MessageBox.Show("Mã người dùng đã tồn tại! Không thể thêm người dùng này","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                    return;
-                }
-                bool result = bll.them_nguoi_dung(nguoiDungMoi);
-                if (result)
-                {
-                    
-                    string title = "Thông báo về tài khoản mới";
-                    string content = @"<p>Tài khoản của bạn đã được tạo trong hệ thống đăng ký suất ăn.</p><br><p>Mật khẩu của bạn:" + matkhaumoi + "<p>";
-
-                    var status = await mailProcess.sendMail(nguoiDungMoi.Email, title, content);
-                    MessageBox.Show("Thêm mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    list = bll.lay_tat_ca(txbTimKiem.Text);
-                    DanhSachNguoiDung();
-                }
-                else
-                {
-                    MessageBox.Show("Thêm mới thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -293,7 +257,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
                 }
 
                 ThongTinNguoiDungDto nguoiDungSua = list.FirstOrDefault(nd => nd.MaNguoiDung == txbMaND.Text);
-                if(maNguoiDung != nguoiDungSua.MaNguoiDung)
+                if (maNguoiDung != nguoiDungSua.MaNguoiDung)
                 {
                     bool check = thongTinNguoiDungBll.check_ton_tai_manguoidung(txbMaND.Text);
                     if (check)
@@ -309,7 +273,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
                     nguoiDungSua.Khoa = lbLop.Text == "Phòng" ? txbLopHoc.Text : null;
                     nguoiDungSua.Phong = lbKhoaHoc.Visible ? txbKhoaHoc.Text : null;
                     nguoiDungSua.DonVi = txbDonVi.Text;
-                    nguoiDungSua.ChucVuId = cbxVaiTro.SelectedIndex+1;
+                    nguoiDungSua.ChucVuId = cbxVaiTro.SelectedIndex + 1;
                     nguoiDungSua.SDT = txbSDT.Text;
                     nguoiDungSua.SoTaiKhoan = txbSTK.Text;
                     nguoiDungSua.NganHang = txbTenNH.Text;
@@ -327,6 +291,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
                     }
 
                     list = bll.lay_tat_ca(txbTimKiem.Text);
+                    nguoiDungDto = thongTinNguoiDungBll.lay_chi_tiet_theo_mngdung(nguoiDungDto.MaNguoiDung);
                     DanhSachNguoiDung();
                 }
             }
@@ -359,7 +324,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
                     // Lấy ID từ ô được chọn (nếu chỉ chọn một ô)
                     maNguoiDung = dgvNguoiDung.SelectedCells[0].OwningRow.Cells["MaNguoiDung"].Value.ToString();
                 }
-                if(string.IsNullOrEmpty(txbMaND.Text) || maNguoiDung!= txbMaND.Text)
+                if (string.IsNullOrEmpty(txbMaND.Text) || maNguoiDung != txbMaND.Text)
                 {
                     MessageBox.Show("Vui lòng chọn một người dùng để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -369,16 +334,16 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
                 if (confirm == DialogResult.Yes)
                 {
                     ThongTinNguoiDungBll bll = new ThongTinNguoiDungBll();
-                        bool result = bll.xoa_nguoi_dung(txbMaND.Text);
-                        if (result)
-                        {
-                            MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            
-                        }
-                        else
-                        {
-                            MessageBox.Show("Xóa thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                    bool result = bll.xoa_nguoi_dung(txbMaND.Text);
+                    if (result)
+                    {
+                        MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                     list = bll.lay_tat_ca(txbTimKiem.Text);
                     DanhSachNguoiDung();
                 }
@@ -445,7 +410,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
 
             ThongTinNguoiDungBll thongTinNguoiDungBll = new ThongTinNguoiDungBll();
             list = thongTinNguoiDungBll.lay_tat_ca(input);
-            
+
             DanhSachNguoiDung();
         }
 
@@ -475,7 +440,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
         private void cbxVaiTro_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChucVuBll chucVuBll = new ChucVuBll();
-            ChucVuDto chucVuDto = chucVuBll.lay_theo_id(cbxVaiTro.SelectedIndex+1);
+            ChucVuDto chucVuDto = chucVuBll.lay_theo_id(cbxVaiTro.SelectedIndex + 1);
             if (chucVuDto != null)
             {
                 if (chucVuDto.LaHocVien)
