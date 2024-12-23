@@ -221,9 +221,9 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             // 
             btnBoTich.Location = new Point(392, 33);
             btnBoTich.Name = "btnBoTich";
-            btnBoTich.Size = new Size(94, 29);
+            btnBoTich.Size = new Size(179, 29);
             btnBoTich.TabIndex = 12;
-            btnBoTich.Text = "Bỏ tích";
+            btnBoTich.Text = "Chuyển trạng thái tích";
             btnBoTich.UseVisualStyleBackColor = true;
             btnBoTich.Click += btnBoTich_Click;
             // 
