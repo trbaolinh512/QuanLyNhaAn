@@ -113,9 +113,9 @@
             // 
             // txbTimKiem
             // 
-            txbTimKiem.Location = new Point(696, 25);
+            txbTimKiem.Location = new Point(658, 25);
             txbTimKiem.Name = "txbTimKiem";
-            txbTimKiem.Size = new Size(205, 27);
+            txbTimKiem.Size = new Size(243, 27);
             txbTimKiem.TabIndex = 41;
             // 
             // btnChuyen
@@ -175,6 +175,7 @@
             cbxVaiTro.Name = "cbxVaiTro";
             cbxVaiTro.Size = new Size(205, 28);
             cbxVaiTro.TabIndex = 20;
+            cbxVaiTro.SelectedIndexChanged += cbxVaiTro_SelectedIndexChanged;
             // 
             // txbMaND
             // 
@@ -364,7 +365,7 @@
             HoTen.MinimumWidth = 6;
             HoTen.Name = "HoTen";
             HoTen.ReadOnly = true;
-            HoTen.Width = 200;
+            HoTen.Width = 300;
             // 
             // MaNguoiDung
             // 
@@ -372,7 +373,7 @@
             MaNguoiDung.MinimumWidth = 6;
             MaNguoiDung.Name = "MaNguoiDung";
             MaNguoiDung.ReadOnly = true;
-            MaNguoiDung.Width = 150;
+            MaNguoiDung.Width = 250;
             // 
             // Lop
             // 
@@ -380,7 +381,7 @@
             Lop.MinimumWidth = 6;
             Lop.Name = "Lop";
             Lop.ReadOnly = true;
-            Lop.Width = 70;
+            Lop.Width = 150;
             // 
             // Phong
             // 
@@ -388,7 +389,7 @@
             Phong.MinimumWidth = 6;
             Phong.Name = "Phong";
             Phong.ReadOnly = true;
-            Phong.Width = 110;
+            Phong.Width = 150;
             // 
             // Khoa
             // 
@@ -396,7 +397,7 @@
             Khoa.MinimumWidth = 6;
             Khoa.Name = "Khoa";
             Khoa.ReadOnly = true;
-            Khoa.Width = 70;
+            Khoa.Width = 150;
             // 
             // DonVi
             // 
@@ -404,7 +405,7 @@
             DonVi.MinimumWidth = 6;
             DonVi.Name = "DonVi";
             DonVi.ReadOnly = true;
-            DonVi.Width = 110;
+            DonVi.Width = 150;
             // 
             // ChucVuID
             // 
@@ -412,7 +413,7 @@
             ChucVuID.MinimumWidth = 6;
             ChucVuID.Name = "ChucVuID";
             ChucVuID.ReadOnly = true;
-            ChucVuID.Width = 125;
+            ChucVuID.Width = 170;
             // 
             // TrangThai
             // 
@@ -420,7 +421,7 @@
             TrangThai.MinimumWidth = 6;
             TrangThai.Name = "TrangThai";
             TrangThai.ReadOnly = true;
-            TrangThai.Width = 110;
+            TrangThai.Width = 155;
             // 
             // UC_QLyNguoiDung
             // 

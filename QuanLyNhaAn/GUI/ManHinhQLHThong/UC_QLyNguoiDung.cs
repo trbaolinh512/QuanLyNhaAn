@@ -236,7 +236,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
                     return;
                 }
 
-                string maNguoiDung = null;
+                string Id = null;
                 ThongTinNguoiDungBll thongTinNguoiDungBll = new ThongTinNguoiDungBll();
                 // Kiểm tra xem người dùng đã chọn một dòng trong DataGridView chưa
                 if (dgvNguoiDung.SelectedRows.Count == 0 && dgvNguoiDung.SelectedCells.Count == 0)
@@ -248,16 +248,16 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
                 if (dgvNguoiDung.SelectedRows.Count > 0)
                 {
                     // Lấy ID từ dòng được chọn
-                    maNguoiDung = dgvNguoiDung.SelectedRows[0].Cells["MaNguoiDung"].Value.ToString();
+                    Id = dgvNguoiDung.SelectedRows[0].Cells["Id"].Value.ToString();
                 }
                 else if (dgvNguoiDung.SelectedCells.Count > 0)
                 {
                     // Lấy ID từ ô được chọn (nếu chỉ chọn một ô)
-                    maNguoiDung = dgvNguoiDung.SelectedCells[0].OwningRow.Cells["MaNguoiDung"].Value.ToString();
+                    Id = dgvNguoiDung.SelectedCells[0].OwningRow.Cells["Id"].Value.ToString();
                 }
 
-                ThongTinNguoiDungDto nguoiDungSua = list.FirstOrDefault(nd => nd.MaNguoiDung == txbMaND.Text);
-                if (maNguoiDung != nguoiDungSua.MaNguoiDung)
+                ThongTinNguoiDungDto nguoiDungSua = list.FirstOrDefault(nd => nd.Id == int.Parse(Id));
+                if (nguoiDungSua != null && int.Parse(Id) == nguoiDungSua.Id)
                 {
                     bool check = thongTinNguoiDungBll.check_ton_tai_manguoidung(txbMaND.Text);
                     if (check)
@@ -269,6 +269,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
                 if (nguoiDungSua != null)
                 {
                     nguoiDungSua.HoTen = txbHoTen.Text;
+                    nguoiDungSua.MaNguoiDung = txbMaND.Text;
                     nguoiDungSua.Lop = lbLop.Text == "Lớp" ? txbLopHoc.Text : null;
                     nguoiDungSua.Khoa = lbLop.Text == "Phòng" ? txbLopHoc.Text : null;
                     nguoiDungSua.Phong = lbKhoaHoc.Visible ? txbKhoaHoc.Text : null;
@@ -283,15 +284,15 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
                     bool result = bll.cap_nhat_nguoi_dung(nguoiDungSua);
                     if (result)
                     {
-                        MessageBox.Show("Cập nhật thành công!");
+                        MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Cập nhật thất bại!");
+                        MessageBox.Show("Cập nhật thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                     list = bll.lay_tat_ca(txbTimKiem.Text);
-                    nguoiDungDto = thongTinNguoiDungBll.lay_chi_tiet_theo_mngdung(nguoiDungDto.MaNguoiDung);
+                    nguoiDungDto = thongTinNguoiDungBll.lay_chi_tiet_theo_iddung(nguoiDungDto.Id);
                     DanhSachNguoiDung();
                 }
             }
@@ -305,7 +306,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
         {
             try
             {
-                string maNguoiDung = null;
+                string Id = null;
                 ThongTinNguoiDungBll thongTinNguoiDungBll = new ThongTinNguoiDungBll();
                 // Kiểm tra xem người dùng đã chọn một dòng trong DataGridView chưa
                 if (dgvNguoiDung.SelectedRows.Count == 0 && dgvNguoiDung.SelectedCells.Count == 0)
@@ -317,24 +318,19 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
                 if (dgvNguoiDung.SelectedRows.Count > 0)
                 {
                     // Lấy ID từ dòng được chọn
-                    maNguoiDung = dgvNguoiDung.SelectedRows[0].Cells["MaNguoiDung"].Value.ToString();
+                    Id = dgvNguoiDung.SelectedRows[0].Cells["Id"].Value.ToString();
                 }
                 else if (dgvNguoiDung.SelectedCells.Count > 0)
                 {
                     // Lấy ID từ ô được chọn (nếu chỉ chọn một ô)
-                    maNguoiDung = dgvNguoiDung.SelectedCells[0].OwningRow.Cells["MaNguoiDung"].Value.ToString();
-                }
-                if (string.IsNullOrEmpty(txbMaND.Text) || maNguoiDung != txbMaND.Text)
-                {
-                    MessageBox.Show("Vui lòng chọn một người dùng để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    Id = dgvNguoiDung.SelectedCells[0].OwningRow.Cells["Id"].Value.ToString();
                 }
 
                 DialogResult confirm = MessageBox.Show("Bạn có chắc chắn muốn xóa người dùng này?", "Xác nhận", MessageBoxButtons.YesNo);
                 if (confirm == DialogResult.Yes)
                 {
                     ThongTinNguoiDungBll bll = new ThongTinNguoiDungBll();
-                    bool result = bll.xoa_nguoi_dung(txbMaND.Text);
+                    bool result = bll.xoa_nguoi_dung(Id);
                     if (result)
                     {
                         MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -342,7 +338,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
                     }
                     else
                     {
-                        MessageBox.Show("Xóa thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Xóa thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     list = bll.lay_tat_ca(txbTimKiem.Text);
                     DanhSachNguoiDung();
@@ -358,7 +354,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
         {
             try
             {
-                string maNguoiDung = null;
+                string Id = null;
                 ThongTinNguoiDungBll thongTinNguoiDungBll = new ThongTinNguoiDungBll();
                 // Kiểm tra xem người dùng đã chọn một dòng trong DataGridView chưa
                 if (dgvNguoiDung.SelectedRows.Count == 0 && dgvNguoiDung.SelectedCells.Count == 0)
@@ -370,15 +366,15 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
                 if (dgvNguoiDung.SelectedRows.Count > 0)
                 {
                     // Lấy ID từ dòng được chọn
-                    maNguoiDung = dgvNguoiDung.SelectedRows[0].Cells["MaNguoiDung"].Value.ToString();
+                    Id = dgvNguoiDung.SelectedRows[0].Cells["Id"].Value.ToString();
                 }
                 else if (dgvNguoiDung.SelectedCells.Count > 0)
                 {
                     // Lấy ID từ ô được chọn (nếu chỉ chọn một ô)
-                    maNguoiDung = dgvNguoiDung.SelectedCells[0].OwningRow.Cells["MaNguoiDung"].Value.ToString();
+                    Id = dgvNguoiDung.SelectedCells[0].OwningRow.Cells["Id"].Value.ToString();
                 }
 
-                ThongTinNguoiDungDto nguoiDungSua = list.FirstOrDefault(nd => nd.MaNguoiDung == txbMaND.Text);
+                ThongTinNguoiDungDto nguoiDungSua = list.FirstOrDefault(nd => nd.Id == int.Parse(Id));
                 if (nguoiDungSua != null)
                 {
                     nguoiDungSua.TrangThai = !nguoiDungSua.TrangThai;
@@ -387,11 +383,11 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
                     bool result = bll.cap_nhat_nguoi_dung(nguoiDungSua);
                     if (result)
                     {
-                        MessageBox.Show("Cập nhật thành công!");
+                        MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Cập nhật thất bại!");
+                        MessageBox.Show("Cập nhật thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                     list = bll.lay_tat_ca(txbTimKiem.Text);

@@ -444,6 +444,7 @@ namespace PhanMemBaoCom.BLL
                                     UPDATE ThongTinNguoiDung 
                                     SET 
                                         HoTen = @HoTen,
+                                        MaNguoiDung = @MaNguoiDung,
                                         Lop = @Lop,
                                         Phong = @Phong,
                                         Khoa = @Khoa,
@@ -456,12 +457,13 @@ namespace PhanMemBaoCom.BLL
                                         MatKhau = @MatKhau,
                                         TrangThai = @TrangThai
                                     WHERE 
-                                        MaNguoiDung = @MaNguoiDung";
+                                        Id = @Id";
 
             SqlConnection cn = access.open();
             SqlCommand command = new SqlCommand(commandString, cn);
 
             command.Parameters.AddWithValue("@HoTen", nguoiDungSua.HoTen);
+            command.Parameters.AddWithValue("@MaNguoiDung", nguoiDungSua.MaNguoiDung);
             command.Parameters.AddWithValue("@Lop", nguoiDungSua.Lop == null ? "" : nguoiDungSua.Lop);
             command.Parameters.AddWithValue("@Phong", nguoiDungSua.Phong == null ? "" : nguoiDungSua.Phong);
             command.Parameters.AddWithValue("@Khoa", nguoiDungSua.Khoa == null ? "" : nguoiDungSua.Khoa);
@@ -473,7 +475,7 @@ namespace PhanMemBaoCom.BLL
             command.Parameters.AddWithValue("@Email", nguoiDungSua.Email);
             command.Parameters.AddWithValue("@MatKhau", nguoiDungSua.MatKhau);
             command.Parameters.AddWithValue("@TrangThai", nguoiDungSua.TrangThai);
-            command.Parameters.AddWithValue("@MaNguoiDung", nguoiDungSua.MaNguoiDung);
+            command.Parameters.AddWithValue("@Id", nguoiDungSua.Id);
 
             int rowsAffected = command.ExecuteNonQuery();
             cn.Close();
@@ -481,17 +483,17 @@ namespace PhanMemBaoCom.BLL
             return rowsAffected > 0;
         }
 
-        public bool xoa_nguoi_dung(string maNguoiDung)
+        public bool xoa_nguoi_dung(string id)
         {
             string commandString = @"
                             DELETE FROM ThongTinNguoiDung 
                             WHERE 
-                                MaNguoiDung = @MaNguoiDung";
+                                Id = @Id";
 
             SqlConnection cn = access.open();
             SqlCommand command = new SqlCommand(commandString, cn);
 
-            command.Parameters.AddWithValue("@MaNguoiDung", maNguoiDung);
+            command.Parameters.AddWithValue("@Id", id);
 
             try
             {

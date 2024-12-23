@@ -89,7 +89,7 @@ INSERT INTO ChucVu (Id, ChucVu, LaHocVien, CoQuyenBaoCom)
 VALUES
     (1, N'Quản trị hệ thống', 0, 0),
     (2, N'Cán bộ nhà ăn', 0, 0),
-    (3, N'Cán bộ', 0, 1),
+    (3, N'Cán bộ - Giáo viên', 0, 1),
     (4, N'Học viên', 1, 0),
     (5, N'Lớp phó hậu cần', 1, 1);
 

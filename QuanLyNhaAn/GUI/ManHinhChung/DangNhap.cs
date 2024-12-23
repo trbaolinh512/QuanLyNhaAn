@@ -63,6 +63,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                         manhinh.StartPosition = FormStartPosition.Manual;
                         manhinh.Location = location;
                         manhinh.Show();
+                        manhinh.WindowState = FormWindowState.Maximized;
                         this.Hide();
                     }
                     else
@@ -73,6 +74,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                         manhinh.StartPosition = FormStartPosition.Manual;
                         manhinh.Location = location;
                         manhinh.Show();
+                        manhinh.WindowState = FormWindowState.Maximized;
                         this.Hide();
                     }
                 }
@@ -86,6 +88,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                         qly.StartPosition = FormStartPosition.Manual;
                         qly.Location = location;
                         qly.Show();
+                        qly.WindowState = FormWindowState.Maximized;
                         this.Hide();
 
 
@@ -100,6 +103,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                             manhinh.StartPosition = FormStartPosition.Manual;
                             manhinh.Location = location;
                             manhinh.Show();
+                            manhinh.WindowState = FormWindowState.Maximized;
                             this.Hide();
                         }
                         else
@@ -110,6 +114,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                             manhinh.StartPosition = FormStartPosition.Manual;
                             manhinh.Location = location;
                             manhinh.Show();
+                            manhinh.WindowState = FormWindowState.Maximized;
                             this.Hide();
                         }
                     }
