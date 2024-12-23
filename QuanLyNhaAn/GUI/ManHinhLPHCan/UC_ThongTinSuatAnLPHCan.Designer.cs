@@ -46,6 +46,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             lblAn = new Label();
             lblLuuY = new Label();
             btnTimKiem = new Button();
+            btnBoTich = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvSuatAn).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -55,17 +56,18 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             dgvSuatAn.AllowUserToAddRows = false;
             dgvSuatAn.AllowUserToDeleteRows = false;
             dgvSuatAn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvSuatAn.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSuatAn.ColumnHeadersHeight = 29;
             dgvSuatAn.Location = new Point(14, 135);
             dgvSuatAn.Name = "dgvSuatAn";
             dgvSuatAn.RowHeadersWidth = 51;
             dgvSuatAn.RowTemplate.Height = 29;
             dgvSuatAn.Size = new Size(1596, 719);
             dgvSuatAn.TabIndex = 0;
+            dgvSuatAn.ColumnHeaderMouseClick += dgvSuatAn_ColumnHeaderMouseClick;
             // 
             // btnLamMoi
             // 
-            btnLamMoi.Location = new Point(387, 32);
+            btnLamMoi.Location = new Point(390, 87);
             btnLamMoi.Name = "btnLamMoi";
             btnLamMoi.Size = new Size(94, 29);
             btnLamMoi.TabIndex = 1;
@@ -215,11 +217,22 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             btnTimKiem.UseVisualStyleBackColor = true;
             btnTimKiem.Click += btnTimKiem_Click;
             // 
+            // btnBoTich
+            // 
+            btnBoTich.Location = new Point(392, 33);
+            btnBoTich.Name = "btnBoTich";
+            btnBoTich.Size = new Size(94, 29);
+            btnBoTich.TabIndex = 12;
+            btnBoTich.Text = "Bỏ tích";
+            btnBoTich.UseVisualStyleBackColor = true;
+            btnBoTich.Click += btnBoTich_Click;
+            // 
             // UC_ThongTinSuatAnLPHCan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
+            Controls.Add(btnBoTich);
             Controls.Add(btnTimKiem);
             Controls.Add(lblLuuY);
             Controls.Add(groupBox1);
@@ -259,5 +272,6 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
         private Label lblAn;
         private Label lblLuuY;
         private Button btnTimKiem;
+        private Button btnBoTich;
     }
 }

@@ -44,18 +44,19 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             dgvHocVien.Columns.Add("HoTen", "Họ Tên");
             dgvHocVien.Columns[1].Width = 150;
             dgvHocVien.Columns.Add("MaHocVien", "Mã học viên");
+            dgvHocVien.Columns[2].Width = 140;
             dgvHocVien.Columns.Add("PhuongThuc", "Phương thức");
             dgvHocVien.Columns["PhuongThuc"].Frozen = true;
-            dgvHocVien.Columns[3].Width = 130;
+            dgvHocVien.Columns[3].Width = 150;
             for (int i = 1; i <= ngayKetThuc.Day; i++)
             {
                 dgvHocVien.Columns.Add(i.ToString(), i.ToString());
-                dgvHocVien.Columns[3 + i].Width = 30;
+                dgvHocVien.Columns[3 + i].Width = 35;
             }
             dgvHocVien.Columns.Add("TongBuoiNghi", "Tổng buổi nghỉ");
             dgvHocVien.Columns.Add("TongTienHoan", "Tổng tiền hoàn lại");
 
-            dgvHocVien.ColumnHeadersDefaultCellStyle.Font = new Font(dgvHocVien.Font, FontStyle.Bold);
+            dgvHocVien.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold, GraphicsUnit.Point);
             int stt = 0;
             int index = 0;
             foreach (ThongTinNguoiDungDto item in listNguoiDung)

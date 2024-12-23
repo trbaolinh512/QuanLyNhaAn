@@ -52,19 +52,20 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             dgvCBGV.Columns[0].Width = 50;
             dgvCBGV.Columns.Add("HoTen", "Họ Tên");
             dgvCBGV.Columns[1].Width = 150;
-            dgvCBGV.Columns.Add("MaNguoiDung", "Mã học viên");
+            dgvCBGV.Columns.Add("MaNguoiDung", "Mã nguời dùng");
+            dgvCBGV.Columns[2].Width = 140;
             dgvCBGV.Columns.Add("PhuongThuc", "Phương thức");
             dgvCBGV.Columns["PhuongThuc"].Frozen = true;
-            dgvCBGV.Columns[3].Width = 130;
+            dgvCBGV.Columns[3].Width = 150;
             for (int i = 1; i <= ngayKetThuc.Day; i++)
             {
                 dgvCBGV.Columns.Add(i.ToString(), i.ToString());
-                dgvCBGV.Columns[3 + i].Width = 30;
+                dgvCBGV.Columns[3 + i].Width = 35;
             }
             dgvCBGV.Columns.Add("TongBuoiDangKy", "Tổng buổi đăng ký");
             dgvCBGV.Columns.Add("TongTienPhaiDong", "Tổng tiền phải đóng");
 
-            dgvCBGV.ColumnHeadersDefaultCellStyle.Font = new Font(dgvCBGV.Font, FontStyle.Bold);
+            dgvCBGV.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold, GraphicsUnit.Point);
             int stt = 0;
             int index = 0;
             foreach (ThongTinNguoiDungDto item in listNguoiDung)

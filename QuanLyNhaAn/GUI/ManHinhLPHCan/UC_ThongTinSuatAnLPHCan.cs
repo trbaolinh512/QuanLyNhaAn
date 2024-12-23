@@ -29,7 +29,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             phuongthuc = 0;
             ngayHienTai = DateTime.Now;
             ThongTinNguoiDungBll thongTinNguoiDungBll = new ThongTinNguoiDungBll();
-            listNguoiDung = thongTinNguoiDungBll.lay_danh_sach_hoc_vien_cung_lop(thongTinNguoiDungDto.Lop,null);
+            listNguoiDung = thongTinNguoiDungBll.lay_danh_sach_hoc_vien_cung_lop(thongTinNguoiDungDto.Lop, null);
 
             HienThiCacNgayTrongThang(dtpThang.Value);
             LoadLich(dtpThang.Value);
@@ -51,13 +51,24 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             dgvSuatAn.Columns.Add("PhuongThuc", "Phương thức");
             dgvSuatAn.Columns["PhuongThuc"].Frozen = true;
             dgvSuatAn.Columns[3].Width = 130;
+
+            dgvSuatAn.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
+            dgvSuatAn.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
+            dgvSuatAn.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
+            dgvSuatAn.Columns[3].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            dgvSuatAn.Columns[0].ReadOnly=true;
+            dgvSuatAn.Columns[1].ReadOnly = true;
+            dgvSuatAn.Columns[2].ReadOnly = true;
+            dgvSuatAn.Columns[3].ReadOnly = true;
+
             for (int i = 1; i <= ngayKetThuc.Day; i++)
             {
                 dgvSuatAn.Columns.Add(i.ToString(), i.ToString());
-                dgvSuatAn.Columns[3 + i].Width = 30;
+                dgvSuatAn.Columns[3 + i].Width = 35;
+                dgvSuatAn.Columns[3 + i].SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            dgvSuatAn.ColumnHeadersDefaultCellStyle.Font = new Font(dgvSuatAn.Font, FontStyle.Bold);
-
+            dgvSuatAn.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold, GraphicsUnit.Point);
             int stt = 0;
             int index = 0;
             foreach (ThongTinNguoiDungDto item in listNguoiDung)
@@ -541,9 +552,35 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
         {
             string input = txbTimKiem.Text;
             ThongTinNguoiDungBll bll = new ThongTinNguoiDungBll();
-            listNguoiDung =bll.lay_danh_sach_hoc_vien_cung_lop(thongTinNguoiDungDto.Lop,input.Trim());
+            listNguoiDung = bll.lay_danh_sach_hoc_vien_cung_lop(thongTinNguoiDungDto.Lop, input.Trim());
             HienThiCacNgayTrongThang(dtpThang.Value);
             LoadLich(dtpThang.Value);
+        }
+
+        private void btnBoTich_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewColumn column in dgvSuatAn.Columns)
+            {
+                foreach (DataGridViewRow row in dgvSuatAn.Rows)
+                {
+                    if (row.Cells[column.Index].Selected && row.Cells[column.Index] is DataGridViewCheckBoxCell)
+                    {
+                        row.Cells[column.Index].Value = !(bool)row.Cells[column.Index].Value;
+                    }
+                }
+            }
+        }
+
+        private void dgvSuatAn_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex >= 0)
+            {
+                // Duyệt qua tất cả các hàng và chọn ô trong cột được bấm
+                foreach (DataGridViewRow row in dgvSuatAn.Rows)
+                {
+                    row.Cells[e.ColumnIndex].Selected = true;
+                }
+            }
         }
     }
 }
