@@ -57,9 +57,9 @@
             // btnLogin
             // 
             btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLogin.Location = new Point(519, 222);
+            btnLogin.Location = new Point(489, 222);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(116, 37);
+            btnLogin.Size = new Size(160, 37);
             btnLogin.TabIndex = 20;
             btnLogin.Text = "Gửi yêu cầu";
             btnLogin.UseVisualStyleBackColor = true;
@@ -68,7 +68,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(475, 177);
+            pictureBox3.Location = new Point(475, 180);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(31, 29);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -79,7 +79,7 @@
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.InitialImage = null;
-            pictureBox2.Location = new Point(475, 104);
+            pictureBox2.Location = new Point(475, 106);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(31, 29);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -90,7 +90,7 @@
             // 
             btnQuenMK.AutoSize = true;
             btnQuenMK.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnQuenMK.Location = new Point(645, 225);
+            btnQuenMK.Location = new Point(666, 222);
             btnQuenMK.Name = "btnQuenMK";
             btnQuenMK.Size = new Size(108, 28);
             btnQuenMK.TabIndex = 17;
@@ -101,7 +101,7 @@
             // txbMail
             // 
             txbMail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txbMail.Location = new Point(519, 177);
+            txbMail.Location = new Point(519, 180);
             txbMail.Name = "txbMail";
             txbMail.Size = new Size(176, 34);
             txbMail.TabIndex = 16;
@@ -109,7 +109,7 @@
             // txbTaiKhoan
             // 
             txbTaiKhoan.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txbTaiKhoan.Location = new Point(519, 103);
+            txbTaiKhoan.Location = new Point(519, 105);
             txbTaiKhoan.Name = "txbTaiKhoan";
             txbTaiKhoan.Size = new Size(176, 34);
             txbTaiKhoan.TabIndex = 15;

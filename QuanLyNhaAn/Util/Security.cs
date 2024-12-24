@@ -42,22 +42,5 @@ namespace PhanMemBaoCom.Helper
             return result.ToString();
         }
 
-        private string ComputeSHA256Hash(string filePath)
-        {
-            using (FileStream fileStream = File.OpenRead(filePath))
-            {
-                using (SHA256 sha256 = SHA256.Create())
-                {
-                    byte[] hashBytes = sha256.ComputeHash(fileStream);
-                    StringBuilder hashString = new StringBuilder();
-                    foreach (byte b in hashBytes)
-                    {
-                        hashString.Append(b.ToString("x2"));
-                    }
-                    return hashString.ToString();
-                }
-            }
-        }
-
     }
 }

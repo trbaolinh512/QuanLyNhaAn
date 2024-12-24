@@ -82,7 +82,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             // txbTaiKhoan
             // 
             txbTaiKhoan.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txbTaiKhoan.Location = new Point(523, 103);
+            txbTaiKhoan.Location = new Point(523, 108);
             txbTaiKhoan.Name = "txbTaiKhoan";
             txbTaiKhoan.Size = new Size(176, 34);
             txbTaiKhoan.TabIndex = 3;
@@ -90,7 +90,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             // txtPassword
             // 
             txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPassword.Location = new Point(523, 177);
+            txtPassword.Location = new Point(523, 182);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(176, 34);
             txtPassword.TabIndex = 4;
@@ -100,7 +100,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             // 
             btnQuenMK.AutoSize = true;
             btnQuenMK.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnQuenMK.Location = new Point(649, 225);
+            btnQuenMK.Location = new Point(649, 227);
             btnQuenMK.Name = "btnQuenMK";
             btnQuenMK.Size = new Size(145, 28);
             btnQuenMK.TabIndex = 5;
@@ -112,7 +112,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.InitialImage = null;
-            pictureBox2.Location = new Point(479, 104);
+            pictureBox2.Location = new Point(479, 109);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(31, 29);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -122,7 +122,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(479, 177);
+            pictureBox3.Location = new Point(479, 182);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(31, 29);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -132,7 +132,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             // btnLogin
             // 
             btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLogin.Location = new Point(523, 222);
+            btnLogin.Location = new Point(523, 224);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(120, 41);
             btnLogin.TabIndex = 8;

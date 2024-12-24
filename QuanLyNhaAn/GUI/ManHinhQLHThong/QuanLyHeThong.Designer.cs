@@ -54,7 +54,7 @@
             panel10.Controls.Add(pnlUser);
             panel10.Location = new Point(0, 0);
             panel10.Name = "panel10";
-            panel10.Size = new Size(258, 123);
+            panel10.Size = new Size(257, 123);
             panel10.TabIndex = 33;
             panel10.Click += pnlUser_Click;
             // 
@@ -240,8 +240,10 @@
             Controls.Add(txbTitle);
             Controls.Add(panel10);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "QuanLyHeThong";
-            Text = "QuanLyHeThong";
+            Text = "Quản lý người dùng";
+            FormClosing += QuanLyHeThong_FormClosing;
             panel10.ResumeLayout(false);
             pnlUser.ResumeLayout(false);
             pnlUser.PerformLayout();

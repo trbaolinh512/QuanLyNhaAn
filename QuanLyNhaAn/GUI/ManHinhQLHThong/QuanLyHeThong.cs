@@ -17,8 +17,10 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
     public partial class QuanLyHeThong : Form
     {
         ThongTinNguoiDungDto thongTinNguoiDungDto { get; set; }
-        public QuanLyHeThong(ThongTinNguoiDungDto dto)
+        DangNhap dangNhap;
+        public QuanLyHeThong(ThongTinNguoiDungDto dto,DangNhap dangNhap)
         {
+            this.dangNhap = dangNhap;
             InitializeComponent();
             thongTinNguoiDungDto = dto;
             lbUser.Text = thongTinNguoiDungDto.HoTen;
@@ -62,9 +64,8 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DangNhap dangNhap = new DangNhap();
+            this.Hide();
             dangNhap.Show();
-            this.Close();
         }
 
         private void pnlUser_Click(object sender, EventArgs e)
@@ -78,5 +79,13 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
 
         }
 
+        private void QuanLyHeThong_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing) // Kiểm tra lý do đóng Form
+            {
+                // Khi đóng bằng dấu X, thoát hoàn toàn chương trình
+                Application.Exit();
+            }
+        }
     }
 }

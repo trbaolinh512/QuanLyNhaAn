@@ -18,8 +18,10 @@ namespace QuanLyNhaAn.GUI.ManHinhLPHCan
     public partial class MH_LPHCan : Form
     {
         public ThongTinNguoiDungDto thongTinNguoiDungDto { get; set; }
-        public MH_LPHCan(ThongTinNguoiDungDto thongtin)
+        public DangNhap dangNhap;
+        public MH_LPHCan(ThongTinNguoiDungDto thongtin, DangNhap dangNhap)
         {
+            this.dangNhap = dangNhap;
             thongTinNguoiDungDto = thongtin;
             InitializeComponent();
             UC_ThongTinSuatAnLPHCan uC = new UC_ThongTinSuatAnLPHCan(thongTinNguoiDungDto);
@@ -45,11 +47,8 @@ namespace QuanLyNhaAn.GUI.ManHinhLPHCan
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DangNhap manhinh = new DangNhap();
-            Point location = this.Location;
-            manhinh.Location = location;
-            manhinh.Show();
-            this.Close();
+            dangNhap.Show();
+            this.Hide();
         }
 
         private void btnXemSuatAn_Click(object sender, EventArgs e)
@@ -68,6 +67,15 @@ namespace QuanLyNhaAn.GUI.ManHinhLPHCan
             lbUser.DataBindings.Add("Text", thongTinNguoiDungDto, "HoTen");
             ThongTinCaNhan thongTinCaNhan = new ThongTinCaNhan(thongTinNguoiDungDto);
             thongTinCaNhan.Show();
+        }
+
+        private void MH_LPHCan_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing) // Kiểm tra lý do đóng Form
+            {
+                // Khi đóng bằng dấu X, thoát hoàn toàn chương trình
+                Application.Exit();
+            }
         }
     }
 }

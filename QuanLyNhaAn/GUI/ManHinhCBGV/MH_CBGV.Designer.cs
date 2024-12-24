@@ -213,6 +213,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MH_CBGV";
             Text = "Hệ thống báo cơm";
+            FormClosing += MH_CBGV_FormClosing;
             Click += pnlUser_Click;
             panel1.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);

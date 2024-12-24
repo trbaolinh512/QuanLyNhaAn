@@ -16,9 +16,11 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
     public partial class MH_CBGV : Form
     {
         ThongTinNguoiDungDto thongTinNguoiDungDto { get; set; }
-        public MH_CBGV(ThongTinNguoiDungDto thongtin)
+        DangNhap dangNhap;
+        public MH_CBGV(ThongTinNguoiDungDto thongtin, DangNhap dangNhap)
         {
             this.thongTinNguoiDungDto = thongtin;
+            this.dangNhap = dangNhap;
             InitializeComponent();
             UC_ThongTinSuatAn uC_YKienDongGop = new UC_ThongTinSuatAn(thongTinNguoiDungDto);
             pnlHienThi.Controls.Add(uC_YKienDongGop);
@@ -43,11 +45,8 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DangNhap manhinh = new DangNhap();
-            Point location = this.Location;
-            manhinh.Location = location;
-            manhinh.Show();
-            this.Close();
+            dangNhap.Show();
+            this.Hide();
         }
 
         private void pnlUser_Click(object sender, EventArgs e)
@@ -58,6 +57,15 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             lbUser.DataBindings.Add("Text", thongTinNguoiDungDto, "HoTen");
             ThongTinCaNhan thongTinCaNhan = new ThongTinCaNhan(thongTinNguoiDungDto);
             thongTinCaNhan.Show();
+        }
+
+        private void MH_CBGV_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing) // Kiểm tra lý do đóng Form
+            {
+                // Khi đóng bằng dấu X, thoát hoàn toàn chương trình
+                Application.Exit();
+            }
         }
     }
 }

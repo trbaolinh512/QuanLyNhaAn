@@ -17,8 +17,10 @@ namespace QuanLyNhaAn.GUI.ManHinhHVien
     public partial class MH_HVien : Form
     {
         public ThongTinNguoiDungDto thongtin { get; set; }
-        public MH_HVien(ThongTinNguoiDungDto thongTinNguoiDungDto)
+        public DangNhap dangNhap;
+        public MH_HVien(ThongTinNguoiDungDto thongTinNguoiDungDto, DangNhap dangNhap)
         {
+            this.dangNhap = dangNhap;
             InitializeComponent();
             UC_ThongTinSuatAn uC_YKienDongGop = new UC_ThongTinSuatAn(thongTinNguoiDungDto);
             pnlHienThi.Controls.Add(uC_YKienDongGop);
@@ -44,11 +46,8 @@ namespace QuanLyNhaAn.GUI.ManHinhHVien
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            DangNhap manhinh = new DangNhap();
-            Point location = this.Location;
-            manhinh.Location = location;
-            manhinh.Show();
-            this.Close();
+            dangNhap.Show();
+            this.Hide();
         }
 
         private void pnlUser_Click(object sender, EventArgs e)
@@ -59,6 +58,15 @@ namespace QuanLyNhaAn.GUI.ManHinhHVien
             lbUser.DataBindings.Add("Text", thongtin, "HoTen");
             ThongTinCaNhan thongTinCaNhan = new ThongTinCaNhan(thongtin);
             thongTinCaNhan.Show();
+        }
+
+        private void MH_HVien_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing) // Kiểm tra lý do đóng Form
+            {
+                // Khi đóng bằng dấu X, thoát hoàn toàn chương trình
+                Application.Exit();
+            }
         }
     }
 }

@@ -201,6 +201,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MH_HVien";
             Text = "Hệ thống báo cơm";
+            FormClosing += MH_HVien_FormClosing;
             flowLayoutPanel1.ResumeLayout(false);
             panel10.ResumeLayout(false);
             pnlUser.ResumeLayout(false);

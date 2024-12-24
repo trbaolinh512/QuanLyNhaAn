@@ -18,8 +18,10 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
     public partial class MH_QLyNAn : Form
     {
         public ThongTinNguoiDungDto thongTinNguoiDungdto { get; set; }
-        public MH_QLyNAn(ThongTinNguoiDungDto thongtin)
+        public DangNhap dangNhap;
+        public MH_QLyNAn(ThongTinNguoiDungDto thongtin,DangNhap dangNhap)
         {
+            this.dangNhap = dangNhap;
             InitializeComponent();
             this.thongTinNguoiDungdto = thongtin;
             lbUser.Text = thongTinNguoiDungdto.HoTen;
@@ -30,11 +32,8 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DangNhap manhinh = new DangNhap();
-            Point location = this.Location;
-            manhinh.Location = location;
-            manhinh.Show();
-            this.Close();
+            dangNhap.Show();
+            this.Hide();
         }
 
         private void btnTrangChu_Click(object sender, EventArgs e)
@@ -78,6 +77,15 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             ThongTinCaNhan thongTinCaNhan = new ThongTinCaNhan(thongTinNguoiDungdto);
             thongTinCaNhan.Show();
 
+        }
+
+        private void MH_QLyNAn_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing) // Kiểm tra lý do đóng Form
+            {
+                // Khi đóng bằng dấu X, thoát hoàn toàn chương trình
+                Application.Exit();
+            }
         }
     }
 }

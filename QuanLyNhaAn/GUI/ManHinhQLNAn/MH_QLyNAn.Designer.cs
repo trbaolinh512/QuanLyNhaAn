@@ -243,6 +243,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MH_QLyNAn";
             Text = "Quản lý nhà ăn";
+            FormClosing += MH_QLyNAn_FormClosing;
             Click += pnlUser_Click;
             panel10.ResumeLayout(false);
             pnlUser.ResumeLayout(false);

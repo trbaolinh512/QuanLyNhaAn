@@ -58,10 +58,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                     if (chucVuDtos[nguoiDungDto.ChucVuId - 1].CoQuyenBaoCom)
                     {
                         //Man lop pho hau can
-                        MH_LPHCan manhinh = new MH_LPHCan(nguoiDungDto);
-                        Point location = this.Location;
-                        manhinh.StartPosition = FormStartPosition.Manual;
-                        manhinh.Location = location;
+                        MH_LPHCan manhinh = new MH_LPHCan(nguoiDungDto,this);
                         manhinh.Show();
                         manhinh.WindowState = FormWindowState.Maximized;
                         this.Hide();
@@ -69,10 +66,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                     else
                     {
                         //Man hoc vien binh thuong
-                        MH_HVien manhinh = new MH_HVien(nguoiDungDto);
-                        Point location = this.Location;
-                        manhinh.StartPosition = FormStartPosition.Manual;
-                        manhinh.Location = location;
+                        MH_HVien manhinh = new MH_HVien(nguoiDungDto, this);
                         manhinh.Show();
                         manhinh.WindowState = FormWindowState.Maximized;
                         this.Hide();
@@ -83,25 +77,17 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                     if (chucVuDtos[nguoiDungDto.ChucVuId - 1].Id == 1)//Quản lý hệ thống
                     {
                         //Man hinh quan tri he thong
-                        QuanLyHeThong qly = new QuanLyHeThong(nguoiDungDto);
-                        Point location = this.Location;
-                        qly.StartPosition = FormStartPosition.Manual;
-                        qly.Location = location;
+                        QuanLyHeThong qly = new QuanLyHeThong(nguoiDungDto, this);
                         qly.Show();
                         qly.WindowState = FormWindowState.Maximized;
                         this.Hide();
-
-
                     }
                     else
                     {
                         if (chucVuDtos[nguoiDungDto.ChucVuId - 1].Id == 2)//Quản lý nhà ăn
                         {
                             //Man hinh quan tri nha an
-                            MH_QLyNAn manhinh = new MH_QLyNAn(nguoiDungDto);
-                            Point location = this.Location;
-                            manhinh.StartPosition = FormStartPosition.Manual;
-                            manhinh.Location = location;
+                            MH_QLyNAn manhinh = new MH_QLyNAn(nguoiDungDto, this);
                             manhinh.Show();
                             manhinh.WindowState = FormWindowState.Maximized;
                             this.Hide();
@@ -109,10 +95,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                         else
                         {
                             //Man hinh can bo giao vien
-                            MH_CBGV manhinh = new MH_CBGV(nguoiDungDto);
-                            Point location = this.Location;
-                            manhinh.StartPosition = FormStartPosition.Manual;
-                            manhinh.Location = location;
+                            MH_CBGV manhinh = new MH_CBGV(nguoiDungDto, this);
                             manhinh.Show();
                             manhinh.WindowState = FormWindowState.Maximized;
                             this.Hide();
