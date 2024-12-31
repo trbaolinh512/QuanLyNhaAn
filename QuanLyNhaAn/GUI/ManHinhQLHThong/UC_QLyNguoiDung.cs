@@ -38,37 +38,9 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             ThongTinNguoiDungBll bll = new ThongTinNguoiDungBll();
             list = bll.lay_tat_ca(null);
 
-
+            //Hien thi danh sach nguoi dung
             DanhSachNguoiDung();
 
-        }
-
-        private void slidebarTimer_Tick(object sender, EventArgs e)
-        {
-            //if (sliderbarExpand)
-            //{
-            //    slidebar.Width -= 10;
-            //    if (slidebar.Width == slidebar.MinimumSize.Width)
-            //    {
-            //        sliderbarExpand = false;
-
-            //        slidebarTimer.Stop();
-            //    }
-            //}
-            //else
-            //{
-            //    slidebar.Width += 10;
-            //    if (slidebar.Width == slidebar.MaximumSize.Width)
-            //    {
-            //        sliderbarExpand = true;
-            //        slidebarTimer.Stop();
-            //    }
-            //}
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            //slidebarTimer.Start();
         }
 
         private void DanhSachNguoiDung()
