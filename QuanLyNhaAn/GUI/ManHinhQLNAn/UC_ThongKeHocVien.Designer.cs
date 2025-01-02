@@ -56,8 +56,6 @@
             dgvHocVien.AllowUserToAddRows = false;
             dgvHocVien.AllowUserToDeleteRows = false;
             dgvHocVien.BackgroundColor = Color.White;
-
-            //Set header data grid view
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -66,9 +64,8 @@
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvHocVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvHocVien.EnableHeadersVisualStyles = false;
-
             dgvHocVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvHocVien.EnableHeadersVisualStyles = false;
             dgvHocVien.Location = new Point(3, 166);
             dgvHocVien.Name = "dgvHocVien";
             dgvHocVien.RowHeadersWidth = 51;
@@ -114,6 +111,7 @@
             dtpThang.Name = "dtpThang";
             dtpThang.Size = new Size(101, 27);
             dtpThang.TabIndex = 17;
+            dtpThang.ValueChanged += dtpThang_ValueChanged;
             // 
             // label2
             // 

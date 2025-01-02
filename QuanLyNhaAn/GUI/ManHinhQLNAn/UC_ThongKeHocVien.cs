@@ -343,7 +343,14 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                     dataAccess.ExportToExcel(dgvHocVien, filePath);
                 }
             }
-            
+
+        }
+
+        private void dtpThang_ValueChanged(object sender, EventArgs e)
+        {
+            ngayHienTai = DateTime.Now;
+            HienThiCacNgayTrongThang(dtpThang.Value);
+            LoadThongKe(dtpThang.Value);
         }
     }
 }
