@@ -77,49 +77,9 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             LoadLich();
             ThemSoNgayVaoLich(dtpChonThang.Value);
 
-            CultureInfo vietnamCulture = new CultureInfo("vi-VN");
+            
 
-            // Tạo một bản sao của NumberFormatInfo để chỉnh sửa
-            NumberFormatInfo customFormat = (NumberFormatInfo)vietnamCulture.NumberFormat.Clone();
-            customFormat.CurrencySymbol = ""; // Loại bỏ ký hiệu tiền tệ
-
-            // Định dạng số tiền
-            string formattedMoney = soTien.ToString("C", customFormat).Trim(); // Trim để loại bỏ khoảng trắng dư thừa
-            string formattedMoney1 = soTienSang.ToString("C", customFormat).Trim(); // Trim để loại bỏ khoảng trắng dư thừa
-            string formattedMoney2 = soTienTrua.ToString("C", customFormat).Trim(); // Trim để loại bỏ khoảng trắng dư thừa
-            string formattedMoney3 = soTienToi.ToString("C", customFormat).Trim(); // Trim để loại bỏ khoảng trắng dư thừa
-
-            if (LaHocVien)
-            {
-                pnlAn.BackColor = Color.Red;
-                lblAn.Text = ": Nghỉ ăn cả ngày";
-                txtTongSuatAn.Text = "Tổng buổi nghỉ: " + soSuatAn;
-                txtTongTien.Text = "Tổng tiền hoàn: " + formattedMoney;
-
-                lbSuatSang.Text = "Số buổi nghỉ: " + soSuatAnSang;
-                lbTienSang.Text = "Số tiền hoàn: " + formattedMoney1;
-                lbSuatTrua.Text = "Số buổi nghỉ: " + soSuatAnTrua;
-                lbTienTrua.Text = "Số tiền hoàn: " + formattedMoney2;
-                lblSuatToi.Text = "Số buổi nghỉ: " + soSuatAnToi;
-                lbTienToi.Text = "Số tiền hoàn: " + formattedMoney3;
-
-                lblLuuY.Visible = false;
-                btnLuuLich.Visible = false;
-            }
-            else
-            {
-                pnlAn.BackColor = Color.LightSkyBlue;
-                lblAn.Text = ": Ăn cả ngày";
-                txtTongSuatAn.Text = "Tổng buổi đăng ký ăn: " + soSuatAn + " buổi";
-                txtTongTien.Text = "Tổng tiền phải đóng: " + formattedMoney;
-
-                lbSuatSang.Text = "Số buổi đăng ký ăn: " + soSuatAnSang;
-                lbTienSang.Text = "Tông tiền phải đóng: " + formattedMoney1;
-                lbSuatTrua.Text = "Tông buổi đăng ký ăn: " + soSuatAnTrua;
-                lbTienTrua.Text = "Tông tiền phải đóng: " + formattedMoney2;
-                lblSuatToi.Text = "Tông buổi đăng ký ăn: " + soSuatAnToi;
-                lbTienToi.Text = "Tông tiền phải đóng: " + formattedMoney3;
-            }
+            
         }
 
         public void LoadLich()
@@ -443,6 +403,54 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                 }
 
                 ngayBatDau = ngayBatDau.AddDays(1);
+            }
+            //Hien thi thong tin tien cua thang
+            HienThiGiaTien();
+        }
+        public void HienThiGiaTien()
+        {
+            CultureInfo vietnamCulture = new CultureInfo("vi-VN");
+
+            // Tạo một bản sao của NumberFormatInfo để chỉnh sửa
+            NumberFormatInfo customFormat = (NumberFormatInfo)vietnamCulture.NumberFormat.Clone();
+            customFormat.CurrencySymbol = ""; // Loại bỏ ký hiệu tiền tệ
+
+            // Định dạng số tiền
+            string formattedMoney = soTien.ToString("C", customFormat).Trim(); // Trim để loại bỏ khoảng trắng dư thừa
+            string formattedMoney1 = soTienSang.ToString("C", customFormat).Trim(); // Trim để loại bỏ khoảng trắng dư thừa
+            string formattedMoney2 = soTienTrua.ToString("C", customFormat).Trim(); // Trim để loại bỏ khoảng trắng dư thừa
+            string formattedMoney3 = soTienToi.ToString("C", customFormat).Trim(); // Trim để loại bỏ khoảng trắng dư thừa
+
+            if (LaHocVien)
+            {
+                pnlAn.BackColor = Color.Red;
+                lblAn.Text = ": Nghỉ ăn cả ngày";
+                txtTongSuatAn.Text = "Tổng buổi nghỉ: " + soSuatAn;
+                txtTongTien.Text = "Tổng tiền hoàn: " + formattedMoney;
+
+                lbSuatSang.Text = "Số buổi nghỉ: " + soSuatAnSang;
+                lbTienSang.Text = "Số tiền hoàn: " + formattedMoney1;
+                lbSuatTrua.Text = "Số buổi nghỉ: " + soSuatAnTrua;
+                lbTienTrua.Text = "Số tiền hoàn: " + formattedMoney2;
+                lblSuatToi.Text = "Số buổi nghỉ: " + soSuatAnToi;
+                lbTienToi.Text = "Số tiền hoàn: " + formattedMoney3;
+
+                lblLuuY.Visible = false;
+                btnLuuLich.Visible = false;
+            }
+            else
+            {
+                pnlAn.BackColor = Color.LightSkyBlue;
+                lblAn.Text = ": Ăn cả ngày";
+                txtTongSuatAn.Text = "Tổng buổi đăng ký ăn: " + soSuatAn + " buổi";
+                txtTongTien.Text = "Tổng tiền phải đóng: " + formattedMoney;
+
+                lbSuatSang.Text = "Số buổi đăng ký ăn: " + soSuatAnSang;
+                lbTienSang.Text = "Tông tiền phải đóng: " + formattedMoney1;
+                lbSuatTrua.Text = "Tông buổi đăng ký ăn: " + soSuatAnTrua;
+                lbTienTrua.Text = "Tông tiền phải đóng: " + formattedMoney2;
+                lblSuatToi.Text = "Tông buổi đăng ký ăn: " + soSuatAnToi;
+                lbTienToi.Text = "Tông tiền phải đóng: " + formattedMoney3;
             }
         }
 
