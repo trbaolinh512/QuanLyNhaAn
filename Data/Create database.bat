@@ -1,3 +1,3 @@
 @echo off
-sqlcmd -S LAPTOP-LCELLU17\MSSQLSERVER03 -E -i "script.sql"
+sqlcmd -S . -E -i "script.sql"
 pause
