@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             lblNgayHomNay = new Label();
             lblSuatHocVienSang = new Label();
             lblSuatCBGVSang = new Label();
@@ -95,8 +96,21 @@
             // 
             // dgvHocVien
             // 
+
+            //Set header data grid view
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvHocVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvHocVien.EnableHeadersVisualStyles = false;
+
             dgvHocVien.AllowUserToAddRows = false;
             dgvHocVien.AllowUserToDeleteRows = false;
+            dgvHocVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvHocVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvHocVien.Columns.AddRange(new DataGridViewColumn[] { STT, Lop, SoSuatAn });
             dgvHocVien.Location = new Point(32, 209);
@@ -112,7 +126,6 @@
             STT.MinimumWidth = 6;
             STT.Name = "STT";
             STT.ReadOnly = true;
-            STT.Width = 125;
             // 
             // Lop
             // 
@@ -120,7 +133,6 @@
             Lop.MinimumWidth = 6;
             Lop.Name = "Lop";
             Lop.ReadOnly = true;
-            Lop.Width = 125;
             // 
             // SoSuatAn
             // 
@@ -128,12 +140,15 @@
             SoSuatAn.MinimumWidth = 6;
             SoSuatAn.Name = "SoSuatAn";
             SoSuatAn.ReadOnly = true;
-            SoSuatAn.Width = 125;
             // 
             // dgvCBGV
             // 
+            dgvCBGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvCBGV.EnableHeadersVisualStyles = false;
+
             dgvCBGV.AllowUserToAddRows = false;
             dgvCBGV.AllowUserToDeleteRows = false;
+            dgvCBGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCBGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCBGV.Columns.AddRange(new DataGridViewColumn[] { STT1, Phong, Khoa, SoSuatAnCBGV });
             dgvCBGV.Location = new Point(742, 209);
@@ -148,7 +163,6 @@
             STT1.HeaderText = "STT";
             STT1.MinimumWidth = 6;
             STT1.Name = "STT1";
-            STT1.Width = 125;
             // 
             // Phong
             // 
@@ -156,7 +170,6 @@
             Phong.MinimumWidth = 6;
             Phong.Name = "Phong";
             Phong.ReadOnly = true;
-            Phong.Width = 125;
             // 
             // Khoa
             // 
@@ -164,7 +177,6 @@
             Khoa.MinimumWidth = 6;
             Khoa.Name = "Khoa";
             Khoa.ReadOnly = true;
-            Khoa.Width = 125;
             // 
             // SoSuatAnCBGV
             // 
@@ -172,7 +184,6 @@
             SoSuatAnCBGV.MinimumWidth = 6;
             SoSuatAnCBGV.Name = "SoSuatAnCBGV";
             SoSuatAnCBGV.ReadOnly = true;
-            SoSuatAnCBGV.Width = 125;
             // 
             // lblSuatTongQuatTrua
             // 

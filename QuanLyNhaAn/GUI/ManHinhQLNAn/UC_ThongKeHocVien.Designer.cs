@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dgvHocVien = new DataGridView();
             btnTimKiem = new Button();
             cbxPhuongThuc = new ComboBox();
@@ -54,6 +55,19 @@
             // 
             dgvHocVien.AllowUserToAddRows = false;
             dgvHocVien.AllowUserToDeleteRows = false;
+            dgvHocVien.BackgroundColor = Color.White;
+
+            //Set header data grid view
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvHocVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvHocVien.EnableHeadersVisualStyles = false;
+
             dgvHocVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvHocVien.Location = new Point(3, 166);
             dgvHocVien.Name = "dgvHocVien";

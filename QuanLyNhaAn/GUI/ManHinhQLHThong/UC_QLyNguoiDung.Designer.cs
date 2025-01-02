@@ -1,4 +1,6 @@
-﻿namespace QuanLyNhaAn.GUI.ManHinhQLHThong
+﻿using System.Windows.Forms;
+
+namespace QuanLyNhaAn.GUI.ManHinhQLHThong
 {
     partial class UC_QLyNguoiDung
     {
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             btnLamMoi = new Button();
             btnXoa = new Button();
             btnTimKiem = new Button();
@@ -333,6 +336,16 @@
             // dgvNguoiDung
             // 
             dgvNguoiDung.AllowUserToAddRows = false;
+            dgvNguoiDung.BackgroundColor = Color.White;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvNguoiDung.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvNguoiDung.EnableHeadersVisualStyles = false;
             dgvNguoiDung.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvNguoiDung.Columns.AddRange(new DataGridViewColumn[] { Id, STT, HoTen, MaNguoiDung, Lop, Phong, Khoa, DonVi, ChucVuID, TrangThai });
             dgvNguoiDung.Location = new Point(10, 303);

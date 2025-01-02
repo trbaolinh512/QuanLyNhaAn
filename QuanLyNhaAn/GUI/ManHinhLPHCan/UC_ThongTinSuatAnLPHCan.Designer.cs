@@ -29,6 +29,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dgvSuatAn = new DataGridView();
             btnLamMoi = new Button();
             btnLuuLich = new Button();
@@ -56,6 +57,19 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             dgvSuatAn.AllowUserToAddRows = false;
             dgvSuatAn.AllowUserToDeleteRows = false;
             dgvSuatAn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvSuatAn.BackgroundColor = Color.White;
+
+            //Set header data grid view
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvSuatAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvSuatAn.EnableHeadersVisualStyles = false;
+
             dgvSuatAn.ColumnHeadersHeight = 29;
             dgvSuatAn.Location = new Point(14, 135);
             dgvSuatAn.Name = "dgvSuatAn";

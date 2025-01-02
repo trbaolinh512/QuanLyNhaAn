@@ -132,7 +132,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                 YKienDongGopDto yKienDongGopDto = yKienDongGopBll.lay_theo_id(int.Parse(id));
                 string noiDung = dgvYeuCau.Rows[e.RowIndex].Cells["NoiDung"].Value.ToString();
                 txbYeuCau.Text = noiDung;
-
+                txbPhanHoi.Text = dgvYeuCau.Rows[e.RowIndex].Cells["NoiDungPhanHoi"].Value.ToString();
                 imageData = yKienDongGopDto.AnhGui;
                 if (imageData != null)
                 {

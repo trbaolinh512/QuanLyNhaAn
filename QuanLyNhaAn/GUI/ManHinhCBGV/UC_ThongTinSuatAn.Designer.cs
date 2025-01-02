@@ -134,66 +134,87 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // 
             // button7
             // 
+            button7.BackColor = Color.FromArgb(2, 136, 209);
+            button7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button7.ForeColor = Color.White;
             button7.Location = new Point(731, 11);
             button7.Name = "button7";
             button7.Size = new Size(110, 60);
             button7.TabIndex = 6;
             button7.Text = "Chủ nhật";
-            button7.UseVisualStyleBackColor = true;
+            button7.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
+            button6.BackColor = Color.FromArgb(2, 136, 209);
+            button6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button6.ForeColor = Color.White;
             button6.Location = new Point(615, 11);
             button6.Name = "button6";
             button6.Size = new Size(110, 60);
             button6.TabIndex = 5;
             button6.Text = "Thứ 7";
-            button6.UseVisualStyleBackColor = true;
+            button6.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
+            button5.BackColor = Color.FromArgb(2, 136, 209);
+            button5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.ForeColor = Color.White;
             button5.Location = new Point(499, 11);
             button5.Name = "button5";
             button5.Size = new Size(110, 60);
             button5.TabIndex = 4;
             button5.Text = "Thứ 6";
-            button5.UseVisualStyleBackColor = true;
+            button5.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
+            button4.BackColor = Color.FromArgb(2, 136, 209);
+            button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.ForeColor = Color.White;
             button4.Location = new Point(383, 11);
             button4.Name = "button4";
             button4.Size = new Size(110, 60);
             button4.TabIndex = 3;
             button4.Text = "Thứ 5";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
+            button3.BackColor = Color.FromArgb(2, 136, 209);
+            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.ForeColor = Color.White;
             button3.Location = new Point(267, 11);
             button3.Name = "button3";
             button3.Size = new Size(110, 60);
             button3.TabIndex = 2;
             button3.Text = "Thứ 4";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
+            button2.BackColor = Color.FromArgb(2, 136, 209);
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.White;
             button2.Location = new Point(151, 11);
             button2.Name = "button2";
             button2.Size = new Size(110, 60);
             button2.TabIndex = 1;
             button2.Text = "Thứ 3";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
+            button1.BackColor = Color.FromArgb(2, 136, 209);
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
             button1.Location = new Point(35, 11);
             button1.Name = "button1";
             button1.Size = new Size(110, 60);
             button1.TabIndex = 0;
             button1.Text = "Thứ 2";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             // 
             // pnlLich
             // 
@@ -312,6 +333,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // 
             // groupBox3
             // 
+            groupBox3.BackColor = Color.FromArgb(192, 192, 0);
             groupBox3.Controls.Add(lblSuatToi);
             groupBox3.Controls.Add(lbTienToi);
             groupBox3.Location = new Point(21, 393);
@@ -341,6 +363,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // 
             // groupBox2
             // 
+            groupBox2.BackColor = Color.FromArgb(128, 128, 255);
             groupBox2.Controls.Add(lbSuatTrua);
             groupBox2.Controls.Add(lbTienTrua);
             groupBox2.Location = new Point(21, 276);
@@ -370,6 +393,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // 
             // groupBox4
             // 
+            groupBox4.BackColor = Color.LightSeaGreen;
             groupBox4.Controls.Add(lbSuatSang);
             groupBox4.Controls.Add(lbTienSang);
             groupBox4.Location = new Point(21, 151);

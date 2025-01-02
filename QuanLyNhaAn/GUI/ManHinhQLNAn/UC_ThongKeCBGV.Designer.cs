@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             btnExcel = new Button();
             cbxPhong = new ComboBox();
             label34 = new Label();
@@ -160,6 +161,19 @@
             // 
             dgvCBGV.AllowUserToAddRows = false;
             dgvCBGV.AllowUserToDeleteRows = false;
+            dgvCBGV.BackgroundColor = Color.White;
+
+            //Set header data grid view
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvCBGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvCBGV.EnableHeadersVisualStyles = false;
+
             dgvCBGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCBGV.Location = new Point(3, 160);
             dgvCBGV.Name = "dgvCBGV";
@@ -244,7 +258,7 @@
             lblAn.TabIndex = 0;
             lblAn.Text = ": Ăn cả ngày";
             // 
-            // UC_TKCBGV
+            // UC_ThongKeCBGV
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -263,7 +277,7 @@
             Controls.Add(label1);
             Controls.Add(btnLamMoi);
             Controls.Add(dgvCBGV);
-            Name = "UC_TKCBGV";
+            Name = "UC_ThongKeCBGV";
             Size = new Size(1615, 958);
             ((System.ComponentModel.ISupportInitialize)dgvCBGV).EndInit();
             groupBox1.ResumeLayout(false);

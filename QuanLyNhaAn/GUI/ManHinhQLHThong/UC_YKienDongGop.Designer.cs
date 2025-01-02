@@ -1,4 +1,6 @@
-﻿namespace QuanLyNhaAn.GUI.ManHinhQLHThong
+﻿using System.Windows.Forms;
+
+namespace QuanLyNhaAn.GUI.ManHinhQLHThong
 {
     partial class UC_YKienDongGop
     {
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             label5 = new Label();
             ptbAnh = new PictureBox();
             txbPhanHoi = new TextBox();
@@ -108,6 +111,19 @@
             // 
             dgvYKien.AllowUserToAddRows = false;
             dgvYKien.AllowUserToDeleteRows = false;
+            dgvYKien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvYKien.BackgroundColor = Color.White;
+            //Set header data grid view
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvYKien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvYKien.EnableHeadersVisualStyles = false;
+
             dgvYKien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvYKien.Columns.AddRange(new DataGridViewColumn[] { Id, STT, NoiDung, NoiDungPhanHoi, NguoiGui, NguoiPhanHoi, NgayYeuCau, NgayPhanHoi });
             dgvYKien.Location = new Point(3, 26);
@@ -126,7 +142,6 @@
             Id.Name = "Id";
             Id.ReadOnly = true;
             Id.Visible = false;
-            Id.Width = 125;
             // 
             // STT
             // 
@@ -134,7 +149,6 @@
             STT.MinimumWidth = 6;
             STT.Name = "STT";
             STT.ReadOnly = true;
-            STT.Width = 50;
             // 
             // NoiDung
             // 
@@ -142,7 +156,6 @@
             NoiDung.MinimumWidth = 6;
             NoiDung.Name = "NoiDung";
             NoiDung.ReadOnly = true;
-            NoiDung.Width = 170;
             // 
             // NoiDungPhanHoi
             // 
@@ -152,7 +165,6 @@
             NoiDungPhanHoi.ReadOnly = true;
             NoiDungPhanHoi.Resizable = DataGridViewTriState.True;
             NoiDungPhanHoi.SortMode = DataGridViewColumnSortMode.NotSortable;
-            NoiDungPhanHoi.Width = 150;
             // 
             // NguoiGui
             // 
@@ -162,7 +174,6 @@
             NguoiGui.ReadOnly = true;
             NguoiGui.Resizable = DataGridViewTriState.True;
             NguoiGui.SortMode = DataGridViewColumnSortMode.NotSortable;
-            NguoiGui.Width = 150;
             // 
             // NguoiPhanHoi
             // 
@@ -170,7 +181,6 @@
             NguoiPhanHoi.MinimumWidth = 6;
             NguoiPhanHoi.Name = "NguoiPhanHoi";
             NguoiPhanHoi.ReadOnly = true;
-            NguoiPhanHoi.Width = 170;
             // 
             // NgayYeuCau
             // 
@@ -178,7 +188,6 @@
             NgayYeuCau.MinimumWidth = 6;
             NgayYeuCau.Name = "NgayYeuCau";
             NgayYeuCau.ReadOnly = true;
-            NgayYeuCau.Width = 170;
             // 
             // NgayPhanHoi
             // 
@@ -186,7 +195,6 @@
             NgayPhanHoi.MinimumWidth = 6;
             NgayPhanHoi.Name = "NgayPhanHoi";
             NgayPhanHoi.ReadOnly = true;
-            NgayPhanHoi.Width = 170;
             // 
             // UC_YKienDongGop
             // 

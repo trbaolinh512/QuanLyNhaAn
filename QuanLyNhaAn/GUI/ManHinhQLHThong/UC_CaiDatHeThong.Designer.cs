@@ -63,6 +63,7 @@
             // 
             // groupBox3
             // 
+            groupBox3.BackColor = Color.FromArgb(192, 192, 0);
             groupBox3.Controls.Add(label21);
             groupBox3.Controls.Add(txbTienCBGVSang);
             groupBox3.Controls.Add(txbTienCBGVToi);
@@ -180,6 +181,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.BackColor = Color.FromArgb(128, 128, 255);
             groupBox2.Controls.Add(label19);
             groupBox2.Controls.Add(txbTienHVToi);
             groupBox2.Controls.Add(label20);
@@ -297,6 +299,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.LightSeaGreen;
             groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(dtpHanSang);
             groupBox1.Controls.Add(label10);

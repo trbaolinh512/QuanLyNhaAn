@@ -1,4 +1,6 @@
-﻿namespace QuanLyNhaAn.GUI.ManHinhQLHThong
+﻿using System.Windows.Forms;
+
+namespace QuanLyNhaAn.GUI.ManHinhQLHThong
 {
     partial class UC_QLyChucVu
     {
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             btnXoa = new Button();
             btnThem = new Button();
             ckbBaoCom = new CheckBox();
@@ -120,6 +123,18 @@
             // 
             dgvChucVu.AllowUserToAddRows = false;
             dgvChucVu.AllowUserToDeleteRows = false;
+            dgvChucVu.BackgroundColor = Color.White;
+            //Set header data grid view
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvChucVu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvChucVu.EnableHeadersVisualStyles = false;
+
             dgvChucVu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvChucVu.Columns.AddRange(new DataGridViewColumn[] { Id, STT, ChucVu, LaHocVien, CoQuyenBaoCom });
             dgvChucVu.Location = new Point(3, 26);
@@ -138,26 +153,29 @@
             Id.Name = "Id";
             Id.ReadOnly = true;
             Id.Visible = false;
-            Id.Width = 125;
+            Id.Width = 6;
             // 
             // STT
             // 
+            STT.FillWeight = 35.5665436F;
             STT.HeaderText = "STT";
             STT.MinimumWidth = 6;
             STT.Name = "STT";
             STT.ReadOnly = true;
-            STT.Width = 125;
+            STT.Width = 50;
             // 
             // ChucVu
             // 
+            ChucVu.FillWeight = 32.484108F;
             ChucVu.HeaderText = "Chức vụ";
             ChucVu.MinimumWidth = 6;
             ChucVu.Name = "ChucVu";
             ChucVu.ReadOnly = true;
-            ChucVu.Width = 150;
+            ChucVu.Width = 226;
             // 
             // LaHocVien
             // 
+            LaHocVien.FillWeight = 32.484108F;
             LaHocVien.HeaderText = "Là học viên";
             LaHocVien.MinimumWidth = 6;
             LaHocVien.Name = "LaHocVien";
@@ -166,6 +184,7 @@
             // 
             // CoQuyenBaoCom
             // 
+            CoQuyenBaoCom.FillWeight = 299.46524F;
             CoQuyenBaoCom.HeaderText = "Có quyền báo cơm";
             CoQuyenBaoCom.MinimumWidth = 6;
             CoQuyenBaoCom.Name = "CoQuyenBaoCom";
