@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_TrangChu));
             lblNgayHomNay = new Label();
             lblSuatHocVienSang = new Label();
             lblSuatCBGVSang = new Label();
@@ -51,17 +52,19 @@
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
             groupBox3 = new GroupBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvHocVien).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCBGV).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblNgayHomNay
             // 
             lblNgayHomNay.AutoSize = true;
-            lblNgayHomNay.Location = new Point(17, 11);
+            lblNgayHomNay.Location = new Point(17, 85);
             lblNgayHomNay.Name = "lblNgayHomNay";
             lblNgayHomNay.Size = new Size(50, 20);
             lblNgayHomNay.TabIndex = 0;
@@ -96,8 +99,9 @@
             // 
             // dgvHocVien
             // 
-
-            //Set header data grid view
+            dgvHocVien.AllowUserToAddRows = false;
+            dgvHocVien.AllowUserToDeleteRows = false;
+            dgvHocVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -106,14 +110,10 @@
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvHocVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvHocVien.EnableHeadersVisualStyles = false;
-
-            dgvHocVien.AllowUserToAddRows = false;
-            dgvHocVien.AllowUserToDeleteRows = false;
-            dgvHocVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvHocVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvHocVien.Columns.AddRange(new DataGridViewColumn[] { STT, Lop, SoSuatAn });
-            dgvHocVien.Location = new Point(32, 209);
+            dgvHocVien.EnableHeadersVisualStyles = false;
+            dgvHocVien.Location = new Point(32, 283);
             dgvHocVien.Name = "dgvHocVien";
             dgvHocVien.RowHeadersWidth = 51;
             dgvHocVien.RowTemplate.Height = 29;
@@ -143,15 +143,14 @@
             // 
             // dgvCBGV
             // 
-            dgvCBGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvCBGV.EnableHeadersVisualStyles = false;
-
             dgvCBGV.AllowUserToAddRows = false;
             dgvCBGV.AllowUserToDeleteRows = false;
             dgvCBGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCBGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCBGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCBGV.Columns.AddRange(new DataGridViewColumn[] { STT1, Phong, Khoa, SoSuatAnCBGV });
-            dgvCBGV.Location = new Point(742, 209);
+            dgvCBGV.EnableHeadersVisualStyles = false;
+            dgvCBGV.Location = new Point(742, 283);
             dgvCBGV.Name = "dgvCBGV";
             dgvCBGV.RowHeadersWidth = 51;
             dgvCBGV.RowTemplate.Height = 29;
@@ -244,7 +243,7 @@
             groupBox1.Controls.Add(lblSuatHocVienSang);
             groupBox1.Controls.Add(lblSuatCBGVSang);
             groupBox1.Controls.Add(lblSuatTongQuatSang);
-            groupBox1.Location = new Point(17, 48);
+            groupBox1.Location = new Point(17, 122);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(250, 125);
             groupBox1.TabIndex = 12;
@@ -256,7 +255,7 @@
             groupBox2.Controls.Add(lblSuatHocVienTrua);
             groupBox2.Controls.Add(lblSuatCBGVTrua);
             groupBox2.Controls.Add(lblSuatTongQuatTrua);
-            groupBox2.Location = new Point(308, 48);
+            groupBox2.Location = new Point(308, 122);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(250, 125);
             groupBox2.TabIndex = 13;
@@ -268,12 +267,22 @@
             groupBox3.Controls.Add(lblSuatHocVienToi);
             groupBox3.Controls.Add(lblSuatCBGVToi);
             groupBox3.Controls.Add(lblSuatTongQuatToi);
-            groupBox3.Location = new Point(598, 48);
+            groupBox3.Location = new Point(598, 122);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(250, 125);
             groupBox3.TabIndex = 14;
             groupBox3.TabStop = false;
             groupBox3.Text = "Buổi tối";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1653, 1033);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 15;
+            pictureBox1.TabStop = false;
             // 
             // UC_TrangChu
             // 
@@ -285,8 +294,9 @@
             Controls.Add(dgvCBGV);
             Controls.Add(dgvHocVien);
             Controls.Add(lblNgayHomNay);
+            Controls.Add(pictureBox1);
             Name = "UC_TrangChu";
-            Size = new Size(1615, 958);
+            Size = new Size(1647, 1033);
             ((System.ComponentModel.ISupportInitialize)dgvHocVien).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvCBGV).EndInit();
             groupBox1.ResumeLayout(false);
@@ -295,6 +305,7 @@
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -323,5 +334,6 @@
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
+        private PictureBox pictureBox1;
     }
 }

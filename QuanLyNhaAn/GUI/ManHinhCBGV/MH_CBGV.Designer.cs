@@ -108,9 +108,9 @@
             // pnlHienThi
             // 
             pnlHienThi.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pnlHienThi.Location = new Point(275, 63);
+            pnlHienThi.Location = new Point(256, -2);
             pnlHienThi.Name = "pnlHienThi";
-            pnlHienThi.Size = new Size(1615, 958);
+            pnlHienThi.Size = new Size(1647, 1035);
             pnlHienThi.TabIndex = 5;
             // 
             // panel1
@@ -212,7 +212,7 @@
             Controls.Add(pnlHienThi);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MH_CBGV";
-            Text = "Hệ thống báo cơm";
+            Text = "Phần mềm đăng ký suất ăn T07";
             FormClosing += MH_CBGV_FormClosing;
             Click += pnlUser_Click;
             panel1.ResumeLayout(false);

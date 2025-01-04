@@ -138,9 +138,9 @@
             // pnlHienThi
             // 
             pnlHienThi.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pnlHienThi.Location = new Point(266, 62);
+            pnlHienThi.Location = new Point(256, 0);
             pnlHienThi.Name = "pnlHienThi";
-            pnlHienThi.Size = new Size(1638, 971);
+            pnlHienThi.Size = new Size(1638, 1033);
             pnlHienThi.TabIndex = 11;
             // 
             // txtTieuDe
@@ -217,12 +217,12 @@
             BackColor = Color.White;
             ClientSize = new Size(1902, 1033);
             Controls.Add(flowLayoutPanel1);
-            Controls.Add(pnlHienThi);
             Controls.Add(txtTieuDe);
             Controls.Add(panel10);
+            Controls.Add(pnlHienThi);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MH_LPHCan";
-            Text = "Hệ thống báo cơm";
+            Text = "Phần mềm đăng ký suất ăn T07";
             FormClosing += MH_LPHCan_FormClosing;
             flowLayoutPanel1.ResumeLayout(false);
             panel10.ResumeLayout(false);

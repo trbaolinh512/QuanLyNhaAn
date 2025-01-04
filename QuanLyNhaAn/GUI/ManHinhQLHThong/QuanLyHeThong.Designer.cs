@@ -217,7 +217,7 @@
             // 
             txbTitle.AutoSize = true;
             txbTitle.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            txbTitle.Location = new Point(264, 0);
+            txbTitle.Location = new Point(263, 2);
             txbTitle.Name = "txbTitle";
             txbTitle.Size = new Size(399, 54);
             txbTitle.TabIndex = 34;
@@ -225,9 +225,9 @@
             // 
             // pnlHienThi
             // 
-            pnlHienThi.Location = new Point(265, 57);
+            pnlHienThi.Location = new Point(256, 0);
             pnlHienThi.Name = "pnlHienThi";
-            pnlHienThi.Size = new Size(1615, 958);
+            pnlHienThi.Size = new Size(1648, 1034);
             pnlHienThi.TabIndex = 35;
             // 
             // QuanLyHeThong
@@ -236,10 +236,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1902, 1033);
-            Controls.Add(pnlHienThi);
             Controls.Add(txbTitle);
             Controls.Add(panel10);
             Controls.Add(panel1);
+            Controls.Add(pnlHienThi);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "QuanLyHeThong";
             Text = "Quản lý người dùng";

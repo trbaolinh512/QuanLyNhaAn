@@ -31,6 +31,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_QLyChucVu));
             btnXoa = new Button();
             btnThem = new Button();
             ckbBaoCom = new CheckBox();
@@ -44,36 +45,40 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             ChucVu = new DataGridViewTextBoxColumn();
             LaHocVien = new DataGridViewCheckBoxColumn();
             CoQuyenBaoCom = new DataGridViewCheckBoxColumn();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvChucVu).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnXoa
             // 
+            btnXoa.BackColor = Color.Red;
             btnXoa.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnXoa.Location = new Point(833, 140);
+            btnXoa.Location = new Point(833, 196);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(101, 29);
             btnXoa.TabIndex = 41;
             btnXoa.Text = "Xóa";
-            btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.UseVisualStyleBackColor = false;
             btnXoa.Click += btnXoa_Click;
             // 
             // btnThem
             // 
+            btnThem.BackColor = Color.DodgerBlue;
             btnThem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnThem.Location = new Point(833, 59);
+            btnThem.Location = new Point(833, 115);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(101, 29);
             btnThem.TabIndex = 40;
             btnThem.Text = "Thêm";
-            btnThem.UseVisualStyleBackColor = true;
+            btnThem.UseVisualStyleBackColor = false;
             btnThem.Click += btnThem_Click;
             // 
             // ckbBaoCom
             // 
             ckbBaoCom.AutoSize = true;
             ckbBaoCom.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            ckbBaoCom.Location = new Point(653, 140);
+            ckbBaoCom.Location = new Point(653, 196);
             ckbBaoCom.Name = "ckbBaoCom";
             ckbBaoCom.Size = new Size(167, 24);
             ckbBaoCom.TabIndex = 39;
@@ -84,7 +89,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             ckbLaHocVien.AutoSize = true;
             ckbLaHocVien.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            ckbLaHocVien.Location = new Point(653, 101);
+            ckbLaHocVien.Location = new Point(653, 157);
             ckbLaHocVien.Name = "ckbLaHocVien";
             ckbLaHocVien.Size = new Size(116, 24);
             ckbLaHocVien.TabIndex = 38;
@@ -93,20 +98,21 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             // btnChinhSua
             // 
+            btnChinhSua.BackColor = Color.Lime;
             btnChinhSua.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnChinhSua.Location = new Point(833, 101);
+            btnChinhSua.Location = new Point(833, 157);
             btnChinhSua.Name = "btnChinhSua";
             btnChinhSua.Size = new Size(101, 29);
             btnChinhSua.TabIndex = 37;
             btnChinhSua.Text = "Chỉnh sửa";
-            btnChinhSua.UseVisualStyleBackColor = true;
+            btnChinhSua.UseVisualStyleBackColor = false;
             btnChinhSua.Click += btnChinhSua_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(653, 40);
+            label2.Location = new Point(653, 96);
             label2.Name = "label2";
             label2.Size = new Size(61, 20);
             label2.TabIndex = 36;
@@ -114,7 +120,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             // txbChucVu
             // 
-            txbChucVu.Location = new Point(653, 68);
+            txbChucVu.Location = new Point(653, 124);
             txbChucVu.Name = "txbChucVu";
             txbChucVu.Size = new Size(167, 27);
             txbChucVu.TabIndex = 35;
@@ -124,7 +130,6 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             dgvChucVu.AllowUserToAddRows = false;
             dgvChucVu.AllowUserToDeleteRows = false;
             dgvChucVu.BackgroundColor = Color.White;
-            //Set header data grid view
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -133,16 +138,15 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvChucVu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvChucVu.EnableHeadersVisualStyles = false;
-
             dgvChucVu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvChucVu.Columns.AddRange(new DataGridViewColumn[] { Id, STT, ChucVu, LaHocVien, CoQuyenBaoCom });
-            dgvChucVu.Location = new Point(3, 26);
+            dgvChucVu.EnableHeadersVisualStyles = false;
+            dgvChucVu.Location = new Point(3, 82);
             dgvChucVu.Name = "dgvChucVu";
             dgvChucVu.ReadOnly = true;
             dgvChucVu.RowHeadersWidth = 51;
             dgvChucVu.RowTemplate.Height = 29;
-            dgvChucVu.Size = new Size(605, 773);
+            dgvChucVu.Size = new Size(605, 849);
             dgvChucVu.TabIndex = 34;
             dgvChucVu.CellClick += dgvChucVu_CellClick;
             // 
@@ -191,6 +195,16 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             CoQuyenBaoCom.ReadOnly = true;
             CoQuyenBaoCom.Width = 150;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, -2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1648, 1033);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 42;
+            pictureBox1.TabStop = false;
+            // 
             // UC_QLyChucVu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -204,9 +218,11 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             Controls.Add(label2);
             Controls.Add(txbChucVu);
             Controls.Add(dgvChucVu);
+            Controls.Add(pictureBox1);
             Name = "UC_QLyChucVu";
-            Size = new Size(1615, 958);
+            Size = new Size(1648, 1034);
             ((System.ComponentModel.ISupportInitialize)dgvChucVu).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -226,5 +242,6 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
         private DataGridViewTextBoxColumn ChucVu;
         private DataGridViewCheckBoxColumn LaHocVien;
         private DataGridViewCheckBoxColumn CoQuyenBaoCom;
+        private PictureBox pictureBox1;
     }
 }

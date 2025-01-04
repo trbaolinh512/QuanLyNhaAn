@@ -70,12 +70,14 @@
             // 
             // btnLuu
             // 
+            btnLuu.BackColor = Color.DodgerBlue;
+            btnLuu.ForeColor = Color.Black;
             btnLuu.Location = new Point(264, 309);
             btnLuu.Name = "btnLuu";
             btnLuu.Size = new Size(133, 29);
             btnLuu.TabIndex = 43;
             btnLuu.Text = "Lưu thông tin";
-            btnLuu.UseVisualStyleBackColor = true;
+            btnLuu.UseVisualStyleBackColor = false;
             btnLuu.Click += btnLuu_Click;
             // 
             // txbMaND
@@ -261,12 +263,14 @@
             // 
             // btnDoiMatKhau
             // 
+            btnDoiMatKhau.BackColor = Color.DodgerBlue;
+            btnDoiMatKhau.ForeColor = Color.Black;
             btnDoiMatKhau.Location = new Point(205, 142);
             btnDoiMatKhau.Name = "btnDoiMatKhau";
             btnDoiMatKhau.Size = new Size(133, 29);
             btnDoiMatKhau.TabIndex = 47;
             btnDoiMatKhau.Text = "Đổi mật khẩu";
-            btnDoiMatKhau.UseVisualStyleBackColor = true;
+            btnDoiMatKhau.UseVisualStyleBackColor = false;
             btnDoiMatKhau.Click += btnDoiMatKhau_Click;
             // 
             // txbMKMoi

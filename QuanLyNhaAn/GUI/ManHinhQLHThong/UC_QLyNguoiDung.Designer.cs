@@ -31,6 +31,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_QLyNguoiDung));
             btnLamMoi = new Button();
             btnXoa = new Button();
             btnTimKiem = new Button();
@@ -48,7 +49,6 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             txbDonVi = new TextBox();
             txbKhoaHoc = new TextBox();
             txbLopHoc = new TextBox();
-            txbHoTen = new TextBox();
             label10 = new Label();
             label9 = new Label();
             label8 = new Label();
@@ -59,6 +59,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             lbLop = new Label();
             label2 = new Label();
             label3 = new Label();
+            txbHoTen = new TextBox();
             dgvNguoiDung = new DataGridView();
             Id = new DataGridViewTextBoxColumn();
             STT = new DataGridViewTextBoxColumn();
@@ -70,75 +71,83 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             DonVi = new DataGridViewTextBoxColumn();
             ChucVuID = new DataGridViewTextBoxColumn();
             TrangThai = new DataGridViewTextBoxColumn();
+            pictureBox1 = new PictureBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNguoiDung).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnLamMoi
             // 
-            btnLamMoi.Location = new Point(763, 75);
+            btnLamMoi.BackColor = Color.Yellow;
+            btnLamMoi.Location = new Point(763, 144);
             btnLamMoi.Name = "btnLamMoi";
             btnLamMoi.Size = new Size(135, 29);
             btnLamMoi.TabIndex = 40;
             btnLamMoi.Text = "Làm mới";
-            btnLamMoi.UseVisualStyleBackColor = true;
+            btnLamMoi.UseVisualStyleBackColor = false;
             btnLamMoi.Click += btnLamMoi_Click;
             // 
             // btnXoa
             // 
-            btnXoa.Location = new Point(658, 168);
+            btnXoa.BackColor = Color.Red;
+            btnXoa.Location = new Point(658, 237);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(84, 29);
             btnXoa.TabIndex = 39;
             btnXoa.Text = "Xóa";
-            btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.UseVisualStyleBackColor = false;
             btnXoa.Click += btnXoa_Click;
             // 
             // btnTimKiem
             // 
-            btnTimKiem.Location = new Point(921, 25);
+            btnTimKiem.BackColor = Color.FromArgb(255, 128, 0);
+            btnTimKiem.Location = new Point(921, 94);
             btnTimKiem.Name = "btnTimKiem";
             btnTimKiem.Size = new Size(94, 29);
             btnTimKiem.TabIndex = 42;
             btnTimKiem.Text = "Tìm kiếm";
-            btnTimKiem.UseVisualStyleBackColor = true;
+            btnTimKiem.UseVisualStyleBackColor = false;
             btnTimKiem.Click += btnTimKiem_Click;
             // 
             // btnThem
             // 
-            btnThem.Location = new Point(658, 75);
+            btnThem.BackColor = Color.DodgerBlue;
+            btnThem.Location = new Point(658, 144);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(84, 29);
             btnThem.TabIndex = 38;
             btnThem.Text = "Thêm";
-            btnThem.UseVisualStyleBackColor = true;
+            btnThem.UseVisualStyleBackColor = false;
             btnThem.Click += btnThem_Click;
             // 
             // txbTimKiem
             // 
-            txbTimKiem.Location = new Point(658, 25);
+            txbTimKiem.Location = new Point(658, 94);
             txbTimKiem.Name = "txbTimKiem";
             txbTimKiem.Size = new Size(243, 27);
             txbTimKiem.TabIndex = 41;
             // 
             // btnChuyen
             // 
-            btnChuyen.Location = new Point(763, 125);
+            btnChuyen.BackColor = Color.FromArgb(0, 192, 192);
+            btnChuyen.Location = new Point(763, 194);
             btnChuyen.Name = "btnChuyen";
             btnChuyen.Size = new Size(135, 29);
             btnChuyen.TabIndex = 37;
             btnChuyen.Text = "Chuyển trạng thái";
-            btnChuyen.UseVisualStyleBackColor = true;
+            btnChuyen.UseVisualStyleBackColor = false;
             btnChuyen.Click += btnChuyen_Click;
             // 
             // btnSua
             // 
-            btnSua.Location = new Point(658, 124);
+            btnSua.BackColor = Color.Lime;
+            btnSua.Location = new Point(658, 193);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(84, 29);
             btnSua.TabIndex = 36;
             btnSua.Text = "Chỉnh sửa";
-            btnSua.UseVisualStyleBackColor = true;
+            btnSua.UseVisualStyleBackColor = false;
             btnSua.Click += btnSua_Click;
             // 
             // groupBox1
@@ -152,7 +161,6 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             groupBox1.Controls.Add(txbDonVi);
             groupBox1.Controls.Add(txbKhoaHoc);
             groupBox1.Controls.Add(txbLopHoc);
-            groupBox1.Controls.Add(txbHoTen);
             groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(label8);
@@ -163,8 +171,9 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             groupBox1.Controls.Add(lbLop);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(txbHoTen);
             groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(24, 15);
+            groupBox1.Location = new Point(24, 84);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(609, 278);
             groupBox1.TabIndex = 35;
@@ -235,13 +244,6 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             txbLopHoc.Name = "txbLopHoc";
             txbLopHoc.Size = new Size(171, 27);
             txbLopHoc.TabIndex = 11;
-            // 
-            // txbHoTen
-            // 
-            txbHoTen.Location = new Point(84, 27);
-            txbHoTen.Name = "txbHoTen";
-            txbHoTen.Size = new Size(171, 27);
-            txbHoTen.TabIndex = 10;
             // 
             // label10
             // 
@@ -327,11 +329,18 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 29);
+            label3.Location = new Point(6, 29);
             label3.Name = "label3";
             label3.Size = new Size(73, 20);
             label3.TabIndex = 0;
             label3.Text = "Họ và tên";
+            // 
+            // txbHoTen
+            // 
+            txbHoTen.Location = new Point(84, 27);
+            txbHoTen.Name = "txbHoTen";
+            txbHoTen.Size = new Size(171, 27);
+            txbHoTen.TabIndex = 10;
             // 
             // dgvNguoiDung
             // 
@@ -345,10 +354,10 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvNguoiDung.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvNguoiDung.EnableHeadersVisualStyles = false;
             dgvNguoiDung.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvNguoiDung.Columns.AddRange(new DataGridViewColumn[] { Id, STT, HoTen, MaNguoiDung, Lop, Phong, Khoa, DonVi, ChucVuID, TrangThai });
-            dgvNguoiDung.Location = new Point(10, 303);
+            dgvNguoiDung.EnableHeadersVisualStyles = false;
+            dgvNguoiDung.Location = new Point(10, 372);
             dgvNguoiDung.Name = "dgvNguoiDung";
             dgvNguoiDung.RowHeadersWidth = 51;
             dgvNguoiDung.RowTemplate.Height = 29;
@@ -436,11 +445,22 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             TrangThai.ReadOnly = true;
             TrangThai.Width = 155;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1648, 1034);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 43;
+            pictureBox1.TabStop = false;
+            // 
             // UC_QLyNguoiDung
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(groupBox1);
             Controls.Add(btnLamMoi);
             Controls.Add(btnXoa);
             Controls.Add(btnTimKiem);
@@ -448,13 +468,14 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             Controls.Add(txbTimKiem);
             Controls.Add(btnChuyen);
             Controls.Add(btnSua);
-            Controls.Add(groupBox1);
             Controls.Add(dgvNguoiDung);
+            Controls.Add(pictureBox1);
             Name = "UC_QLyNguoiDung";
-            Size = new Size(1615, 958);
+            Size = new Size(1648, 1034);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNguoiDung).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -500,5 +521,6 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
         private DataGridViewTextBoxColumn DonVi;
         private DataGridViewTextBoxColumn ChucVuID;
         private DataGridViewTextBoxColumn TrangThai;
+        private PictureBox pictureBox1;
     }
 }

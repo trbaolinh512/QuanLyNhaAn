@@ -47,22 +47,25 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(457, 19);
+            label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(444, 31);
             label3.Name = "label3";
-            label3.Size = new Size(264, 46);
+            label3.Size = new Size(178, 31);
             label3.TabIndex = 23;
             label3.Text = "Quên mật khẩu";
             // 
             // btnLogin
             // 
+            btnLogin.BackColor = Color.DodgerBlue;
             btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogin.ForeColor = Color.Black;
             btnLogin.Location = new Point(489, 222);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(160, 37);
             btnLogin.TabIndex = 20;
             btnLogin.Text = "Gửi yêu cầu";
-            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
             // pictureBox3

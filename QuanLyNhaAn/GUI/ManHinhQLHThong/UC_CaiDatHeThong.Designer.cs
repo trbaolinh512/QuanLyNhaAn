@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CaiDatHeThong));
             groupBox3 = new GroupBox();
             label21 = new Label();
             txbTienCBGVSang = new TextBox();
@@ -56,9 +57,11 @@
             dtpHanTruaToi = new DateTimePicker();
             label12 = new Label();
             btnLuu = new Button();
+            pictureBox1 = new PictureBox();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // groupBox3
@@ -74,7 +77,7 @@
             groupBox3.Controls.Add(label24);
             groupBox3.Controls.Add(txbTienCBGVTrua);
             groupBox3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox3.Location = new Point(255, 371);
+            groupBox3.Location = new Point(255, 399);
             groupBox3.Margin = new Padding(4, 3, 4, 3);
             groupBox3.Name = "groupBox3";
             groupBox3.Padding = new Padding(4, 3, 4, 3);
@@ -192,7 +195,7 @@
             groupBox2.Controls.Add(txbTienHVSang);
             groupBox2.Controls.Add(label15);
             groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox2.Location = new Point(255, 68);
+            groupBox2.Location = new Point(255, 96);
             groupBox2.Margin = new Padding(4, 3, 4, 3);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(4, 3, 4, 3);
@@ -307,7 +310,7 @@
             groupBox1.Controls.Add(dtpHanTruaToi);
             groupBox1.Controls.Add(label12);
             groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox1.Location = new Point(894, 68);
+            groupBox1.Location = new Point(894, 96);
             groupBox1.Margin = new Padding(4, 3, 4, 3);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4, 3, 4, 3);
@@ -388,15 +391,26 @@
             // 
             // btnLuu
             // 
-            btnLuu.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLuu.Location = new Point(747, 661);
+            btnLuu.BackColor = Color.DodgerBlue;
+            btnLuu.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLuu.Location = new Point(997, 470);
             btnLuu.Margin = new Padding(4, 3, 4, 3);
             btnLuu.Name = "btnLuu";
-            btnLuu.Size = new Size(129, 41);
+            btnLuu.Size = new Size(320, 99);
             btnLuu.TabIndex = 28;
-            btnLuu.Text = "Lưu";
-            btnLuu.UseVisualStyleBackColor = true;
+            btnLuu.Text = "Lưu cài đặt";
+            btnLuu.UseVisualStyleBackColor = false;
             btnLuu.Click += btnLuu_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1648, 1034);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 32;
+            pictureBox1.TabStop = false;
             // 
             // UC_CaiDatHeThong
             // 
@@ -407,16 +421,18 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(btnLuu);
+            Controls.Add(pictureBox1);
             Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             Margin = new Padding(4, 3, 4, 3);
             Name = "UC_CaiDatHeThong";
-            Size = new Size(1615, 958);
+            Size = new Size(1648, 1034);
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -450,5 +466,6 @@
         private DateTimePicker dtpHanTruaToi;
         private Label label12;
         private Button btnLuu;
+        private PictureBox pictureBox1;
     }
 }

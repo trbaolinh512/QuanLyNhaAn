@@ -63,7 +63,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(523, 77);
+            label1.Location = new Point(518, 78);
             label1.Name = "label1";
             label1.Size = new Size(103, 28);
             label1.TabIndex = 1;
@@ -73,7 +73,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(523, 151);
+            label2.Location = new Point(518, 152);
             label2.Name = "label2";
             label2.Size = new Size(102, 28);
             label2.TabIndex = 2;
@@ -82,7 +82,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             // txbTaiKhoan
             // 
             txbTaiKhoan.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txbTaiKhoan.Location = new Point(523, 108);
+            txbTaiKhoan.Location = new Point(518, 109);
             txbTaiKhoan.Name = "txbTaiKhoan";
             txbTaiKhoan.Size = new Size(176, 34);
             txbTaiKhoan.TabIndex = 3;
@@ -90,7 +90,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             // txtPassword
             // 
             txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPassword.Location = new Point(523, 182);
+            txtPassword.Location = new Point(518, 183);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(176, 34);
             txtPassword.TabIndex = 4;
@@ -100,7 +100,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             // 
             btnQuenMK.AutoSize = true;
             btnQuenMK.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnQuenMK.Location = new Point(649, 227);
+            btnQuenMK.Location = new Point(644, 228);
             btnQuenMK.Name = "btnQuenMK";
             btnQuenMK.Size = new Size(145, 28);
             btnQuenMK.TabIndex = 5;
@@ -112,7 +112,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.InitialImage = null;
-            pictureBox2.Location = new Point(479, 109);
+            pictureBox2.Location = new Point(474, 110);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(31, 29);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -122,7 +122,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(479, 182);
+            pictureBox3.Location = new Point(474, 183);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(31, 29);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -131,19 +131,21 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             // 
             // btnLogin
             // 
+            btnLogin.BackColor = Color.DodgerBlue;
             btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLogin.Location = new Point(523, 224);
+            btnLogin.ForeColor = Color.Black;
+            btnLogin.Location = new Point(518, 225);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(120, 41);
             btnLogin.TabIndex = 8;
             btnLogin.Text = "Đăng nhập";
-            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
             // ckbViewPass
             // 
             ckbViewPass.AutoSize = true;
-            ckbViewPass.Location = new Point(719, 184);
+            ckbViewPass.Location = new Point(714, 185);
             ckbViewPass.Name = "ckbViewPass";
             ckbViewPass.Size = new Size(18, 17);
             ckbViewPass.TabIndex = 9;
@@ -154,7 +156,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.InitialImage = null;
-            pictureBox4.Location = new Point(743, 177);
+            pictureBox4.Location = new Point(738, 178);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(31, 29);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -164,12 +166,13 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(461, 19);
+            label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(446, 22);
             label3.Name = "label3";
-            label3.Size = new Size(194, 46);
+            label3.Size = new Size(343, 31);
             label3.TabIndex = 11;
-            label3.Text = "Đăng nhập";
+            label3.Text = "Phần mềm đăng kí suất ăn T07";
             // 
             // DangNhap
             // 

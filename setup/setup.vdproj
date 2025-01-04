@@ -15,12 +15,6 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_1723FD6C3EA2460C8C1EC7B3BFD68CD1"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_3F714160EB9C4F6B91732FCA0D7A1373"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -28,7 +22,13 @@
         "Entry"
         {
         "MsmKey" = "8:_7A540600B6BEF606D79CD8014A37F985"
-        "OwnerKey" = "8:_1723FD6C3EA2460C8C1EC7B3BFD68CD1"
+        "OwnerKey" = "8:_9E0B572D94DF4DCFA02370AB38FD69A4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9E0B572D94DF4DCFA02370AB38FD69A4"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -64,7 +64,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1723FD6C3EA2460C8C1EC7B3BFD68CD1"
+        "OwnerKey" = "8:_9E0B572D94DF4DCFA02370AB38FD69A4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -170,37 +170,6 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1723FD6C3EA2460C8C1EC7B3BFD68CD1"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.Vbe.Interop, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_1723FD6C3EA2460C8C1EC7B3BFD68CD1"
-                    {
-                    "Name" = "8:Microsoft.Vbe.Interop.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\QuanLyNhaAn\\Libs\\Microsoft.Vbe.Interop.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_A1D51CDAC8F84FAD9FEF863FEBDDEF8E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3F714160EB9C4F6B91732FCA0D7A1373"
             {
             "SourcePath" = "8:C:\\Users\\DELL PC\\Downloads\\Icon\\Logo_dai_hoc_hau_can_CAND.ico"
@@ -250,6 +219,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9E0B572D94DF4DCFA02370AB38FD69A4"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.Vbe.Interop, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_9E0B572D94DF4DCFA02370AB38FD69A4"
+                    {
+                    "Name" = "8:Microsoft.Vbe.Interop.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\QuanLyNhaAn\\Libs\\Microsoft.Vbe.Interop.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_A1D51CDAC8F84FAD9FEF863FEBDDEF8E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B8491EFDFD4049919FDF0AFDA76176B3"
@@ -360,7 +360,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Quan ly nha an"
         "ProductCode" = "8:{EE1416CA-9DD2-4119-8F97-F3FCBDA5C11D}"
-        "PackageCode" = "8:{79CA67A9-14E8-4B7B-B99F-1488184AA050}"
+        "PackageCode" = "8:{CD19004D-8468-42B5-8169-5681993E7870}"
         "UpgradeCode" = "8:{B30C2B99-0BD1-43E0-AD1F-1DBA1F67BCC5}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

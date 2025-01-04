@@ -50,7 +50,7 @@
             // 
             txtTieuDe.AutoSize = true;
             txtTieuDe.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            txtTieuDe.Location = new Point(264, 3);
+            txtTieuDe.Location = new Point(276, 3);
             txtTieuDe.Name = "txtTieuDe";
             txtTieuDe.Size = new Size(353, 54);
             txtTieuDe.TabIndex = 4;
@@ -58,9 +58,9 @@
             // 
             // pnlHienThi
             // 
-            pnlHienThi.Location = new Point(264, 63);
+            pnlHienThi.Location = new Point(256, 0);
             pnlHienThi.Name = "pnlHienThi";
-            pnlHienThi.Size = new Size(1615, 958);
+            pnlHienThi.Size = new Size(1647, 1035);
             pnlHienThi.TabIndex = 5;
             // 
             // flowLayoutPanel1
@@ -196,11 +196,11 @@
             ClientSize = new Size(1902, 1033);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(panel10);
-            Controls.Add(pnlHienThi);
             Controls.Add(txtTieuDe);
+            Controls.Add(pnlHienThi);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MH_HVien";
-            Text = "Hệ thống báo cơm";
+            Text = "Phần mềm đăng ký suất ăn T07";
             FormClosing += MH_HVien_FormClosing;
             flowLayoutPanel1.ResumeLayout(false);
             panel10.ResumeLayout(false);

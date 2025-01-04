@@ -50,9 +50,9 @@
             // 
             // pnlHienThi
             // 
-            pnlHienThi.Location = new Point(265, 65);
+            pnlHienThi.Location = new Point(255, 0);
             pnlHienThi.Name = "pnlHienThi";
-            pnlHienThi.Size = new Size(1615, 958);
+            pnlHienThi.Size = new Size(1647, 1033);
             pnlHienThi.TabIndex = 5;
             // 
             // panel10
