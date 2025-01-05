@@ -138,7 +138,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // button7
             // 
             button7.BackColor = Color.FromArgb(2, 136, 209);
-            button7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button7.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
             button7.ForeColor = Color.White;
             button7.Location = new Point(731, 11);
             button7.Name = "button7";
@@ -150,7 +150,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // button6
             // 
             button6.BackColor = Color.FromArgb(2, 136, 209);
-            button6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button6.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
             button6.ForeColor = Color.White;
             button6.Location = new Point(615, 11);
             button6.Name = "button6";
@@ -162,7 +162,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // button5
             // 
             button5.BackColor = Color.FromArgb(2, 136, 209);
-            button5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
             button5.ForeColor = Color.White;
             button5.Location = new Point(499, 11);
             button5.Name = "button5";
@@ -174,7 +174,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // button4
             // 
             button4.BackColor = Color.FromArgb(2, 136, 209);
-            button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
             button4.ForeColor = Color.White;
             button4.Location = new Point(383, 11);
             button4.Name = "button4";
@@ -186,7 +186,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // button3
             // 
             button3.BackColor = Color.FromArgb(2, 136, 209);
-            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
             button3.Location = new Point(267, 11);
             button3.Name = "button3";
@@ -198,7 +198,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // button2
             // 
             button2.BackColor = Color.FromArgb(2, 136, 209);
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
             button2.Location = new Point(151, 11);
             button2.Name = "button2";
@@ -210,7 +210,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // button1
             // 
             button1.BackColor = Color.FromArgb(2, 136, 209);
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
             button1.Location = new Point(35, 11);
             button1.Name = "button1";
@@ -307,9 +307,9 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // btnLuuLich
             // 
             btnLuuLich.BackColor = Color.DodgerBlue;
-            btnLuuLich.Location = new Point(399, 100);
+            btnLuuLich.Location = new Point(414, 100);
             btnLuuLich.Name = "btnLuuLich";
-            btnLuuLich.Size = new Size(94, 29);
+            btnLuuLich.Size = new Size(107, 39);
             btnLuuLich.TabIndex = 8;
             btnLuuLich.Text = "Lưu lịch";
             btnLuuLich.UseVisualStyleBackColor = false;
@@ -320,7 +320,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             btnLamMoi.BackColor = Color.Yellow;
             btnLamMoi.Location = new Point(299, 100);
             btnLamMoi.Name = "btnLamMoi";
-            btnLamMoi.Size = new Size(94, 29);
+            btnLamMoi.Size = new Size(109, 39);
             btnLamMoi.TabIndex = 9;
             btnLamMoi.Text = "Làm mới";
             btnLamMoi.UseVisualStyleBackColor = false;

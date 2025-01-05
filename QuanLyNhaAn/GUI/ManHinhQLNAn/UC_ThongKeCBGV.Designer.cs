@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ThongKeCBGV));
             btnExcel = new Button();
             cbxPhong = new ComboBox();
@@ -42,8 +42,6 @@
             label1 = new Label();
             btnLamMoi = new Button();
             dgvCBGV = new DataGridView();
-            cbxKhoa = new ComboBox();
-            label4 = new Label();
             groupBox1 = new GroupBox();
             label5 = new Label();
             panel4 = new Panel();
@@ -59,9 +57,10 @@
             // btnExcel
             // 
             btnExcel.BackColor = Color.Lime;
-            btnExcel.Location = new Point(492, 191);
+            btnExcel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            btnExcel.Location = new Point(492, 182);
             btnExcel.Name = "btnExcel";
-            btnExcel.Size = new Size(118, 29);
+            btnExcel.Size = new Size(140, 42);
             btnExcel.TabIndex = 35;
             btnExcel.Text = "Xuất file Excel";
             btnExcel.UseVisualStyleBackColor = false;
@@ -82,16 +81,17 @@
             label34.AutoSize = true;
             label34.Location = new Point(271, 102);
             label34.Name = "label34";
-            label34.Size = new Size(51, 20);
+            label34.Size = new Size(99, 20);
             label34.TabIndex = 33;
-            label34.Text = "Phòng";
+            label34.Text = "Phòng / Khoa";
             // 
             // btnTimKiem
             // 
             btnTimKiem.BackColor = Color.FromArgb(255, 128, 0);
-            btnTimKiem.Location = new Point(270, 191);
+            btnTimKiem.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTimKiem.Location = new Point(270, 182);
             btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.Size = new Size(94, 29);
+            btnTimKiem.Size = new Size(104, 42);
             btnTimKiem.TabIndex = 32;
             btnTimKiem.Text = "Tìm kiếm";
             btnTimKiem.UseVisualStyleBackColor = false;
@@ -155,9 +155,10 @@
             // btnLamMoi
             // 
             btnLamMoi.BackColor = Color.Yellow;
-            btnLamMoi.Location = new Point(380, 191);
+            btnLamMoi.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLamMoi.Location = new Point(380, 182);
             btnLamMoi.Name = "btnLamMoi";
-            btnLamMoi.Size = new Size(94, 29);
+            btnLamMoi.Size = new Size(106, 42);
             btnLamMoi.TabIndex = 25;
             btnLamMoi.Text = "Làm mới";
             btnLamMoi.UseVisualStyleBackColor = false;
@@ -168,14 +169,14 @@
             dgvCBGV.AllowUserToAddRows = false;
             dgvCBGV.AllowUserToDeleteRows = false;
             dgvCBGV.BackgroundColor = Color.White;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(2, 136, 209);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvCBGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvCBGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCBGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCBGV.EnableHeadersVisualStyles = false;
             dgvCBGV.Location = new Point(3, 250);
@@ -184,25 +185,6 @@
             dgvCBGV.RowTemplate.Height = 29;
             dgvCBGV.Size = new Size(1609, 700);
             dgvCBGV.TabIndex = 24;
-            // 
-            // cbxKhoa
-            // 
-            cbxKhoa.FormattingEnabled = true;
-            cbxKhoa.Items.AddRange(new object[] { "" });
-            cbxKhoa.Location = new Point(415, 127);
-            cbxKhoa.Name = "cbxKhoa";
-            cbxKhoa.Size = new Size(120, 28);
-            cbxKhoa.TabIndex = 37;
-            cbxKhoa.SelectedIndexChanged += cbxKhoa_SelectedIndexChanged;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(415, 102);
-            label4.Name = "label4";
-            label4.Size = new Size(43, 20);
-            label4.TabIndex = 36;
-            label4.Text = "Khoa";
             // 
             // groupBox1
             // 
@@ -276,8 +258,6 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(groupBox1);
-            Controls.Add(cbxKhoa);
-            Controls.Add(label4);
             Controls.Add(btnExcel);
             Controls.Add(cbxPhong);
             Controls.Add(label34);
@@ -315,8 +295,6 @@
         private Label label1;
         private Button btnLamMoi;
         private DataGridView dgvCBGV;
-        private ComboBox cbxKhoa;
-        private Label label4;
         private GroupBox groupBox1;
         private Label label5;
         private Panel panel4;

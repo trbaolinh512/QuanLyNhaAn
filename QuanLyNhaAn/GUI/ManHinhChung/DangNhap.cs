@@ -58,9 +58,12 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                     if (chucVuDtos[nguoiDungDto.ChucVuId - 1].CoQuyenBaoCom)
                     {
                         //Man lop pho hau can
-                        MH_LPHCan manhinh = new MH_LPHCan(nguoiDungDto,this);
+                        MH_LPHCan manhinh = new MH_LPHCan(nguoiDungDto, this);
                         manhinh.Show();
                         manhinh.WindowState = FormWindowState.Maximized;
+                        //Xoa du lieu cua o tk mk
+                        txbTaiKhoan.Text = string.Empty;
+                        txtPassword.Text = string.Empty;
                         this.Hide();
                     }
                     else
@@ -69,6 +72,9 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                         MH_HVien manhinh = new MH_HVien(nguoiDungDto, this);
                         manhinh.Show();
                         manhinh.WindowState = FormWindowState.Maximized;
+                        //Xoa du lieu cua o tk mk
+                        txbTaiKhoan.Text = string.Empty;
+                        txtPassword.Text = string.Empty;
                         this.Hide();
                     }
                 }
@@ -80,6 +86,9 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                         QuanLyHeThong qly = new QuanLyHeThong(nguoiDungDto, this);
                         qly.Show();
                         qly.WindowState = FormWindowState.Maximized;
+                        //Xoa du lieu cua o tk mk
+                        txbTaiKhoan.Text = string.Empty;
+                        txtPassword.Text = string.Empty;
                         this.Hide();
                     }
                     else
@@ -90,6 +99,9 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                             MH_QLyNAn manhinh = new MH_QLyNAn(nguoiDungDto, this);
                             manhinh.Show();
                             manhinh.WindowState = FormWindowState.Maximized;
+                            //Xoa du lieu cua o tk mk
+                            txbTaiKhoan.Text = string.Empty;
+                            txtPassword.Text = string.Empty;
                             this.Hide();
                         }
                         else
@@ -98,6 +110,9 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                             MH_CBGV manhinh = new MH_CBGV(nguoiDungDto, this);
                             manhinh.Show();
                             manhinh.WindowState = FormWindowState.Maximized;
+                            //Xoa du lieu cua o tk mk
+                            txbTaiKhoan.Text = string.Empty;
+                            txtPassword.Text = string.Empty;
                             this.Hide();
                         }
                     }
@@ -118,6 +133,14 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             manhinh.Location = location;
             manhinh.Show();
             this.Hide();
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick(); // Gọi sự kiện Click của btnLogin
+            }
         }
     }
 }

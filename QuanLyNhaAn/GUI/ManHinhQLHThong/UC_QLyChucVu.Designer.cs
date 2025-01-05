@@ -40,12 +40,12 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             label2 = new Label();
             txbChucVu = new TextBox();
             dgvChucVu = new DataGridView();
+            pictureBox1 = new PictureBox();
             Id = new DataGridViewTextBoxColumn();
             STT = new DataGridViewTextBoxColumn();
             ChucVu = new DataGridViewTextBoxColumn();
             LaHocVien = new DataGridViewCheckBoxColumn();
             CoQuyenBaoCom = new DataGridViewCheckBoxColumn();
-            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvChucVu).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -53,10 +53,10 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // btnXoa
             // 
             btnXoa.BackColor = Color.Red;
-            btnXoa.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnXoa.Location = new Point(833, 196);
+            btnXoa.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            btnXoa.Location = new Point(833, 207);
             btnXoa.Name = "btnXoa";
-            btnXoa.Size = new Size(101, 29);
+            btnXoa.Size = new Size(113, 44);
             btnXoa.TabIndex = 41;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = false;
@@ -65,10 +65,10 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // btnThem
             // 
             btnThem.BackColor = Color.DodgerBlue;
-            btnThem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnThem.Location = new Point(833, 115);
+            btnThem.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            btnThem.Location = new Point(833, 97);
             btnThem.Name = "btnThem";
-            btnThem.Size = new Size(101, 29);
+            btnThem.Size = new Size(113, 48);
             btnThem.TabIndex = 40;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = false;
@@ -99,10 +99,10 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // btnChinhSua
             // 
             btnChinhSua.BackColor = Color.Lime;
-            btnChinhSua.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnChinhSua.Location = new Point(833, 157);
+            btnChinhSua.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            btnChinhSua.Location = new Point(833, 153);
             btnChinhSua.Name = "btnChinhSua";
-            btnChinhSua.Size = new Size(101, 29);
+            btnChinhSua.Size = new Size(113, 46);
             btnChinhSua.TabIndex = 37;
             btnChinhSua.Text = "Chỉnh sửa";
             btnChinhSua.UseVisualStyleBackColor = false;
@@ -132,7 +132,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             dgvChucVu.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -146,9 +146,19 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             dgvChucVu.ReadOnly = true;
             dgvChucVu.RowHeadersWidth = 51;
             dgvChucVu.RowTemplate.Height = 29;
-            dgvChucVu.Size = new Size(605, 849);
+            dgvChucVu.Size = new Size(644, 849);
             dgvChucVu.TabIndex = 34;
             dgvChucVu.CellClick += dgvChucVu_CellClick;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, -2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1648, 1033);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 42;
+            pictureBox1.TabStop = false;
             // 
             // Id
             // 
@@ -193,17 +203,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             CoQuyenBaoCom.MinimumWidth = 6;
             CoQuyenBaoCom.Name = "CoQuyenBaoCom";
             CoQuyenBaoCom.ReadOnly = true;
-            CoQuyenBaoCom.Width = 150;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, -2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1648, 1033);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 42;
-            pictureBox1.TabStop = false;
+            CoQuyenBaoCom.Width = 200;
             // 
             // UC_QLyChucVu
             // 
@@ -237,11 +237,11 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
         private Label label2;
         private TextBox txbChucVu;
         private DataGridView dgvChucVu;
+        private PictureBox pictureBox1;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn STT;
         private DataGridViewTextBoxColumn ChucVu;
         private DataGridViewCheckBoxColumn LaHocVien;
         private DataGridViewCheckBoxColumn CoQuyenBaoCom;
-        private PictureBox pictureBox1;
     }
 }

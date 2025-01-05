@@ -73,7 +73,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                 stt++;
                 int[] soSuatTongTungPhongKhoa = new int[3] { 0, 0, 0 };//Phục vụ hiển thị data grid view
 
-                List<ThongTinNguoiDungDto> listNguoiDungCungPhongKhoa = thongTinNguoiDungBll.lay_danh_sach_CB_GV_cung_phong_khoa(item.Item1,item.Item2,null);
+                List<ThongTinNguoiDungDto> listNguoiDungCungPhongKhoa = thongTinNguoiDungBll.lay_danh_sach_CB_GV_cung_phong_khoa1(item.Item1,item.Item2,null);
                 int count = listNguoiDungCungPhongKhoa.Count();
                 foreach (ThongTinNguoiDungDto l in listNguoiDungCungPhongKhoa)//Vòng lặp tính từng người ăn bao nhiêu suất trong từng thời điểm
                 {
@@ -98,9 +98,9 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             lblSuatHocVienTrua.Text = "Suất học viên: " + soSuatTongLop[1].ToString();
             lblSuatHocVienToi.Text = "Suất học viên: " + soSuatTongLop[2].ToString();
 
-            lblSuatCBGVSang.Text = "Suất CBGV: " + soSuatTongPhongKhoa[0].ToString();
-            lblSuatCBGVTrua.Text = "Suất CBGV: " + soSuatTongPhongKhoa[1].ToString();
-            lblSuatCBGVToi.Text = "Suất CBGV: " + soSuatTongPhongKhoa[2].ToString();
+            lblSuatCBGVSang.Text = "Suất CB-GV: " + soSuatTongPhongKhoa[0].ToString();
+            lblSuatCBGVTrua.Text = "Suất CB-GV: " + soSuatTongPhongKhoa[1].ToString();
+            lblSuatCBGVToi.Text = "Suất CB-GV: " + soSuatTongPhongKhoa[2].ToString();
 
             soSuatTongLop[0] += soSuatTongPhongKhoa[0];
             soSuatTongLop[1] += soSuatTongPhongKhoa[1];

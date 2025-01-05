@@ -24,19 +24,15 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
 
             ngayHienTai = DateTime.Now;
             ThongTinNguoiDungBll thongTinNguoiDungBll = new ThongTinNguoiDungBll();
-            List<string> dsPhong = thongTinNguoiDungBll.lay_thong_tin_phong();
-            List<string> dsKhoa = thongTinNguoiDungBll.lay_thong_tin_khoa();
+            List<string> dsPhongKhoa = thongTinNguoiDungBll.lay_thong_tin_phong();
+            dsPhongKhoa.AddRange(thongTinNguoiDungBll.lay_thong_tin_khoa());
             listNguoiDung = new List<ThongTinNguoiDungDto>();
 
-            dsPhong.Insert(0, "Tất cả");
-            cbxPhong.DataSource = dsPhong;
+            dsPhongKhoa.Insert(0, "Tất cả");
+            cbxPhong.DataSource = dsPhongKhoa;
             cbxPhong.SelectedIndex = 0;
 
-            dsKhoa.Insert(0, "Tất cả");
-            cbxKhoa.DataSource = dsKhoa;
-            cbxKhoa.SelectedIndex = 0;
-
-            listNguoiDung = thongTinNguoiDungBll.lay_danh_sach_CB_GV_cung_phong_khoa(null, null, null);
+            listNguoiDung = thongTinNguoiDungBll.lay_danh_sach_CB_GV_cung_phong_khoa(null, null);
             HienThiCacNgayTrongThang(dtpThang.Value);
             LoadThongKe(dtpThang.Value);
         }
@@ -268,11 +264,10 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
         {
             try
             {
-                string phong = cbxPhong.SelectedValue == null ? string.Empty : cbxPhong.SelectedValue.ToString();
-                string khoa = cbxKhoa.SelectedValue == null?string.Empty: cbxKhoa.SelectedValue.ToString();
+                string phongKhoa = cbxPhong.SelectedValue == null ? string.Empty : cbxPhong.SelectedValue.ToString();
                 string timKiem = txbTimKiem.Text;
                 ThongTinNguoiDungBll thongTinNguoiDungBll = new ThongTinNguoiDungBll();
-                listNguoiDung = thongTinNguoiDungBll.lay_danh_sach_CB_GV_cung_phong_khoa(phong.Equals("Tất cả") ? null : phong, khoa.Equals("Tất cả") ? null : khoa, timKiem);
+                listNguoiDung = thongTinNguoiDungBll.lay_danh_sach_CB_GV_cung_phong_khoa(phongKhoa.Equals("Tất cả") ? null : phongKhoa, timKiem);
                 HienThiCacNgayTrongThang(dtpThang.Value);
                 LoadThongKe(dtpThang.Value);
             }
@@ -280,30 +275,14 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             
         }
 
-        private void cbxKhoa_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                string phong = cbxPhong.SelectedValue == null ? string.Empty : cbxPhong.SelectedValue.ToString();
-                string khoa = cbxKhoa.SelectedValue == null ? string.Empty : cbxKhoa.SelectedValue.ToString();
-                string timKiem = txbTimKiem.Text;
-                ThongTinNguoiDungBll thongTinNguoiDungBll = new ThongTinNguoiDungBll();
-                listNguoiDung = thongTinNguoiDungBll.lay_danh_sach_CB_GV_cung_phong_khoa(phong.Equals("Tất cả") ? null : phong, khoa.Equals("Tất cả") ? null : khoa, timKiem);
-                HienThiCacNgayTrongThang(dtpThang.Value);
-                LoadThongKe(dtpThang.Value);
-            }
-            catch { }
-        }
-
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             listNguoiDung.Clear();
-            string phong = cbxPhong.SelectedValue.ToString();
-            string khoa = cbxKhoa.SelectedValue.ToString();
+            string phongKhoa = cbxPhong.SelectedValue.ToString();
             string timKiem = txbTimKiem.Text;
 
             ThongTinNguoiDungBll thongTinNguoiDungBll = new ThongTinNguoiDungBll();
-            listNguoiDung = thongTinNguoiDungBll.lay_danh_sach_CB_GV_cung_phong_khoa(phong.Equals("Tất cả")?null:phong, khoa.Equals("Tất cả") ? null : khoa, timKiem);
+            listNguoiDung = thongTinNguoiDungBll.lay_danh_sach_CB_GV_cung_phong_khoa(phongKhoa.Equals("Tất cả")?null: phongKhoa, timKiem);
             HienThiCacNgayTrongThang(dtpThang.Value);
             LoadThongKe(dtpThang.Value);
         }
@@ -312,11 +291,10 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
         {
             listNguoiDung.Clear();
             cbxPhong.SelectedIndex = 0;
-            cbxKhoa.SelectedIndex = 0;
             txbTimKiem.Text = string.Empty;
 
             ThongTinNguoiDungBll thongTinNguoiDungBll = new ThongTinNguoiDungBll();
-            listNguoiDung = thongTinNguoiDungBll.lay_danh_sach_CB_GV_cung_phong_khoa(null,null, null);
+            listNguoiDung = thongTinNguoiDungBll.lay_danh_sach_CB_GV_cung_phong_khoa(null, null);
             HienThiCacNgayTrongThang(dtpThang.Value);
             LoadThongKe(dtpThang.Value);
         }

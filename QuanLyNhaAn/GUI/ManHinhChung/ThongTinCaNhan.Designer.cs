@@ -71,10 +71,11 @@
             // btnLuu
             // 
             btnLuu.BackColor = Color.DodgerBlue;
+            btnLuu.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnLuu.ForeColor = Color.Black;
-            btnLuu.Location = new Point(264, 309);
+            btnLuu.Location = new Point(264, 303);
             btnLuu.Name = "btnLuu";
-            btnLuu.Size = new Size(133, 29);
+            btnLuu.Size = new Size(133, 43);
             btnLuu.TabIndex = 43;
             btnLuu.Text = "Lưu thông tin";
             btnLuu.UseVisualStyleBackColor = false;
@@ -264,10 +265,11 @@
             // btnDoiMatKhau
             // 
             btnDoiMatKhau.BackColor = Color.DodgerBlue;
+            btnDoiMatKhau.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnDoiMatKhau.ForeColor = Color.Black;
-            btnDoiMatKhau.Location = new Point(205, 142);
+            btnDoiMatKhau.Location = new Point(205, 134);
             btnDoiMatKhau.Name = "btnDoiMatKhau";
-            btnDoiMatKhau.Size = new Size(133, 29);
+            btnDoiMatKhau.Size = new Size(133, 37);
             btnDoiMatKhau.TabIndex = 47;
             btnDoiMatKhau.Text = "Đổi mật khẩu";
             btnDoiMatKhau.UseVisualStyleBackColor = false;

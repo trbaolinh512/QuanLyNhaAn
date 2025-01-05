@@ -57,7 +57,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(1208, 315);
+            label5.Location = new Point(1208, 318);
             label5.Name = "label5";
             label5.Size = new Size(35, 20);
             label5.TabIndex = 42;
@@ -84,7 +84,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(1208, 637);
+            label3.Location = new Point(1208, 635);
             label3.Name = "label3";
             label3.Size = new Size(133, 20);
             label3.TabIndex = 39;
@@ -102,10 +102,10 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // btnLuu
             // 
             btnLuu.BackColor = Color.DodgerBlue;
-            btnLuu.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLuu.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             btnLuu.Location = new Point(1301, 847);
             btnLuu.Name = "btnLuu";
-            btnLuu.Size = new Size(123, 29);
+            btnLuu.Size = new Size(134, 40);
             btnLuu.TabIndex = 37;
             btnLuu.Text = "Gửi phản hồi";
             btnLuu.UseVisualStyleBackColor = false;
@@ -119,7 +119,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             dgvYKien.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;

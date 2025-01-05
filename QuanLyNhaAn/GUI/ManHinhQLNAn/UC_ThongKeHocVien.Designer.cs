@@ -61,7 +61,7 @@
             dgvHocVien.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -79,9 +79,10 @@
             // btnTimKiem
             // 
             btnTimKiem.BackColor = Color.FromArgb(255, 128, 0);
-            btnTimKiem.Location = new Point(270, 191);
+            btnTimKiem.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTimKiem.Location = new Point(270, 184);
             btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.Size = new Size(94, 29);
+            btnTimKiem.Size = new Size(104, 42);
             btnTimKiem.TabIndex = 20;
             btnTimKiem.Text = "Tìm kiếm";
             btnTimKiem.UseVisualStyleBackColor = false;
@@ -145,9 +146,10 @@
             // btnLamMoi
             // 
             btnLamMoi.BackColor = Color.Yellow;
-            btnLamMoi.Location = new Point(380, 191);
+            btnLamMoi.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLamMoi.Location = new Point(380, 184);
             btnLamMoi.Name = "btnLamMoi";
-            btnLamMoi.Size = new Size(94, 29);
+            btnLamMoi.Size = new Size(106, 42);
             btnLamMoi.TabIndex = 12;
             btnLamMoi.Text = "Làm mới";
             btnLamMoi.UseVisualStyleBackColor = false;
@@ -175,9 +177,10 @@
             // btnExcel
             // 
             btnExcel.BackColor = Color.Lime;
-            btnExcel.Location = new Point(492, 191);
+            btnExcel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            btnExcel.Location = new Point(492, 184);
             btnExcel.Name = "btnExcel";
-            btnExcel.Size = new Size(118, 29);
+            btnExcel.Size = new Size(140, 42);
             btnExcel.TabIndex = 23;
             btnExcel.Text = "Xuất file Excel";
             btnExcel.UseVisualStyleBackColor = false;
@@ -243,7 +246,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-1, 0);
+            pictureBox1.Location = new Point(-1, -8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1654, 1033);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;

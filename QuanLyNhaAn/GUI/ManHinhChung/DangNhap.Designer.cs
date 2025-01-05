@@ -95,6 +95,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             txtPassword.Size = new Size(176, 34);
             txtPassword.TabIndex = 4;
             txtPassword.UseSystemPasswordChar = true;
+            txtPassword.KeyDown += txtPassword_KeyDown;
             // 
             // btnQuenMK
             // 
@@ -193,6 +194,7 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             Name = "DangNhap";
             Text = "Đăng nhập";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

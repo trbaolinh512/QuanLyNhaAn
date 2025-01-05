@@ -150,10 +150,11 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // btnGui
             // 
             btnGui.BackColor = Color.DodgerBlue;
+            btnGui.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnGui.ForeColor = Color.Black;
-            btnGui.Location = new Point(1192, 694);
+            btnGui.Location = new Point(1185, 684);
             btnGui.Name = "btnGui";
-            btnGui.Size = new Size(94, 29);
+            btnGui.Size = new Size(101, 45);
             btnGui.TabIndex = 3;
             btnGui.Text = "Gửi";
             btnGui.UseVisualStyleBackColor = false;
@@ -171,9 +172,10 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // btnChinhSua
             // 
             btnChinhSua.BackColor = Color.Yellow;
-            btnChinhSua.Location = new Point(1305, 694);
+            btnChinhSua.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnChinhSua.Location = new Point(1292, 684);
             btnChinhSua.Name = "btnChinhSua";
-            btnChinhSua.Size = new Size(94, 29);
+            btnChinhSua.Size = new Size(107, 45);
             btnChinhSua.TabIndex = 5;
             btnChinhSua.Text = "Chỉnh sửa";
             btnChinhSua.UseVisualStyleBackColor = false;
@@ -182,10 +184,11 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // btnChonAnh
             // 
             btnChonAnh.BackColor = Color.DodgerBlue;
+            btnChonAnh.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnChonAnh.ForeColor = Color.Black;
-            btnChonAnh.Location = new Point(1048, 249);
+            btnChonAnh.Location = new Point(1040, 249);
             btnChonAnh.Name = "btnChonAnh";
-            btnChonAnh.Size = new Size(94, 29);
+            btnChonAnh.Size = new Size(102, 38);
             btnChonAnh.TabIndex = 6;
             btnChonAnh.Text = "Chọn ảnh";
             btnChonAnh.UseVisualStyleBackColor = false;
@@ -194,9 +197,10 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // btnXoa
             // 
             btnXoa.BackColor = Color.Red;
-            btnXoa.Location = new Point(1417, 694);
+            btnXoa.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnXoa.Location = new Point(1405, 684);
             btnXoa.Name = "btnXoa";
-            btnXoa.Size = new Size(94, 29);
+            btnXoa.Size = new Size(106, 45);
             btnXoa.TabIndex = 7;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = false;
@@ -205,10 +209,11 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // btnXoaAnh
             // 
             btnXoaAnh.BackColor = Color.Red;
+            btnXoaAnh.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnXoaAnh.ForeColor = Color.Black;
-            btnXoaAnh.Location = new Point(1048, 293);
+            btnXoaAnh.Location = new Point(1040, 293);
             btnXoaAnh.Name = "btnXoaAnh";
-            btnXoaAnh.Size = new Size(94, 29);
+            btnXoaAnh.Size = new Size(102, 38);
             btnXoaAnh.TabIndex = 8;
             btnXoaAnh.Text = "Xóa ảnh";
             btnXoaAnh.UseVisualStyleBackColor = false;

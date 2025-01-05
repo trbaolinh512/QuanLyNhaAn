@@ -316,7 +316,7 @@ namespace PhanMemBaoCom.BLL
             return list;
         }
 
-        public List<ThongTinNguoiDungDto> lay_danh_sach_CB_GV_cung_phong_khoa(string? phong,string? khoa,string? input)
+        public List<ThongTinNguoiDungDto> lay_danh_sach_CB_GV_cung_phong_khoa(string? phongKhoa, string? input)
         {
             ChucVuBll chucVuBll = new ChucVuBll();
             List<ChucVuDto> chucVuDtos = chucVuBll.lay_tat_ca();
@@ -325,10 +325,67 @@ namespace PhanMemBaoCom.BLL
             string commandString = "SELECT * FROM ThongTinNguoiDung WHERE ChucVuId in (@ChucVuId) ";
             SqlConnection cn = access.open();
 
-            if(!string.IsNullOrEmpty(phong) && !string.IsNullOrEmpty(khoa))
+            if(!string.IsNullOrEmpty(phongKhoa))
+            {
+                commandString += "AND Phong = @Phong OR Khoa = @Khoa";
+            }
+            if (input != null)
+            {
+                commandString += " AND (MaNguoiDung Like @input OR HoTen LIKE @input)";
+            }
+            using (SqlCommand cmd = new SqlCommand(commandString, cn))
+            {
+                if (input != null)
+                {
+                    cmd.Parameters.AddWithValue("@input", $"%{input}%");
+                }
+                if (!string.IsNullOrEmpty(phongKhoa))
+                {
+                    cmd.Parameters.AddWithValue("@Phong", phongKhoa);
+                    cmd.Parameters.AddWithValue("@Khoa", phongKhoa);
+                }
+
+                cmd.Parameters.AddWithValue("@ChucVuId", string.Join(",", listChucVuCBGV));
+                SqlDataReader result = cmd.ExecuteReader();
+                while (result.Read())
+                {
+                    list.Add(new ThongTinNguoiDungDto
+                    {
+                        Id = result.GetInt32(0),
+                        HoTen = result.GetString(1),
+                        MaNguoiDung = result.GetString(2),
+                        Lop = result.GetString(3),
+                        Phong = result.GetString(4),
+                        Khoa = result.GetString(5),
+                        DonVi = result.GetString(6),
+                        ChucVuId = result.GetInt32(7),
+                        SDT = result.GetString(8),
+                        SoTaiKhoan = result.GetString(9),
+                        NganHang = result.GetString(10),
+                        Email = result.GetString(11),
+                        MatKhau = result.GetString(12),
+                        TrangThai = result.GetBoolean(13)
+                    });
+                }
+            }
+            cn.Close();
+            return list;
+        }
+
+        public List<ThongTinNguoiDungDto> lay_danh_sach_CB_GV_cung_phong_khoa1(string? phong, string? khoa, string? input)
+        {
+            ChucVuBll chucVuBll = new ChucVuBll();
+            List<ChucVuDto> chucVuDtos = chucVuBll.lay_tat_ca();
+            List<int> listChucVuCBGV = chucVuDtos.Where(x => !x.LaHocVien && x.CoQuyenBaoCom).Select(x => x.Id).ToList();
+            List<ThongTinNguoiDungDto> list = new List<ThongTinNguoiDungDto>();
+            string commandString = "SELECT * FROM ThongTinNguoiDung WHERE ChucVuId in (@ChucVuId) ";
+            SqlConnection cn = access.open();
+
+            if (!string.IsNullOrEmpty(phong) && !string.IsNullOrEmpty(khoa))
             {
                 commandString += "AND Phong = @Phong AND Khoa = @Khoa";
-            }else if (!string.IsNullOrEmpty(phong))
+            }
+            else if (!string.IsNullOrEmpty(phong))
             {
                 commandString += "AND Phong = @Phong";
             }
@@ -359,7 +416,7 @@ namespace PhanMemBaoCom.BLL
                 {
                     cmd.Parameters.AddWithValue("@Khoa", khoa);
                 }
-                
+
                 cmd.Parameters.AddWithValue("@ChucVuId", string.Join(",", listChucVuCBGV));
                 SqlDataReader result = cmd.ExecuteReader();
                 while (result.Read())
@@ -386,7 +443,6 @@ namespace PhanMemBaoCom.BLL
             cn.Close();
             return list;
         }
-
         public bool them_nguoi_dung(ThongTinNguoiDungDto nguoiDungMoi)
         {
             string commandString = "INSERT INTO ThongTinNguoiDung (Id, HoTen, MaNguoiDung, Lop, Phong, Khoa, DonVi, ChucVuId, SDT, SoTaiKhoan, NganHang, Email, MatKhau, TrangThai)VALUES(@Id, @HoTen, @MaNguoiDung, @Lop, @Phong, @Khoa, @DonVi, @ChucVuId, @SDT, @SoTaiKhoan, @NganHang, @Email, @MatKhau, @TrangThai)";

@@ -50,19 +50,19 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                 }
                 else
                 {
-                    
+
                     MailProcess mailProcess = new MailProcess();
                     Security security = new Security();
                     string matkhaumoi = security.GenerateRandomString();
                     string title = "Thông báo về mật khẩu mới";
                     string content = "Mật khẩu mới của bạn:" + matkhaumoi;
-                    
+
                     mailProcess.sendMail(email, title, content);
                     int check = thongTinNguoiDungBll.doi_mat_khau(tk, email, security.MD5Hash(matkhaumoi));
                     Cursor = Cursors.Default;
-                    if (check>0)
+                    if (check > 0)
                     {
-                        
+
                         MessageBox.Show("Đã gửi mật khẩu mới cho bạn thông qua email: " + email + ".",
                                 "Thông báo",
                                 MessageBoxButtons.OK,
@@ -77,8 +77,17 @@ namespace PhanMemBaoCom.GUI.ManHinhChung
                     }
                 }
             }
-            
 
+
+        }
+
+        private void txbMail_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Kiểm tra phím Enter
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick(); // Gọi sự kiện Click của btnLogin
+            }
         }
     }
 }

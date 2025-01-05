@@ -63,7 +63,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             dgvSuatAn.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -82,10 +82,11 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             // btnLamMoi
             // 
             btnLamMoi.BackColor = Color.Yellow;
+            btnLamMoi.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnLamMoi.ForeColor = Color.Black;
-            btnLamMoi.Location = new Point(390, 137);
+            btnLamMoi.Location = new Point(390, 129);
             btnLamMoi.Name = "btnLamMoi";
-            btnLamMoi.Size = new Size(94, 29);
+            btnLamMoi.Size = new Size(98, 42);
             btnLamMoi.TabIndex = 1;
             btnLamMoi.Text = "Làm mới";
             btnLamMoi.UseVisualStyleBackColor = false;
@@ -94,9 +95,10 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             // btnLuuLich
             // 
             btnLuuLich.BackColor = Color.DodgerBlue;
+            btnLuuLich.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnLuuLich.Location = new Point(272, 83);
             btnLuuLich.Name = "btnLuuLich";
-            btnLuuLich.Size = new Size(94, 29);
+            btnLuuLich.Size = new Size(94, 39);
             btnLuuLich.TabIndex = 2;
             btnLuuLich.Text = "Lưu lịch";
             btnLuuLich.UseVisualStyleBackColor = false;
@@ -227,9 +229,10 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             // btnTimKiem
             // 
             btnTimKiem.BackColor = Color.FromArgb(255, 128, 0);
-            btnTimKiem.Location = new Point(272, 137);
+            btnTimKiem.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTimKiem.Location = new Point(272, 129);
             btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.Size = new Size(94, 29);
+            btnTimKiem.Size = new Size(94, 42);
             btnTimKiem.TabIndex = 11;
             btnTimKiem.Text = "Tìm kiếm";
             btnTimKiem.UseVisualStyleBackColor = false;
@@ -238,9 +241,10 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             // btnBoTich
             // 
             btnBoTich.BackColor = Color.FromArgb(0, 192, 192);
+            btnBoTich.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnBoTich.Location = new Point(392, 83);
             btnBoTich.Name = "btnBoTich";
-            btnBoTich.Size = new Size(179, 29);
+            btnBoTich.Size = new Size(193, 39);
             btnBoTich.TabIndex = 12;
             btnBoTich.Text = "Chuyển trạng thái tích";
             btnBoTich.UseVisualStyleBackColor = false;

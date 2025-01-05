@@ -108,6 +108,7 @@
             txbMail.Name = "txbMail";
             txbMail.Size = new Size(176, 34);
             txbMail.TabIndex = 16;
+            txbMail.KeyDown += txbMail_KeyDown;
             // 
             // txbTaiKhoan
             // 
