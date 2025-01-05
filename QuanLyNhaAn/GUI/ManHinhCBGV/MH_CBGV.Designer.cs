@@ -33,6 +33,7 @@
             btnYKDG = new Button();
             button1 = new Button();
             pnlHienThi = new Panel();
+            txtTieuDe = new Label();
             panel1 = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel10 = new Panel();
@@ -40,7 +41,6 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             lbUser = new Label();
-            txtTieuDe = new Label();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             panel10.SuspendLayout();
@@ -112,6 +112,16 @@
             pnlHienThi.Name = "pnlHienThi";
             pnlHienThi.Size = new Size(1647, 1035);
             pnlHienThi.TabIndex = 5;
+            // 
+            // txtTieuDe
+            // 
+            txtTieuDe.AutoSize = true;
+            txtTieuDe.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            txtTieuDe.Location = new Point(998, -2);
+            txtTieuDe.Name = "txtTieuDe";
+            txtTieuDe.Size = new Size(353, 54);
+            txtTieuDe.TabIndex = 4;
+            txtTieuDe.Text = "Thông tin suất ăn";
             // 
             // panel1
             // 
@@ -189,16 +199,6 @@
             lbUser.TabIndex = 4;
             lbUser.Text = "label1";
             lbUser.Click += pnlUser_Click;
-            // 
-            // txtTieuDe
-            // 
-            txtTieuDe.AutoSize = true;
-            txtTieuDe.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            txtTieuDe.Location = new Point(264, 0);
-            txtTieuDe.Name = "txtTieuDe";
-            txtTieuDe.Size = new Size(353, 54);
-            txtTieuDe.TabIndex = 4;
-            txtTieuDe.Text = "Thông tin suất ăn";
             // 
             // MH_CBGV
             // 

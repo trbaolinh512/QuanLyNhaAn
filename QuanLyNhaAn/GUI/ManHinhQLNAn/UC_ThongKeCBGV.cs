@@ -125,16 +125,16 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                         {
                             if (phuongthuc == 0)
                             {
-                                dgvCBGV[3 + i, index].Value = "";
+                                dgvCBGV[3 + i, index].Value = "X";
                                 tongSoBuoiAn[0] += 3;
                                 tongTienDong[0] += tinhTongTien(lsSuatAn, 0);
                                 dgvCBGV[3 + i, index].Style.BackColor = Color.LightSkyBlue;
                             }
                             else
                             {
-                                dgvCBGV[3 + i, index].Value = "";
-                                dgvCBGV[3 + i, index + 1].Value = "";
-                                dgvCBGV[3 + i, index + 2].Value = "";
+                                dgvCBGV[3 + i, index].Value = "X";
+                                dgvCBGV[3 + i, index + 1].Value = "X";
+                                dgvCBGV[3 + i, index + 2].Value = "X";
 
                                 tongSoBuoiAn[0] += 1;
                                 tongTienDong[0] += tinhTongTien(lsSuatAn, 1);
@@ -162,25 +162,25 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                             }
                             else
                             {
-                                dgvCBGV[3 + i, index].Value = "X";
-                                dgvCBGV[3 + i, index + 1].Value = "X";
-                                dgvCBGV[3 + i, index + 2].Value = "X";
+                                dgvCBGV[3 + i, index].Value = "";
+                                dgvCBGV[3 + i, index + 1].Value = "";
+                                dgvCBGV[3 + i, index + 2].Value = "";
 
                                 if (lsSuatAn.Any(x => x.ThoiDiem == 1))
                                 {
-                                    dgvCBGV[3 + i, index].Value = "";
+                                    dgvCBGV[3 + i, index].Value = "X";
                                     tongSoBuoiAn[0] += 1;
                                     tongTienDong[0] += tinhTongTien(lsSuatAn, 1);
                                 }
                                 if (lsSuatAn.Any(x => x.ThoiDiem == 2))
                                 {
-                                    dgvCBGV[3 + i, index + 1].Value = "";
+                                    dgvCBGV[3 + i, index + 1].Value = "X";
                                     tongSoBuoiAn[1] += 1;
                                     tongTienDong[1] += tinhTongTien(lsSuatAn, 2);
                                 }
                                 if (lsSuatAn.Any(x => x.ThoiDiem == 3))
                                 {
-                                    dgvCBGV[3 + i, index + 2].Value = "";
+                                    dgvCBGV[3 + i, index + 2].Value = "X";
                                     tongSoBuoiAn[2] += 1;
                                     tongTienDong[2] += tinhTongTien(lsSuatAn, 3);
                                 }
@@ -192,11 +192,11 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                         }
                         else
                         {
-                            dgvCBGV[3 + i, index].Value = "X";
+                            dgvCBGV[3 + i, index].Value = "";
                             if (phuongthuc != 0)
                             {
-                                dgvCBGV[3 + i, index + 1].Value = "X";
-                                dgvCBGV[3 + i, index + 2].Value = "X";
+                                dgvCBGV[3 + i, index + 1].Value = "";
+                                dgvCBGV[3 + i, index + 2].Value = "";
                             }
                         }
                     }

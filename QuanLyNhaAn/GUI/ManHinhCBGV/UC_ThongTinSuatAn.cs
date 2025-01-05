@@ -77,9 +77,9 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             LoadLich();
             ThemSoNgayVaoLich(dtpChonThang.Value);
 
-            
 
-            
+
+
         }
 
         public void LoadLich()
@@ -106,7 +106,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
         public void ThemSoNgayVaoLich(DateTime chonThang)
         {
             DateTime ngayBatDau = new DateTime(chonThang.Year, chonThang.Month, 1);
-            DateTime ngayKetThuc = new DateTime(chonThang.Year, chonThang.Month, DateTime.DaysInMonth(chonThang.Year, chonThang.Month),23,59,0);
+            DateTime ngayKetThuc = new DateTime(chonThang.Year, chonThang.Month, DateTime.DaysInMonth(chonThang.Year, chonThang.Month), 23, 59, 0);
 
             int line = 0;
             LichSuLuuTruBll lsbll = new LichSuLuuTruBll();
@@ -157,10 +157,10 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                                 soTienTrua += item.SoTienTuongUng;
                                 soSuatAnTrua += 1;
                             }
-                            if (item.ThoiDiem == 3) 
-                            { 
+                            if (item.ThoiDiem == 3)
+                            {
                                 soTienToi += item.SoTienTuongUng;
-                                soSuatAnToi += 1; 
+                                soSuatAnToi += 1;
                             }
                         }
                         if (lsSuatAn.Count() == 3)
@@ -193,14 +193,14 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                             }
                             else
                             {
-                                txbSang.Text = "Cả ngày: X";//Ăn cả ngay đối với cbgv
+                                txbSang.Text = "X";//Ăn cả ngay đối với cbgv
                             }
                         }
                         else if (lsSuatAn.Count() == 0)
                         {
                             if (LaHocVien)
                             {
-                                txbSang.Text = "Cả ngày: X";//Ăn cả ngay đối với học viên
+                                txbSang.Text = "X";//Ăn cả ngay đối với học viên
                             }
                             else
                             {
@@ -209,7 +209,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                         }
                         else
                         {
-                            txbSang.Text = "Cả ngày: A";//Ăn từ 1->2 buổi trong ngày đối với học viên, CBGV
+                            txbSang.Text = "A";//Ăn từ 1->2 buổi trong ngày đối với học viên, CBGV
                         }
                         txbSang.BorderStyle = BorderStyle.None;
                         txbSang.Size = new Size(100, 20);
@@ -326,18 +326,18 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                                 }
                                 else
                                 {
-                                    txbSang.Text = "Cả ngày: X";
+                                    txbSang.Text = "X";
                                 }
                             }
                             else if (lsSuatAn.Count() != 0)
                             {
-                                txbSang.Text = "Cả ngày: A";
+                                txbSang.Text = "A";
                             }
                             else
                             {
                                 if (LaHocVien)
                                 {
-                                    txbSang.Text = "Cả ngày: X";
+                                    txbSang.Text = "X";
                                 }
                                 else
                                 {
@@ -437,20 +437,21 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
 
                 lblLuuY.Visible = false;
                 btnLuuLich.Visible = false;
+                checkBox1.Visible = false;
             }
             else
             {
                 pnlAn.BackColor = Color.LightSkyBlue;
                 lblAn.Text = ": Ăn cả ngày";
-                txtTongSuatAn.Text = "Tổng buổi đăng ký ăn: " + soSuatAn + " buổi";
-                txtTongTien.Text = "Tổng tiền phải đóng: " + formattedMoney;
+                txtTongSuatAn.Text = "Tổng buổi ăn: " + soSuatAn + " buổi";
+                txtTongTien.Text = "Tổng tiền nộp: " + formattedMoney;
 
-                lbSuatSang.Text = "Số buổi đăng ký ăn: " + soSuatAnSang;
-                lbTienSang.Text = "Tông tiền phải đóng: " + formattedMoney1;
-                lbSuatTrua.Text = "Tông buổi đăng ký ăn: " + soSuatAnTrua;
-                lbTienTrua.Text = "Tông tiền phải đóng: " + formattedMoney2;
-                lblSuatToi.Text = "Tông buổi đăng ký ăn: " + soSuatAnToi;
-                lbTienToi.Text = "Tông tiền phải đóng: " + formattedMoney3;
+                lbSuatSang.Text = "Số buổi ăn: " + soSuatAnSang;
+                lbTienSang.Text = "Tổng tiền nộp: " + formattedMoney1;
+                lbSuatTrua.Text = "Tổng buổi ăn: " + soSuatAnTrua;
+                lbTienTrua.Text = "Tổng tiền nộp: " + formattedMoney2;
+                lblSuatToi.Text = "Tổng buổi ăn: " + soSuatAnToi;
+                lbTienToi.Text = "Tổng tiền nộp: " + formattedMoney3;
             }
         }
 
@@ -494,7 +495,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
 
             pnl.Controls.Add(label);
             pnl.Controls.Add(checkBox);
-            label.BackColor=pnl.BackColor;
+            label.BackColor = pnl.BackColor;
         }
 
         private void AddLichSuLabel(Panel pnl, List<LichSuLuuTruDto> lsSuatAn, int thoiDiem, string labelText, Point location)
@@ -534,6 +535,16 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
         }
         private async Task LamMoiLich()
         {
+            soSuatAn = 0;
+            soTien = 0;
+
+            soSuatAnSang = 0;
+            soSuatAnTrua = 0;
+            soSuatAnToi = 0;
+
+            soTienSang = 0;
+            soTienTrua = 0;
+            soTienToi = 0;
             for (int i = 0; i < MaTranLich.Count; i++)
             {
                 for (int j = 0; j < MaTranLich[i].Count; j++)
@@ -581,20 +592,20 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                             // Xác định thứ tự của CheckBox trong Panel
                             int index = k;
                             // Kiểm tra nếu CheckBox được chọn
-                            
-                                DateTime dt = dtpChonThang.Value;
-                                string day = panel.Controls[0].Text.Replace("Ngày: ", "");
-                                DateTime ngayDuocTich = new DateTime(dt.Year, dt.Month, int.Parse(day));
 
-                                ThongTinHeThongBll thongTinHeThongBll = new ThongTinHeThongBll();
-                                ThongTinHeThongDto thongTinHeThongDto = thongTinHeThongBll.lay_tat_ca();
+                            DateTime dt = dtpChonThang.Value;
+                            string day = panel.Controls[0].Text.Replace("Ngày: ", "");
+                            DateTime ngayDuocTich = new DateTime(dt.Year, dt.Month, int.Parse(day));
 
-                                DateTime hanGioMoSang = ngayDuocTich.AddDays(-1).Date.AddHours(thongTinHeThongDto.HanBaoSang.TotalHours); // 10 giờ sáng hôm trước
-                                DateTime hanGioMoTruaToi = ngayDuocTich.Date.AddHours(thongTinHeThongDto.HanBaoTruaToi.TotalHours);  // 7 giờ sáng hôm nay
+                            ThongTinHeThongBll thongTinHeThongBll = new ThongTinHeThongBll();
+                            ThongTinHeThongDto thongTinHeThongDto = thongTinHeThongBll.lay_tat_ca();
 
-                                // Danh sách lưu trữ trạng thái của các buổi
-                                bool quaHanSang = thoigianHienTai >= hanGioMoSang;
-                                bool quaHanTrua = thoigianHienTai >= hanGioMoTruaToi;
+                            DateTime hanGioMoSang = ngayDuocTich.AddDays(-1).Date.AddHours(thongTinHeThongDto.HanBaoSang.TotalHours); // 10 giờ sáng hôm trước
+                            DateTime hanGioMoTruaToi = ngayDuocTich.Date.AddHours(thongTinHeThongDto.HanBaoTruaToi.TotalHours);  // 7 giờ sáng hôm nay
+
+                            // Danh sách lưu trữ trạng thái của các buổi
+                            bool quaHanSang = thoigianHienTai >= hanGioMoSang;
+                            bool quaHanTrua = thoigianHienTai >= hanGioMoTruaToi;
 
                             if (phuongthuc == 0) // Cả ngày
                             {
@@ -643,11 +654,11 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                                     }
                                 }
                             }
-                            else 
+                            else
                             {
                                 if (!quaHanSang)
                                 {
-                                    if(panel.Controls[k - 1].Text.Contains("Sáng")) // ô check box của sáng
+                                    if (panel.Controls[k - 1].Text.Contains("Sáng")) // ô check box của sáng
                                     {
                                         DateTime buoisang = new DateTime(ngayDuocTich.Year, ngayDuocTich.Month, ngayDuocTich.Day);
 
@@ -726,7 +737,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                                 }
 
                             }
-                            }
+                        }
                     }
                 }
             }
@@ -746,6 +757,18 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             thoigianHienTai = DateTime.Now;
             await LamMoiLich();
             ThemSoNgayVaoLich(dtpChonThang.Value);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                checkBox1.Text = " - Đã đăng ký suất ăn";
+            }
+            else
+            {
+                checkBox1.Text = " - Chưa đăng ký suất ăn";
+            }
         }
     }
 }

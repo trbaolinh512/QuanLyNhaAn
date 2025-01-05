@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ThongKeCBGV));
             btnExcel = new Button();
             cbxPhong = new ComboBox();
@@ -79,9 +79,12 @@
             // label34
             // 
             label34.AutoSize = true;
-            label34.Location = new Point(271, 102);
+            label34.BackColor = Color.White;
+            label34.BorderStyle = BorderStyle.FixedSingle;
+            label34.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label34.Location = new Point(271, 99);
             label34.Name = "label34";
-            label34.Size = new Size(99, 20);
+            label34.Size = new Size(129, 27);
             label34.TabIndex = 33;
             label34.Text = "Phòng / Khoa";
             // 
@@ -111,9 +114,12 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(130, 102);
+            label3.BackColor = Color.White;
+            label3.BorderStyle = BorderStyle.FixedSingle;
+            label3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(130, 99);
             label3.Name = "label3";
-            label3.Size = new Size(93, 20);
+            label3.Size = new Size(122, 27);
             label3.TabIndex = 30;
             label3.Text = "Phương thức";
             // 
@@ -130,15 +136,18 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.White;
+            label2.BorderStyle = BorderStyle.FixedSingle;
+            label2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(11, 100);
             label2.Name = "label2";
-            label2.Size = new Size(50, 20);
+            label2.Size = new Size(67, 27);
             label2.TabIndex = 28;
             label2.Text = "Tháng";
             // 
             // txbTimKiem
             // 
-            txbTimKiem.Location = new Point(8, 194);
+            txbTimKiem.Location = new Point(8, 195);
             txbTimKiem.Name = "txbTimKiem";
             txbTimKiem.Size = new Size(238, 27);
             txbTimKiem.TabIndex = 27;
@@ -146,9 +155,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(10, 168);
+            label1.BackColor = Color.White;
+            label1.BorderStyle = BorderStyle.FixedSingle;
+            label1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(10, 167);
             label1.Name = "label1";
-            label1.Size = new Size(70, 20);
+            label1.Size = new Size(90, 27);
             label1.TabIndex = 26;
             label1.Text = "Tìm kiếm";
             // 
@@ -169,14 +181,14 @@
             dgvCBGV.AllowUserToAddRows = false;
             dgvCBGV.AllowUserToDeleteRows = false;
             dgvCBGV.BackgroundColor = Color.White;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvCBGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(2, 136, 209);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvCBGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvCBGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCBGV.EnableHeadersVisualStyles = false;
             dgvCBGV.Location = new Point(3, 250);
@@ -189,11 +201,13 @@
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.White;
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(panel4);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(pnlAn);
             groupBox1.Controls.Add(lblAn);
+            groupBox1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(1266, 137);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(341, 84);
@@ -206,9 +220,9 @@
             label5.AutoSize = true;
             label5.Location = new Point(38, 58);
             label5.Name = "label5";
-            label5.Size = new Size(170, 20);
+            label5.Size = new Size(247, 25);
             label5.TabIndex = 3;
-            label5.Text = ": Ăn 1-2 buổi trong ngày";
+            label5.Text = "- A : Ăn 1-2 buổi trong ngày";
             // 
             // panel4
             // 
@@ -223,7 +237,7 @@
             label6.AutoSize = true;
             label6.Location = new Point(207, 32);
             label6.Name = "label6";
-            label6.Size = new Size(98, 20);
+            label6.Size = new Size(126, 25);
             label6.TabIndex = 2;
             label6.Text = "X : Có suất ăn";
             // 
@@ -240,7 +254,7 @@
             lblAn.AutoSize = true;
             lblAn.Location = new Point(38, 32);
             lblAn.Name = "lblAn";
-            lblAn.Size = new Size(89, 20);
+            lblAn.Size = new Size(114, 25);
             lblAn.TabIndex = 0;
             lblAn.Text = ": Ăn cả ngày";
             // 
@@ -258,6 +272,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             Controls.Add(groupBox1);
             Controls.Add(btnExcel);
             Controls.Add(cbxPhong);

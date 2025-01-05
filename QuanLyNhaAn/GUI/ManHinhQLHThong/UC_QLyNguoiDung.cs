@@ -229,7 +229,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
                 }
 
                 ThongTinNguoiDungDto nguoiDungSua = list.FirstOrDefault(nd => nd.Id == int.Parse(Id));
-                if (nguoiDungSua != null && int.Parse(Id) == nguoiDungSua.Id)
+                if (nguoiDungSua != null && int.Parse(Id) == nguoiDungSua.Id && !nguoiDungSua.MaNguoiDung.Equals(txbMaND.Text))
                 {
                     bool check = thongTinNguoiDungBll.check_ton_tai_manguoidung(txbMaND.Text);
                     if (check)
@@ -423,6 +423,16 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
                     lbKhoaHoc.Visible = true; txbKhoaHoc.Visible = true;
                 }
             }
+        }
+
+        private void txbTimKiem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbDonVi_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

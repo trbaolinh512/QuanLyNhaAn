@@ -138,16 +138,16 @@
             // pnlHienThi
             // 
             pnlHienThi.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pnlHienThi.Location = new Point(256, 0);
+            pnlHienThi.Location = new Point(256, 1);
             pnlHienThi.Name = "pnlHienThi";
-            pnlHienThi.Size = new Size(1638, 1033);
+            pnlHienThi.Size = new Size(1638, 1032);
             pnlHienThi.TabIndex = 11;
             // 
             // txtTieuDe
             // 
             txtTieuDe.AutoSize = true;
             txtTieuDe.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            txtTieuDe.Location = new Point(266, 2);
+            txtTieuDe.Location = new Point(886, -2);
             txtTieuDe.Name = "txtTieuDe";
             txtTieuDe.Size = new Size(501, 54);
             txtTieuDe.TabIndex = 10;
@@ -216,8 +216,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1902, 1033);
-            Controls.Add(flowLayoutPanel1);
             Controls.Add(txtTieuDe);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(panel10);
             Controls.Add(pnlHienThi);
             Icon = (Icon)resources.GetObject("$this.Icon");

@@ -56,10 +56,11 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(1208, 318);
+            label5.BorderStyle = BorderStyle.FixedSingle;
+            label5.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(1208, 314);
             label5.Name = "label5";
-            label5.Size = new Size(35, 20);
+            label5.Size = new Size(48, 27);
             label5.TabIndex = 42;
             label5.Text = "Ảnh";
             // 
@@ -83,10 +84,11 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(1208, 635);
+            label3.BorderStyle = BorderStyle.FixedSingle;
+            label3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(1208, 632);
             label3.Name = "label3";
-            label3.Size = new Size(133, 20);
+            label3.Size = new Size(173, 27);
             label3.TabIndex = 39;
             label3.Text = "Nội dung phản hồi";
             // 

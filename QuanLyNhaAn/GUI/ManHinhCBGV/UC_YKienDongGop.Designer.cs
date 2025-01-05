@@ -141,9 +141,12 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(1070, 88);
+            label1.BackColor = Color.White;
+            label1.BorderStyle = BorderStyle.FixedSingle;
+            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(1053, 88);
             label1.Name = "label1";
-            label1.Size = new Size(71, 20);
+            label1.Size = new Size(89, 27);
             label1.TabIndex = 1;
             label1.Text = "Nội dung";
             // 
@@ -239,9 +242,12 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(1070, 748);
+            label2.BackColor = Color.White;
+            label2.BorderStyle = BorderStyle.FixedSingle;
+            label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(1067, 747);
             label2.Name = "label2";
-            label2.Size = new Size(133, 20);
+            label2.Size = new Size(164, 27);
             label2.TabIndex = 9;
             label2.Text = "Nội dung phản hồi";
             // 

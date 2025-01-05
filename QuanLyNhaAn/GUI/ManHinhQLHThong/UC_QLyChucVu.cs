@@ -72,7 +72,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
 
             LoadChucVu();
 
-            MessageBox.Show("Ý kiến đóng góp của bạn đã được chỉnh sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Chức vụ của bạn đã được chỉnh sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

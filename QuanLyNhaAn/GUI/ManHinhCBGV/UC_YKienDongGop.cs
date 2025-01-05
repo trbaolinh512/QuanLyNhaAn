@@ -132,7 +132,14 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
                 YKienDongGopDto yKienDongGopDto = yKienDongGopBll.lay_theo_id(int.Parse(id));
                 string noiDung = dgvYeuCau.Rows[e.RowIndex].Cells["NoiDung"].Value.ToString();
                 txbYeuCau.Text = noiDung;
-                txbPhanHoi.Text = dgvYeuCau.Rows[e.RowIndex].Cells["NoiDungPhanHoi"].Value.ToString();
+                if(dgvYeuCau.Rows[e.RowIndex].Cells["NoiDungPhanHoi"].Value != null)
+                {
+                    txbPhanHoi.Text = dgvYeuCau.Rows[e.RowIndex].Cells["NoiDungPhanHoi"].Value.ToString();
+                }
+                else
+                {
+                    txbPhanHoi.Text = "";
+                }
                 imageData = yKienDongGopDto.AnhGui;
                 if (imageData != null)
                 {

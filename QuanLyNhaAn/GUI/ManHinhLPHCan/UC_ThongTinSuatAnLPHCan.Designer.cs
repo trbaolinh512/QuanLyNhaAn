@@ -29,7 +29,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ThongTinSuatAnLPHCan));
             dgvSuatAn = new DataGridView();
             btnLamMoi = new Button();
@@ -41,6 +41,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             label3 = new Label();
             cbxPhuongThuc = new ComboBox();
             groupBox1 = new GroupBox();
+            checkBox1 = new CheckBox();
             label5 = new Label();
             panel4 = new Panel();
             label4 = new Label();
@@ -61,22 +62,21 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             dgvSuatAn.AllowUserToDeleteRows = false;
             dgvSuatAn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvSuatAn.BackgroundColor = Color.White;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvSuatAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(2, 136, 209);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvSuatAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvSuatAn.ColumnHeadersHeight = 29;
             dgvSuatAn.EnableHeadersVisualStyles = false;
-            dgvSuatAn.Location = new Point(14, 185);
+            dgvSuatAn.Location = new Point(14, 220);
             dgvSuatAn.Name = "dgvSuatAn";
-            dgvSuatAn.ReadOnly = true;
             dgvSuatAn.RowHeadersWidth = 51;
             dgvSuatAn.RowTemplate.Height = 29;
-            dgvSuatAn.Size = new Size(1483, 786);
+            dgvSuatAn.Size = new Size(1588, 751);
             dgvSuatAn.TabIndex = 0;
             dgvSuatAn.ColumnHeaderMouseClick += dgvSuatAn_ColumnHeaderMouseClick;
             // 
@@ -85,7 +85,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             btnLamMoi.BackColor = Color.Yellow;
             btnLamMoi.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnLamMoi.ForeColor = Color.Black;
-            btnLamMoi.Location = new Point(390, 129);
+            btnLamMoi.Location = new Point(390, 137);
             btnLamMoi.Name = "btnLamMoi";
             btnLamMoi.Size = new Size(98, 42);
             btnLamMoi.TabIndex = 1;
@@ -108,15 +108,18 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(15, 114);
+            label1.BackColor = Color.White;
+            label1.BorderStyle = BorderStyle.FixedSingle;
+            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(15, 120);
             label1.Name = "label1";
-            label1.Size = new Size(70, 20);
+            label1.Size = new Size(86, 27);
             label1.TabIndex = 3;
             label1.Text = "Tìm kiếm";
             // 
             // txbTimKiem
             // 
-            txbTimKiem.Location = new Point(14, 140);
+            txbTimKiem.Location = new Point(14, 151);
             txbTimKiem.Name = "txbTimKiem";
             txbTimKiem.Size = new Size(238, 27);
             txbTimKiem.TabIndex = 4;
@@ -124,9 +127,12 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.White;
+            label2.BorderStyle = BorderStyle.FixedSingle;
+            label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(14, 55);
             label2.Name = "label2";
-            label2.Size = new Size(50, 20);
+            label2.Size = new Size(63, 27);
             label2.TabIndex = 5;
             label2.Text = "Tháng";
             // 
@@ -134,7 +140,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             // 
             dtpThang.CustomFormat = "MM/yyyy";
             dtpThang.Format = DateTimePickerFormat.Custom;
-            dtpThang.Location = new Point(13, 83);
+            dtpThang.Location = new Point(14, 85);
             dtpThang.Name = "dtpThang";
             dtpThang.Size = new Size(101, 27);
             dtpThang.TabIndex = 6;
@@ -143,9 +149,12 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(132, 57);
+            label3.BackColor = Color.White;
+            label3.BorderStyle = BorderStyle.FixedSingle;
+            label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(132, 54);
             label3.Name = "label3";
-            label3.Size = new Size(93, 20);
+            label3.Size = new Size(117, 27);
             label3.TabIndex = 7;
             label3.Text = "Phương thức";
             // 
@@ -153,7 +162,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             // 
             cbxPhuongThuc.FormattingEnabled = true;
             cbxPhuongThuc.Items.AddRange(new object[] { "Theo ngày", "Theo từng buổi" });
-            cbxPhuongThuc.Location = new Point(132, 82);
+            cbxPhuongThuc.Location = new Point(132, 84);
             cbxPhuongThuc.Name = "cbxPhuongThuc";
             cbxPhuongThuc.Size = new Size(120, 28);
             cbxPhuongThuc.TabIndex = 8;
@@ -162,26 +171,40 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.White;
+            groupBox1.Controls.Add(checkBox1);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(panel4);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(pnlAn);
             groupBox1.Controls.Add(lblAn);
+            groupBox1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(1265, 57);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(341, 84);
+            groupBox1.Size = new Size(341, 121);
             groupBox1.TabIndex = 9;
             groupBox1.TabStop = false;
             groupBox1.Text = "Lưu ý";
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(12, 86);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(218, 29);
+            checkBox1.TabIndex = 5;
+            checkBox1.Text = "- Chưa đăng ký suất ăn";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Location = new Point(38, 58);
             label5.Name = "label5";
-            label5.Size = new Size(170, 20);
+            label5.Size = new Size(238, 25);
             label5.TabIndex = 3;
-            label5.Text = ": Ăn 1-2 buổi trong ngày";
+            label5.Text = "- A : Ăn 1-2 buổi trong ngày";
             // 
             // panel4
             // 
@@ -196,7 +219,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             label4.AutoSize = true;
             label4.Location = new Point(207, 32);
             label4.Name = "label4";
-            label4.Size = new Size(98, 20);
+            label4.Size = new Size(121, 25);
             label4.TabIndex = 2;
             label4.Text = "X : Có suất ăn";
             // 
@@ -213,17 +236,19 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             lblAn.AutoSize = true;
             lblAn.Location = new Point(38, 32);
             lblAn.Name = "lblAn";
-            lblAn.Size = new Size(123, 20);
+            lblAn.Size = new Size(149, 25);
             lblAn.TabIndex = 0;
             lblAn.Text = ": Nghỉ ăn cả ngày";
             // 
             // lblLuuY
             // 
             lblLuuY.AutoSize = true;
+            lblLuuY.BackColor = Color.White;
+            lblLuuY.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             lblLuuY.ForeColor = Color.Red;
-            lblLuuY.Location = new Point(1087, 146);
+            lblLuuY.Location = new Point(937, 192);
             lblLuuY.Name = "lblLuuY";
-            lblLuuY.Size = new Size(519, 20);
+            lblLuuY.Size = new Size(665, 25);
             lblLuuY.TabIndex = 10;
             lblLuuY.Text = "*Trước khi đổi sang tháng khác, bạn hãy lưu lịch trong tháng mà bạn đã chỉnh";
             // 
@@ -231,7 +256,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             // 
             btnTimKiem.BackColor = Color.FromArgb(255, 128, 0);
             btnTimKiem.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnTimKiem.Location = new Point(272, 129);
+            btnTimKiem.Location = new Point(272, 137);
             btnTimKiem.Name = "btnTimKiem";
             btnTimKiem.Size = new Size(94, 42);
             btnTimKiem.TabIndex = 11;
@@ -281,7 +306,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             Controls.Add(dgvSuatAn);
             Controls.Add(pictureBox1);
             Name = "UC_ThongTinSuatAnLPHCan";
-            Size = new Size(1650, 1038);
+            Size = new Size(1755, 1038);
             ((System.ComponentModel.ISupportInitialize)dgvSuatAn).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -310,5 +335,6 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
         private Button btnTimKiem;
         private Button btnBoTich;
         private PictureBox pictureBox1;
+        private CheckBox checkBox1;
     }
 }

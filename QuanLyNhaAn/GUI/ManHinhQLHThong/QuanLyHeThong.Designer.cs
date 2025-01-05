@@ -46,6 +46,7 @@
             pnlUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
+            pnlHienThi.SuspendLayout();
             SuspendLayout();
             // 
             // panel10
@@ -217,7 +218,7 @@
             // 
             txbTitle.AutoSize = true;
             txbTitle.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            txbTitle.Location = new Point(263, 2);
+            txbTitle.Location = new Point(590, 0);
             txbTitle.Name = "txbTitle";
             txbTitle.Size = new Size(399, 54);
             txbTitle.TabIndex = 34;
@@ -225,6 +226,7 @@
             // 
             // pnlHienThi
             // 
+            pnlHienThi.Controls.Add(txbTitle);
             pnlHienThi.Location = new Point(256, 0);
             pnlHienThi.Name = "pnlHienThi";
             pnlHienThi.Size = new Size(1648, 1034);
@@ -236,7 +238,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1902, 1033);
-            Controls.Add(txbTitle);
             Controls.Add(panel10);
             Controls.Add(panel1);
             Controls.Add(pnlHienThi);
@@ -249,8 +250,9 @@
             pnlUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
+            pnlHienThi.ResumeLayout(false);
+            pnlHienThi.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

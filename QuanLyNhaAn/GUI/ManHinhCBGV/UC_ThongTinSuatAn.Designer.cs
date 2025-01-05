@@ -48,6 +48,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             cbxPhuongThuc = new ComboBox();
             label2 = new Label();
             groupBox1 = new GroupBox();
+            checkBox1 = new CheckBox();
             label5 = new Label();
             panel4 = new Panel();
             label4 = new Label();
@@ -78,9 +79,12 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.White;
+            label1.BorderStyle = BorderStyle.FixedSingle;
+            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(25, 63);
             label1.Name = "label1";
-            label1.Size = new Size(50, 20);
+            label1.Size = new Size(63, 27);
             label1.TabIndex = 0;
             label1.Text = "Tháng";
             // 
@@ -88,7 +92,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // 
             dtpChonThang.CustomFormat = "MM/yyyy";
             dtpChonThang.Format = DateTimePickerFormat.Custom;
-            dtpChonThang.Location = new Point(81, 58);
+            dtpChonThang.Location = new Point(94, 63);
             dtpChonThang.Name = "dtpChonThang";
             dtpChonThang.Size = new Size(99, 27);
             dtpChonThang.TabIndex = 1;
@@ -97,18 +101,24 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // txtTongSuatAn
             // 
             txtTongSuatAn.AutoSize = true;
+            txtTongSuatAn.BackColor = Color.White;
+            txtTongSuatAn.BorderStyle = BorderStyle.FixedSingle;
+            txtTongSuatAn.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtTongSuatAn.Location = new Point(25, 99);
             txtTongSuatAn.Name = "txtTongSuatAn";
-            txtTongSuatAn.Size = new Size(94, 20);
+            txtTongSuatAn.Size = new Size(117, 27);
             txtTongSuatAn.TabIndex = 2;
             txtTongSuatAn.Text = "Tổng suất ăn";
             // 
             // txtTongTien
             // 
             txtTongTien.AutoSize = true;
+            txtTongTien.BackColor = Color.White;
+            txtTongTien.BorderStyle = BorderStyle.FixedSingle;
+            txtTongTien.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtTongTien.Location = new Point(25, 134);
             txtTongTien.Name = "txtTongTien";
-            txtTongTien.Size = new Size(72, 20);
+            txtTongTien.Size = new Size(89, 27);
             txtTongTien.TabIndex = 3;
             txtTongTien.Text = "Tổng tiền";
             // 
@@ -231,7 +241,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // 
             cbxPhuongThuc.FormattingEnabled = true;
             cbxPhuongThuc.Items.AddRange(new object[] { "Theo ngày", "Theo từng buổi" });
-            cbxPhuongThuc.Location = new Point(399, 58);
+            cbxPhuongThuc.Location = new Point(427, 63);
             cbxPhuongThuc.Name = "cbxPhuongThuc";
             cbxPhuongThuc.Size = new Size(134, 28);
             cbxPhuongThuc.TabIndex = 5;
@@ -241,34 +251,51 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.White;
+            label2.BorderStyle = BorderStyle.FixedSingle;
+            label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(300, 64);
             label2.Name = "label2";
-            label2.Size = new Size(93, 20);
+            label2.Size = new Size(117, 27);
             label2.TabIndex = 6;
             label2.Text = "Phương thức";
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.White;
+            groupBox1.Controls.Add(checkBox1);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(panel4);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(pnlAn);
             groupBox1.Controls.Add(lblAn);
+            groupBox1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(1218, 161);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(341, 84);
+            groupBox1.Size = new Size(341, 119);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             groupBox1.Text = "Lưu ý";
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(13, 87);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(228, 29);
+            checkBox1.TabIndex = 4;
+            checkBox1.Text = "- Chưa đăng ký suất ăn";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(38, 58);
+            label5.Location = new Point(35, 58);
             label5.Name = "label5";
-            label5.Size = new Size(170, 20);
+            label5.Size = new Size(247, 25);
             label5.TabIndex = 3;
-            label5.Text = ": Ăn 1-2 buổi trong ngày";
+            label5.Text = "- A : Ăn 1-2 buổi trong ngày";
             // 
             // panel4
             // 
@@ -283,7 +310,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             label4.AutoSize = true;
             label4.Location = new Point(207, 32);
             label4.Name = "label4";
-            label4.Size = new Size(98, 20);
+            label4.Size = new Size(126, 25);
             label4.TabIndex = 2;
             label4.Text = "X : Có suất ăn";
             // 
@@ -300,7 +327,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             lblAn.AutoSize = true;
             lblAn.Location = new Point(38, 32);
             lblAn.Name = "lblAn";
-            lblAn.Size = new Size(89, 20);
+            lblAn.Size = new Size(114, 25);
             lblAn.TabIndex = 0;
             lblAn.Text = ": Ăn cả ngày";
             // 
@@ -329,10 +356,12 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // lblLuuY
             // 
             lblLuuY.AutoSize = true;
+            lblLuuY.BackColor = Color.White;
+            lblLuuY.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             lblLuuY.ForeColor = Color.Red;
-            lblLuuY.Location = new Point(1073, 135);
+            lblLuuY.Location = new Point(894, 133);
             lblLuuY.Name = "lblLuuY";
-            lblLuuY.Size = new Size(519, 20);
+            lblLuuY.Size = new Size(665, 25);
             lblLuuY.TabIndex = 4;
             lblLuuY.Text = "*Trước khi đổi sang tháng khác, bạn hãy lưu lịch trong tháng mà bạn đã chỉnh";
             // 
@@ -341,6 +370,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             groupBox3.BackColor = Color.FromArgb(192, 192, 0);
             groupBox3.Controls.Add(lblSuatToi);
             groupBox3.Controls.Add(lbTienToi);
+            groupBox3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox3.Location = new Point(21, 431);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(250, 93);
@@ -351,18 +381,18 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // lblSuatToi
             // 
             lblSuatToi.AutoSize = true;
-            lblSuatToi.Location = new Point(28, 23);
+            lblSuatToi.Location = new Point(14, 29);
             lblSuatToi.Name = "lblSuatToi";
-            lblSuatToi.Size = new Size(50, 20);
+            lblSuatToi.Size = new Size(59, 25);
             lblSuatToi.TabIndex = 9;
             lblSuatToi.Text = "label2";
             // 
             // lbTienToi
             // 
             lbTienToi.AutoSize = true;
-            lbTienToi.Location = new Point(27, 54);
+            lbTienToi.Location = new Point(13, 60);
             lbTienToi.Name = "lbTienToi";
-            lbTienToi.Size = new Size(50, 20);
+            lbTienToi.Size = new Size(59, 25);
             lbTienToi.TabIndex = 10;
             lbTienToi.Text = "label3";
             // 
@@ -371,6 +401,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             groupBox2.BackColor = Color.FromArgb(128, 128, 255);
             groupBox2.Controls.Add(lbSuatTrua);
             groupBox2.Controls.Add(lbTienTrua);
+            groupBox2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(21, 314);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(250, 87);
@@ -381,18 +412,18 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // lbSuatTrua
             // 
             lbSuatTrua.AutoSize = true;
-            lbSuatTrua.Location = new Point(34, 23);
+            lbSuatTrua.Location = new Point(20, 25);
             lbSuatTrua.Name = "lbSuatTrua";
-            lbSuatTrua.Size = new Size(50, 20);
+            lbSuatTrua.Size = new Size(59, 25);
             lbSuatTrua.TabIndex = 6;
             lbSuatTrua.Text = "label2";
             // 
             // lbTienTrua
             // 
             lbTienTrua.AutoSize = true;
-            lbTienTrua.Location = new Point(33, 54);
+            lbTienTrua.Location = new Point(19, 56);
             lbTienTrua.Name = "lbTienTrua";
-            lbTienTrua.Size = new Size(50, 20);
+            lbTienTrua.Size = new Size(59, 25);
             lbTienTrua.TabIndex = 7;
             lbTienTrua.Text = "label3";
             // 
@@ -401,6 +432,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             groupBox4.BackColor = Color.LightSeaGreen;
             groupBox4.Controls.Add(lbSuatSang);
             groupBox4.Controls.Add(lbTienSang);
+            groupBox4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox4.Location = new Point(21, 189);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(250, 91);
@@ -411,18 +443,18 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // lbSuatSang
             // 
             lbSuatSang.AutoSize = true;
-            lbSuatSang.Location = new Point(29, 23);
+            lbSuatSang.Location = new Point(15, 28);
             lbSuatSang.Name = "lbSuatSang";
-            lbSuatSang.Size = new Size(50, 20);
+            lbSuatSang.Size = new Size(59, 25);
             lbSuatSang.TabIndex = 1;
             lbSuatSang.Text = "label2";
             // 
             // lbTienSang
             // 
             lbTienSang.AutoSize = true;
-            lbTienSang.Location = new Point(28, 54);
+            lbTienSang.Location = new Point(14, 59);
             lbTienSang.Name = "lbTienSang";
-            lbTienSang.Size = new Size(50, 20);
+            lbTienSang.Size = new Size(59, 25);
             lbTienSang.TabIndex = 2;
             lbTienSang.Text = "label3";
             // 
@@ -509,5 +541,6 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
         private Label lbSuatSang;
         private Label lbTienSang;
         private PictureBox pictureBox1;
+        private CheckBox checkBox1;
     }
 }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MH_QLyNAn));
             pnlHienThi = new Panel();
+            lblTieuDe = new Label();
             panel10 = new Panel();
             pnlUser = new Panel();
             pictureBox1 = new PictureBox();
@@ -41,7 +42,6 @@
             button1 = new Button();
             btnTKCBGV = new Button();
             btnYKDG = new Button();
-            lblTieuDe = new Label();
             panel10.SuspendLayout();
             pnlUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -54,6 +54,16 @@
             pnlHienThi.Name = "pnlHienThi";
             pnlHienThi.Size = new Size(1647, 1033);
             pnlHienThi.TabIndex = 5;
+            // 
+            // lblTieuDe
+            // 
+            lblTieuDe.AutoSize = true;
+            lblTieuDe.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTieuDe.Location = new Point(954, 0);
+            lblTieuDe.Name = "lblTieuDe";
+            lblTieuDe.Size = new Size(208, 54);
+            lblTieuDe.TabIndex = 32;
+            lblTieuDe.Text = "Trang chủ";
             // 
             // panel10
             // 
@@ -219,16 +229,6 @@
             btnYKDG.TextAlign = ContentAlignment.MiddleLeft;
             btnYKDG.UseVisualStyleBackColor = false;
             btnYKDG.Click += btnYKDG_Click;
-            // 
-            // lblTieuDe
-            // 
-            lblTieuDe.AutoSize = true;
-            lblTieuDe.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTieuDe.Location = new Point(265, 0);
-            lblTieuDe.Name = "lblTieuDe";
-            lblTieuDe.Size = new Size(208, 54);
-            lblTieuDe.TabIndex = 32;
-            lblTieuDe.Text = "Trang chủ";
             // 
             // MH_QLyNAn
             // 

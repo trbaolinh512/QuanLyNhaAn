@@ -57,7 +57,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             dgvSuatAn.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
             dgvSuatAn.Columns[3].SortMode = DataGridViewColumnSortMode.NotSortable;
 
-            dgvSuatAn.Columns[0].ReadOnly=true;
+            dgvSuatAn.Columns[0].ReadOnly = true;
             dgvSuatAn.Columns[1].ReadOnly = true;
             dgvSuatAn.Columns[2].ReadOnly = true;
             dgvSuatAn.Columns[3].ReadOnly = true;
@@ -580,6 +580,17 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                 {
                     row.Cells[e.ColumnIndex].Selected = true;
                 }
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked)
+            {
+                checkBox1.Text = " - Đã đăng ký suất ăn";
+            }else
+            {
+                checkBox1.Text = " - Chưa đăng ký suất ăn";
             }
         }
     }

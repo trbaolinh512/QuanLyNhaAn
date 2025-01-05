@@ -30,7 +30,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_QLyChucVu));
             btnXoa = new Button();
             btnThem = new Button();
@@ -40,12 +40,12 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             label2 = new Label();
             txbChucVu = new TextBox();
             dgvChucVu = new DataGridView();
-            pictureBox1 = new PictureBox();
             Id = new DataGridViewTextBoxColumn();
             STT = new DataGridViewTextBoxColumn();
             ChucVu = new DataGridViewTextBoxColumn();
             LaHocVien = new DataGridViewCheckBoxColumn();
             CoQuyenBaoCom = new DataGridViewCheckBoxColumn();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvChucVu).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -54,7 +54,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             btnXoa.BackColor = Color.Red;
             btnXoa.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            btnXoa.Location = new Point(833, 207);
+            btnXoa.Location = new Point(1204, 194);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(113, 44);
             btnXoa.TabIndex = 41;
@@ -66,7 +66,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             btnThem.BackColor = Color.DodgerBlue;
             btnThem.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            btnThem.Location = new Point(833, 97);
+            btnThem.Location = new Point(1204, 84);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(113, 48);
             btnThem.TabIndex = 40;
@@ -77,10 +77,10 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // ckbBaoCom
             // 
             ckbBaoCom.AutoSize = true;
-            ckbBaoCom.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            ckbBaoCom.Location = new Point(653, 196);
+            ckbBaoCom.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            ckbBaoCom.Location = new Point(980, 196);
             ckbBaoCom.Name = "ckbBaoCom";
-            ckbBaoCom.Size = new Size(167, 24);
+            ckbBaoCom.Size = new Size(206, 29);
             ckbBaoCom.TabIndex = 39;
             ckbBaoCom.Text = "Có quyền báo cơm ?";
             ckbBaoCom.UseVisualStyleBackColor = true;
@@ -88,10 +88,10 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // ckbLaHocVien
             // 
             ckbLaHocVien.AutoSize = true;
-            ckbLaHocVien.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            ckbLaHocVien.Location = new Point(653, 157);
+            ckbLaHocVien.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            ckbLaHocVien.Location = new Point(980, 157);
             ckbLaHocVien.Name = "ckbLaHocVien";
-            ckbLaHocVien.Size = new Size(116, 24);
+            ckbLaHocVien.Size = new Size(143, 29);
             ckbLaHocVien.TabIndex = 38;
             ckbLaHocVien.Text = "Là học viên ?";
             ckbLaHocVien.UseVisualStyleBackColor = true;
@@ -100,7 +100,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             btnChinhSua.BackColor = Color.Lime;
             btnChinhSua.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            btnChinhSua.Location = new Point(833, 153);
+            btnChinhSua.Location = new Point(1204, 140);
             btnChinhSua.Name = "btnChinhSua";
             btnChinhSua.Size = new Size(113, 46);
             btnChinhSua.TabIndex = 37;
@@ -111,16 +111,17 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(653, 96);
+            label2.BorderStyle = BorderStyle.FixedSingle;
+            label2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(980, 96);
             label2.Name = "label2";
-            label2.Size = new Size(61, 20);
+            label2.Size = new Size(82, 27);
             label2.TabIndex = 36;
             label2.Text = "Chức vụ";
             // 
             // txbChucVu
             // 
-            txbChucVu.Location = new Point(653, 124);
+            txbChucVu.Location = new Point(980, 125);
             txbChucVu.Name = "txbChucVu";
             txbChucVu.Size = new Size(167, 27);
             txbChucVu.TabIndex = 35;
@@ -130,35 +131,25 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             dgvChucVu.AllowUserToAddRows = false;
             dgvChucVu.AllowUserToDeleteRows = false;
             dgvChucVu.BackgroundColor = Color.White;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvChucVu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(2, 136, 209);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvChucVu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvChucVu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvChucVu.Columns.AddRange(new DataGridViewColumn[] { Id, STT, ChucVu, LaHocVien, CoQuyenBaoCom });
             dgvChucVu.EnableHeadersVisualStyles = false;
-            dgvChucVu.Location = new Point(3, 82);
+            dgvChucVu.Location = new Point(301, 82);
             dgvChucVu.Name = "dgvChucVu";
             dgvChucVu.ReadOnly = true;
             dgvChucVu.RowHeadersWidth = 51;
             dgvChucVu.RowTemplate.Height = 29;
-            dgvChucVu.Size = new Size(644, 849);
+            dgvChucVu.Size = new Size(673, 849);
             dgvChucVu.TabIndex = 34;
             dgvChucVu.CellClick += dgvChucVu_CellClick;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, -2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1648, 1033);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 42;
-            pictureBox1.TabStop = false;
             // 
             // Id
             // 
@@ -204,6 +195,16 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             CoQuyenBaoCom.Name = "CoQuyenBaoCom";
             CoQuyenBaoCom.ReadOnly = true;
             CoQuyenBaoCom.Width = 200;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, -2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1648, 1033);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 42;
+            pictureBox1.TabStop = false;
             // 
             // UC_QLyChucVu
             // 

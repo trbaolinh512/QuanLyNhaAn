@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_TrangChu));
             lblNgayHomNay = new Label();
             lblSuatHocVienSang = new Label();
@@ -64,36 +64,39 @@
             // lblNgayHomNay
             // 
             lblNgayHomNay.AutoSize = true;
+            lblNgayHomNay.BackColor = Color.White;
+            lblNgayHomNay.BorderStyle = BorderStyle.FixedSingle;
+            lblNgayHomNay.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             lblNgayHomNay.Location = new Point(17, 85);
             lblNgayHomNay.Name = "lblNgayHomNay";
-            lblNgayHomNay.Size = new Size(50, 20);
+            lblNgayHomNay.Size = new Size(65, 27);
             lblNgayHomNay.TabIndex = 0;
             lblNgayHomNay.Text = "label1";
             // 
             // lblSuatHocVienSang
             // 
             lblSuatHocVienSang.AutoSize = true;
-            lblSuatHocVienSang.Location = new Point(29, 23);
+            lblSuatHocVienSang.Location = new Point(29, 27);
             lblSuatHocVienSang.Name = "lblSuatHocVienSang";
-            lblSuatHocVienSang.Size = new Size(50, 20);
+            lblSuatHocVienSang.Size = new Size(63, 25);
             lblSuatHocVienSang.TabIndex = 1;
             lblSuatHocVienSang.Text = "label2";
             // 
             // lblSuatCBGVSang
             // 
             lblSuatCBGVSang.AutoSize = true;
-            lblSuatCBGVSang.Location = new Point(28, 54);
+            lblSuatCBGVSang.Location = new Point(28, 58);
             lblSuatCBGVSang.Name = "lblSuatCBGVSang";
-            lblSuatCBGVSang.Size = new Size(50, 20);
+            lblSuatCBGVSang.Size = new Size(63, 25);
             lblSuatCBGVSang.TabIndex = 2;
             lblSuatCBGVSang.Text = "label3";
             // 
             // lblSuatTongQuatSang
             // 
             lblSuatTongQuatSang.AutoSize = true;
-            lblSuatTongQuatSang.Location = new Point(29, 88);
+            lblSuatTongQuatSang.Location = new Point(29, 92);
             lblSuatTongQuatSang.Name = "lblSuatTongQuatSang";
-            lblSuatTongQuatSang.Size = new Size(50, 20);
+            lblSuatTongQuatSang.Size = new Size(63, 25);
             lblSuatTongQuatSang.TabIndex = 3;
             lblSuatTongQuatSang.Text = "label4";
             // 
@@ -102,14 +105,14 @@
             dgvHocVien.AllowUserToAddRows = false;
             dgvHocVien.AllowUserToDeleteRows = false;
             dgvHocVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvHocVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(2, 136, 209);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvHocVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvHocVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvHocVien.Columns.AddRange(new DataGridViewColumn[] { STT, Lop, SoSuatAn });
             dgvHocVien.EnableHeadersVisualStyles = false;
@@ -147,7 +150,14 @@
             dgvCBGV.AllowUserToAddRows = false;
             dgvCBGV.AllowUserToDeleteRows = false;
             dgvCBGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvCBGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(2, 136, 209);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvCBGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvCBGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCBGV.Columns.AddRange(new DataGridViewColumn[] { STT1, Phong, Khoa, SoSuatAnCBGV });
             dgvCBGV.EnableHeadersVisualStyles = false;
@@ -190,62 +200,64 @@
             // lblSuatTongQuatTrua
             // 
             lblSuatTongQuatTrua.AutoSize = true;
-            lblSuatTongQuatTrua.Location = new Point(34, 88);
+            lblSuatTongQuatTrua.Location = new Point(34, 92);
             lblSuatTongQuatTrua.Name = "lblSuatTongQuatTrua";
-            lblSuatTongQuatTrua.Size = new Size(50, 20);
+            lblSuatTongQuatTrua.Size = new Size(63, 25);
             lblSuatTongQuatTrua.TabIndex = 8;
             lblSuatTongQuatTrua.Text = "label4";
             // 
             // lblSuatCBGVTrua
             // 
             lblSuatCBGVTrua.AutoSize = true;
-            lblSuatCBGVTrua.Location = new Point(33, 54);
+            lblSuatCBGVTrua.Location = new Point(33, 58);
             lblSuatCBGVTrua.Name = "lblSuatCBGVTrua";
-            lblSuatCBGVTrua.Size = new Size(50, 20);
+            lblSuatCBGVTrua.Size = new Size(63, 25);
             lblSuatCBGVTrua.TabIndex = 7;
             lblSuatCBGVTrua.Text = "label3";
             // 
             // lblSuatHocVienTrua
             // 
             lblSuatHocVienTrua.AutoSize = true;
-            lblSuatHocVienTrua.Location = new Point(34, 23);
+            lblSuatHocVienTrua.Location = new Point(34, 27);
             lblSuatHocVienTrua.Name = "lblSuatHocVienTrua";
-            lblSuatHocVienTrua.Size = new Size(50, 20);
+            lblSuatHocVienTrua.Size = new Size(63, 25);
             lblSuatHocVienTrua.TabIndex = 6;
             lblSuatHocVienTrua.Text = "label2";
             // 
             // lblSuatTongQuatToi
             // 
             lblSuatTongQuatToi.AutoSize = true;
-            lblSuatTongQuatToi.Location = new Point(28, 88);
+            lblSuatTongQuatToi.Location = new Point(28, 92);
             lblSuatTongQuatToi.Name = "lblSuatTongQuatToi";
-            lblSuatTongQuatToi.Size = new Size(50, 20);
+            lblSuatTongQuatToi.Size = new Size(63, 25);
             lblSuatTongQuatToi.TabIndex = 11;
             lblSuatTongQuatToi.Text = "label4";
             // 
             // lblSuatCBGVToi
             // 
             lblSuatCBGVToi.AutoSize = true;
-            lblSuatCBGVToi.Location = new Point(27, 54);
+            lblSuatCBGVToi.Location = new Point(27, 58);
             lblSuatCBGVToi.Name = "lblSuatCBGVToi";
-            lblSuatCBGVToi.Size = new Size(50, 20);
+            lblSuatCBGVToi.Size = new Size(63, 25);
             lblSuatCBGVToi.TabIndex = 10;
             lblSuatCBGVToi.Text = "label3";
             // 
             // lblSuatHocVienToi
             // 
             lblSuatHocVienToi.AutoSize = true;
-            lblSuatHocVienToi.Location = new Point(28, 23);
+            lblSuatHocVienToi.Location = new Point(28, 27);
             lblSuatHocVienToi.Name = "lblSuatHocVienToi";
-            lblSuatHocVienToi.Size = new Size(50, 20);
+            lblSuatHocVienToi.Size = new Size(63, 25);
             lblSuatHocVienToi.TabIndex = 9;
             lblSuatHocVienToi.Text = "label2";
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.White;
             groupBox1.Controls.Add(lblSuatHocVienSang);
             groupBox1.Controls.Add(lblSuatCBGVSang);
             groupBox1.Controls.Add(lblSuatTongQuatSang);
+            groupBox1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(17, 122);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(250, 125);
@@ -255,9 +267,11 @@
             // 
             // groupBox2
             // 
+            groupBox2.BackColor = Color.White;
             groupBox2.Controls.Add(lblSuatHocVienTrua);
             groupBox2.Controls.Add(lblSuatCBGVTrua);
             groupBox2.Controls.Add(lblSuatTongQuatTrua);
+            groupBox2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(308, 122);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(250, 125);
@@ -267,9 +281,11 @@
             // 
             // groupBox3
             // 
+            groupBox3.BackColor = Color.White;
             groupBox3.Controls.Add(lblSuatHocVienToi);
             groupBox3.Controls.Add(lblSuatCBGVToi);
             groupBox3.Controls.Add(lblSuatTongQuatToi);
+            groupBox3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox3.Location = new Point(598, 122);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(250, 125);
