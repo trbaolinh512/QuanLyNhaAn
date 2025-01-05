@@ -171,7 +171,7 @@
             dgvCBGV.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -181,6 +181,7 @@
             dgvCBGV.EnableHeadersVisualStyles = false;
             dgvCBGV.Location = new Point(3, 250);
             dgvCBGV.Name = "dgvCBGV";
+            dgvCBGV.ReadOnly = true;
             dgvCBGV.RowHeadersWidth = 51;
             dgvCBGV.RowTemplate.Height = 29;
             dgvCBGV.Size = new Size(1609, 700);

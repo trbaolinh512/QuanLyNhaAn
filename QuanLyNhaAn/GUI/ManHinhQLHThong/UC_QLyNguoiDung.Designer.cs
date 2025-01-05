@@ -93,9 +93,9 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             btnXoa.BackColor = Color.Red;
             btnXoa.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            btnXoa.Location = new Point(658, 242);
+            btnXoa.Location = new Point(658, 195);
             btnXoa.Name = "btnXoa";
-            btnXoa.Size = new Size(99, 35);
+            btnXoa.Size = new Size(99, 40);
             btnXoa.TabIndex = 39;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = false;
@@ -136,7 +136,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             btnChuyen.BackColor = Color.FromArgb(0, 192, 192);
             btnChuyen.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            btnChuyen.Location = new Point(763, 194);
+            btnChuyen.Location = new Point(658, 246);
             btnChuyen.Name = "btnChuyen";
             btnChuyen.Size = new Size(195, 39);
             btnChuyen.TabIndex = 37;
@@ -148,9 +148,9 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             btnSua.BackColor = Color.Lime;
             btnSua.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSua.Location = new Point(658, 193);
+            btnSua.Location = new Point(763, 195);
             btnSua.Name = "btnSua";
-            btnSua.Size = new Size(99, 38);
+            btnSua.Size = new Size(138, 40);
             btnSua.TabIndex = 36;
             btnSua.Text = "Chỉnh sửa";
             btnSua.UseVisualStyleBackColor = false;
@@ -181,7 +181,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             groupBox1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(24, 84);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(609, 264);
+            groupBox1.Size = new Size(609, 254);
             groupBox1.TabIndex = 35;
             groupBox1.TabStop = false;
             groupBox1.Text = "Nội dung chi tiết";
@@ -189,7 +189,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // cbxVaiTro
             // 
             cbxVaiTro.FormattingEnabled = true;
-            cbxVaiTro.Location = new Point(389, 219);
+            cbxVaiTro.Location = new Point(389, 199);
             cbxVaiTro.Name = "cbxVaiTro";
             cbxVaiTro.Size = new Size(205, 33);
             cbxVaiTro.TabIndex = 20;
@@ -197,56 +197,56 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             // txbMaND
             // 
-            txbMaND.Location = new Point(84, 98);
+            txbMaND.Location = new Point(84, 78);
             txbMaND.Name = "txbMaND";
             txbMaND.Size = new Size(171, 32);
             txbMaND.TabIndex = 19;
             // 
             // txbSTK
             // 
-            txbSTK.Location = new Point(389, 96);
+            txbSTK.Location = new Point(389, 76);
             txbSTK.Name = "txbSTK";
             txbSTK.Size = new Size(205, 32);
             txbSTK.TabIndex = 18;
             // 
             // txbEmail
             // 
-            txbEmail.Location = new Point(389, 178);
+            txbEmail.Location = new Point(389, 158);
             txbEmail.Name = "txbEmail";
             txbEmail.Size = new Size(205, 32);
             txbEmail.TabIndex = 16;
             // 
             // txbTenNH
             // 
-            txbTenNH.Location = new Point(389, 138);
+            txbTenNH.Location = new Point(389, 118);
             txbTenNH.Name = "txbTenNH";
             txbTenNH.Size = new Size(205, 32);
             txbTenNH.TabIndex = 15;
             // 
             // txbSDT
             // 
-            txbSDT.Location = new Point(389, 55);
+            txbSDT.Location = new Point(389, 35);
             txbSDT.Name = "txbSDT";
             txbSDT.Size = new Size(205, 32);
             txbSDT.TabIndex = 14;
             // 
             // txbDonVi
             // 
-            txbDonVi.Location = new Point(84, 219);
+            txbDonVi.Location = new Point(84, 199);
             txbDonVi.Name = "txbDonVi";
             txbDonVi.Size = new Size(171, 32);
             txbDonVi.TabIndex = 13;
             // 
             // txbKhoaHoc
             // 
-            txbKhoaHoc.Location = new Point(84, 179);
+            txbKhoaHoc.Location = new Point(84, 159);
             txbKhoaHoc.Name = "txbKhoaHoc";
             txbKhoaHoc.Size = new Size(171, 32);
             txbKhoaHoc.TabIndex = 12;
             // 
             // txbLopHoc
             // 
-            txbLopHoc.Location = new Point(84, 139);
+            txbLopHoc.Location = new Point(84, 119);
             txbLopHoc.Name = "txbLopHoc";
             txbLopHoc.Size = new Size(171, 32);
             txbLopHoc.TabIndex = 11;
@@ -255,7 +255,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(284, 222);
+            label10.Location = new Point(284, 202);
             label10.Name = "label10";
             label10.Size = new Size(52, 20);
             label10.TabIndex = 9;
@@ -265,7 +265,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(284, 182);
+            label9.Location = new Point(284, 162);
             label9.Name = "label9";
             label9.Size = new Size(46, 20);
             label9.TabIndex = 8;
@@ -275,7 +275,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(284, 142);
+            label8.Location = new Point(284, 122);
             label8.Name = "label8";
             label8.Size = new Size(106, 20);
             label8.TabIndex = 7;
@@ -285,7 +285,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(284, 99);
+            label7.Location = new Point(284, 79);
             label7.Name = "label7";
             label7.Size = new Size(91, 20);
             label7.TabIndex = 6;
@@ -295,7 +295,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(284, 58);
+            label6.Location = new Point(284, 38);
             label6.Name = "label6";
             label6.Size = new Size(97, 20);
             label6.TabIndex = 5;
@@ -305,7 +305,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             lbDonVi.AutoSize = true;
             lbDonVi.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lbDonVi.Location = new Point(12, 222);
+            lbDonVi.Location = new Point(12, 202);
             lbDonVi.Name = "lbDonVi";
             lbDonVi.Size = new Size(52, 20);
             lbDonVi.TabIndex = 4;
@@ -315,7 +315,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             lbKhoaHoc.AutoSize = true;
             lbKhoaHoc.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lbKhoaHoc.Location = new Point(12, 182);
+            lbKhoaHoc.Location = new Point(12, 162);
             lbKhoaHoc.Name = "lbKhoaHoc";
             lbKhoaHoc.Size = new Size(71, 20);
             lbKhoaHoc.TabIndex = 3;
@@ -325,7 +325,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             lbLop.AutoSize = true;
             lbLop.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lbLop.Location = new Point(12, 142);
+            lbLop.Location = new Point(12, 122);
             lbLop.Name = "lbLop";
             lbLop.Size = new Size(62, 20);
             lbLop.TabIndex = 2;
@@ -335,7 +335,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 101);
+            label2.Location = new Point(12, 81);
             label2.Name = "label2";
             label2.Size = new Size(56, 20);
             label2.TabIndex = 1;
@@ -345,7 +345,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(6, 58);
+            label3.Location = new Point(6, 38);
             label3.Name = "label3";
             label3.Size = new Size(73, 20);
             label3.TabIndex = 0;
@@ -353,7 +353,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // 
             // txbHoTen
             // 
-            txbHoTen.Location = new Point(84, 56);
+            txbHoTen.Location = new Point(84, 36);
             txbHoTen.Name = "txbHoTen";
             txbHoTen.Size = new Size(171, 32);
             txbHoTen.TabIndex = 10;
@@ -364,7 +364,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             dgvNguoiDung.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -375,6 +375,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             dgvNguoiDung.EnableHeadersVisualStyles = false;
             dgvNguoiDung.Location = new Point(10, 372);
             dgvNguoiDung.Name = "dgvNguoiDung";
+            dgvNguoiDung.ReadOnly = true;
             dgvNguoiDung.RowHeadersWidth = 51;
             dgvNguoiDung.RowTemplate.Height = 29;
             dgvNguoiDung.Size = new Size(1578, 587);
@@ -386,6 +387,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             Id.HeaderText = "Id";
             Id.MinimumWidth = 6;
             Id.Name = "Id";
+            Id.ReadOnly = true;
             Id.Visible = false;
             Id.Width = 125;
             // 
@@ -464,7 +466,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLHThong
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Location = new Point(0, -20);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1648, 1034);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;

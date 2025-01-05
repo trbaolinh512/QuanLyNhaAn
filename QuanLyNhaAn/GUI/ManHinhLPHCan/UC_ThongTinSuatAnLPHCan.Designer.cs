@@ -63,7 +63,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             dgvSuatAn.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -73,6 +73,7 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             dgvSuatAn.EnableHeadersVisualStyles = false;
             dgvSuatAn.Location = new Point(14, 185);
             dgvSuatAn.Name = "dgvSuatAn";
+            dgvSuatAn.ReadOnly = true;
             dgvSuatAn.RowHeadersWidth = 51;
             dgvSuatAn.RowTemplate.Height = 29;
             dgvSuatAn.Size = new Size(1483, 786);

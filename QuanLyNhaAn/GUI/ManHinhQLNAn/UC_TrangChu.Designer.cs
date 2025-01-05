@@ -104,7 +104,7 @@
             dgvHocVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -115,6 +115,7 @@
             dgvHocVien.EnableHeadersVisualStyles = false;
             dgvHocVien.Location = new Point(32, 283);
             dgvHocVien.Name = "dgvHocVien";
+            dgvHocVien.ReadOnly = true;
             dgvHocVien.RowHeadersWidth = 51;
             dgvHocVien.RowTemplate.Height = 29;
             dgvHocVien.Size = new Size(686, 698);
@@ -152,6 +153,7 @@
             dgvCBGV.EnableHeadersVisualStyles = false;
             dgvCBGV.Location = new Point(742, 283);
             dgvCBGV.Name = "dgvCBGV";
+            dgvCBGV.ReadOnly = true;
             dgvCBGV.RowHeadersWidth = 51;
             dgvCBGV.RowTemplate.Height = 29;
             dgvCBGV.Size = new Size(818, 698);
@@ -162,6 +164,7 @@
             STT1.HeaderText = "STT";
             STT1.MinimumWidth = 6;
             STT1.Name = "STT1";
+            STT1.ReadOnly = true;
             // 
             // Phong
             // 

@@ -30,7 +30,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_YKienDongGop));
             dgvYeuCau = new DataGridView();
             Id = new DataGridViewTextBoxColumn();
@@ -61,19 +61,20 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             dgvYeuCau.AllowUserToAddRows = false;
             dgvYeuCau.AllowUserToDeleteRows = false;
             dgvYeuCau.BackgroundColor = Color.White;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvYeuCau.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(2, 136, 209);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvYeuCau.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvYeuCau.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvYeuCau.Columns.AddRange(new DataGridViewColumn[] { Id, STT, NoiDung, NoiDungPhanHoi, NguoiPhanHoi, NgayGui, NgayPhanHoi });
             dgvYeuCau.EnableHeadersVisualStyles = false;
             dgvYeuCau.Location = new Point(16, 73);
             dgvYeuCau.Name = "dgvYeuCau";
+            dgvYeuCau.ReadOnly = true;
             dgvYeuCau.RowHeadersWidth = 51;
             dgvYeuCau.RowTemplate.Height = 29;
             dgvYeuCau.Size = new Size(1018, 878);
@@ -85,6 +86,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             Id.HeaderText = "Id";
             Id.MinimumWidth = 6;
             Id.Name = "Id";
+            Id.ReadOnly = true;
             Id.Visible = false;
             Id.Width = 125;
             // 
@@ -93,6 +95,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             STT.HeaderText = "STT";
             STT.MinimumWidth = 6;
             STT.Name = "STT";
+            STT.ReadOnly = true;
             STT.Width = 50;
             // 
             // NoiDung
@@ -100,6 +103,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             NoiDung.HeaderText = "Nội dung";
             NoiDung.MinimumWidth = 6;
             NoiDung.Name = "NoiDung";
+            NoiDung.ReadOnly = true;
             NoiDung.Width = 225;
             // 
             // NoiDungPhanHoi
@@ -107,6 +111,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             NoiDungPhanHoi.HeaderText = "Nội dung phản hồi";
             NoiDungPhanHoi.MinimumWidth = 6;
             NoiDungPhanHoi.Name = "NoiDungPhanHoi";
+            NoiDungPhanHoi.ReadOnly = true;
             NoiDungPhanHoi.Width = 225;
             // 
             // NguoiPhanHoi
@@ -114,6 +119,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             NguoiPhanHoi.HeaderText = "Người phản hồi";
             NguoiPhanHoi.MinimumWidth = 6;
             NguoiPhanHoi.Name = "NguoiPhanHoi";
+            NguoiPhanHoi.ReadOnly = true;
             NguoiPhanHoi.Width = 225;
             // 
             // NgayGui
@@ -121,6 +127,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             NgayGui.HeaderText = "Ngày Gửi";
             NgayGui.MinimumWidth = 6;
             NgayGui.Name = "NgayGui";
+            NgayGui.ReadOnly = true;
             NgayGui.Width = 225;
             // 
             // NgayPhanHoi
@@ -128,6 +135,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             NgayPhanHoi.HeaderText = "Ngày phản hồi";
             NgayPhanHoi.MinimumWidth = 6;
             NgayPhanHoi.Name = "NgayPhanHoi";
+            NgayPhanHoi.ReadOnly = true;
             NgayPhanHoi.Width = 225;
             // 
             // label1
@@ -231,7 +239,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(1070, 742);
+            label2.Location = new Point(1070, 748);
             label2.Name = "label2";
             label2.Size = new Size(133, 20);
             label2.TabIndex = 9;

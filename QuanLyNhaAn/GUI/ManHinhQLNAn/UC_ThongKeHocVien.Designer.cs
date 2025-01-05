@@ -61,7 +61,7 @@
             dgvHocVien.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -71,6 +71,7 @@
             dgvHocVien.EnableHeadersVisualStyles = false;
             dgvHocVien.Location = new Point(3, 250);
             dgvHocVien.Name = "dgvHocVien";
+            dgvHocVien.ReadOnly = true;
             dgvHocVien.RowHeadersWidth = 51;
             dgvHocVien.RowTemplate.Height = 29;
             dgvHocVien.Size = new Size(1609, 700);
