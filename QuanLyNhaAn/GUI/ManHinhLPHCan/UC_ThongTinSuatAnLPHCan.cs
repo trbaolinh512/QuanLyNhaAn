@@ -69,6 +69,8 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                 dgvSuatAn.Columns[3 + i].SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             dgvSuatAn.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold, GraphicsUnit.Point);
+            dgvSuatAn.Columns.Add("TongBuoiNghi", "Tổng buổi nghỉ");
+            dgvSuatAn.Columns.Add("TongTienHoan", "Tổng tiền hoàn lại");
             int stt = 0;
             int index = 0;
             foreach (ThongTinNguoiDungDto item in listNguoiDung)
@@ -120,7 +122,8 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                 stt++;
                 List<LichSuLuuTruDto> lichSuLuuTruDtos = lichSuLuuTruBll.lay_theo_thang_va_id(ngayBatDau, ngayKetThuc, item.Id);
                 List<YeuCauDangKyDto> yeuCauDangKyDtos = yeuCauDangKyBll.lay_theo_thang_va_id(ngayBatDau, ngayKetThuc, item.Id);
-
+                int[] tongSoBuoiNghi = { 0, 0, 0 };
+                decimal[] tongTienHoan = { 0, 0, 0 };
                 for (int i = 1; i <= ngayKetThuc.Day; i++)
                 {
 
@@ -136,12 +139,23 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                             {
                                 dgvSuatAn[3 + i, index].Value = "";
                                 dgvSuatAn[3 + i, index].Style.BackColor = Color.Red;
+                                tongSoBuoiNghi[0] += 3;
+                                tongTienHoan[0] += tinhTongTien(lsSuatAn, 0);
                             }
                             else
                             {
                                 dgvSuatAn[3 + i, index].Value = "";
                                 dgvSuatAn[3 + i, index + 1].Value = "";
                                 dgvSuatAn[3 + i, index + 2].Value = "";
+
+                                tongSoBuoiNghi[0] += 1;
+                                tongTienHoan[0] += tinhTongTien(lsSuatAn, 1);
+
+                                tongSoBuoiNghi[1] += 1;
+                                tongTienHoan[1] += tinhTongTien(lsSuatAn, 2);
+
+                                tongSoBuoiNghi[2] += 1;
+                                tongTienHoan[2] += tinhTongTien(lsSuatAn, 3);
 
                                 dgvSuatAn[3 + i, index].Style.BackColor = Color.Red;
                                 dgvSuatAn[3 + i, index + 1].Style.BackColor = Color.Red;
@@ -154,6 +168,9 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                             {
                                 dgvSuatAn[3 + i, index].Value = "A";
                                 dgvSuatAn[3 + i, index].Style.BackColor = Color.Yellow;
+
+                                tongSoBuoiNghi[0] += lsSuatAn.Count();
+                                tongTienHoan[0] += tinhTongTien(lsSuatAn, 0);
                             }
                             else
                             {
@@ -164,14 +181,20 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                                 if (lsSuatAn.Any(x => x.ThoiDiem == 1))
                                 {
                                     dgvSuatAn[3 + i, index].Value = "";
+                                    tongSoBuoiNghi[0] += 1;
+                                    tongTienHoan[0] += tinhTongTien(lsSuatAn, 1);
                                 }
                                 if (lsSuatAn.Any(x => x.ThoiDiem == 2))
                                 {
                                     dgvSuatAn[3 + i, index + 1].Value = "";
+                                    tongSoBuoiNghi[1] += 1;
+                                    tongTienHoan[1] += tinhTongTien(lsSuatAn, 2);
                                 }
                                 if (lsSuatAn.Any(x => x.ThoiDiem == 3))
                                 {
                                     dgvSuatAn[3 + i, index + 2].Value = "";
+                                    tongSoBuoiNghi[2] += 1;
+                                    tongTienHoan[2] += tinhTongTien(lsSuatAn, 3);
                                 }
 
                                 dgvSuatAn[3 + i, index].Style.BackColor = Color.Yellow;
@@ -188,6 +211,8 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
                                 dgvSuatAn[3 + i, index + 2].Value = "X";
                             }
                         }
+
+
                     }
                     else if (ngayTrongVLap > ngayHienTai.Date)//Yeu cau dang ky
                     {
@@ -395,14 +420,46 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
 
                 if (phuongthuc == 0)
                 {
+                    dgvSuatAn[4 + ngayKetThuc.Day, index].Value = tongSoBuoiNghi[0];
+                    dgvSuatAn[5 + ngayKetThuc.Day, index].Value = tongTienHoan[0];
                     index += 1;
+
                 }
                 else
                 {
+                    dgvSuatAn[4 + ngayKetThuc.Day, index].Value = tongSoBuoiNghi[0];
+                    dgvSuatAn[5 + ngayKetThuc.Day, index].Value = tongTienHoan[0];
+
+                    dgvSuatAn[4 + ngayKetThuc.Day, index + 1].Value = tongSoBuoiNghi[1];
+                    dgvSuatAn[5 + ngayKetThuc.Day, index + 1].Value = tongTienHoan[1];
+
+                    dgvSuatAn[4 + ngayKetThuc.Day, index + 2].Value = tongSoBuoiNghi[2];
+                    dgvSuatAn[5 + ngayKetThuc.Day, index + 2].Value = tongTienHoan[2];
                     index += 3;
                 }
             }
 
+        }
+
+        private decimal tinhTongTien(List<LichSuLuuTruDto> lsSuatAn, int thoiDiem)
+        {
+            decimal tong = 0;
+            if (thoiDiem == 0)
+            {
+                foreach (var item in lsSuatAn)
+                {
+                    tong += item.SoTienTuongUng;
+                }
+            }
+            else
+            {
+                foreach (var item in lsSuatAn.Where(x => x.ThoiDiem == thoiDiem))
+                {
+                    tong += item.SoTienTuongUng;
+                }
+            }
+
+            return tong;
         }
         public void cbxPhuongThuc_SelectedIndexChanged(object sender, EventArgs e)
         {
