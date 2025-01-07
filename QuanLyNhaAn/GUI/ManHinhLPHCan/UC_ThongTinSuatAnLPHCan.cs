@@ -71,6 +71,10 @@ namespace QuanLyNhaAn.GUI.ManHinhQLNAn
             dgvSuatAn.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold, GraphicsUnit.Point);
             dgvSuatAn.Columns.Add("TongBuoiNghi", "Tổng buổi nghỉ");
             dgvSuatAn.Columns.Add("TongTienHoan", "Tổng tiền hoàn lại");
+            dgvSuatAn.Columns[4 + ngayKetThuc.Day].ReadOnly = true;
+            dgvSuatAn.Columns[5 + ngayKetThuc.Day].ReadOnly = true;
+            dgvSuatAn.Columns[4 + ngayKetThuc.Day].Width = 150;
+            dgvSuatAn.Columns[5 + ngayKetThuc.Day].Width = 180;
             int stt = 0;
             int index = 0;
             foreach (ThongTinNguoiDungDto item in listNguoiDung)

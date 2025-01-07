@@ -222,6 +222,7 @@ namespace QuanLyNhaAn.GUI.ManHinhCBGV
             txbYeuCau.Text = null;
             imageData = null;
             ptbAnh.Image = null;
+            txbPhanHoi.Text = null;
             LoadYKien();
 
             

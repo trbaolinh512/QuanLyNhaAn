@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_TrangChu));
             lblNgayHomNay = new Label();
             lblSuatHocVienSang = new Label();
@@ -105,14 +105,14 @@
             dgvHocVien.AllowUserToAddRows = false;
             dgvHocVien.AllowUserToDeleteRows = false;
             dgvHocVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(2, 136, 209);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvHocVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(2, 136, 209);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvHocVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvHocVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvHocVien.Columns.AddRange(new DataGridViewColumn[] { STT, Lop, SoSuatAn });
             dgvHocVien.EnableHeadersVisualStyles = false;
@@ -150,14 +150,7 @@
             dgvCBGV.AllowUserToAddRows = false;
             dgvCBGV.AllowUserToDeleteRows = false;
             dgvCBGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(2, 136, 209);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvCBGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvCBGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCBGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCBGV.Columns.AddRange(new DataGridViewColumn[] { STT1, Phong, Khoa, SoSuatAnCBGV });
             dgvCBGV.EnableHeadersVisualStyles = false;
@@ -260,7 +253,7 @@
             groupBox1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(17, 122);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(250, 125);
+            groupBox1.Size = new Size(425, 125);
             groupBox1.TabIndex = 12;
             groupBox1.TabStop = false;
             groupBox1.Text = "Buổi sáng";
@@ -272,9 +265,9 @@
             groupBox2.Controls.Add(lblSuatCBGVTrua);
             groupBox2.Controls.Add(lblSuatTongQuatTrua);
             groupBox2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox2.Location = new Point(308, 122);
+            groupBox2.Location = new Point(475, 122);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(250, 125);
+            groupBox2.Size = new Size(425, 125);
             groupBox2.TabIndex = 13;
             groupBox2.TabStop = false;
             groupBox2.Text = "Buổi trưa";
@@ -286,9 +279,9 @@
             groupBox3.Controls.Add(lblSuatCBGVToi);
             groupBox3.Controls.Add(lblSuatTongQuatToi);
             groupBox3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox3.Location = new Point(598, 122);
+            groupBox3.Location = new Point(935, 122);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(250, 125);
+            groupBox3.Size = new Size(425, 125);
             groupBox3.TabIndex = 14;
             groupBox3.TabStop = false;
             groupBox3.Text = "Buổi tối";
